@@ -14,7 +14,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
-        [SerializeField] private float m_JumpSpeed;
+        [SerializeField] private float m_BaseJumpSpeed;
+		[SerializeField] private float m_JumpChargeCoeff;
+		private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
         [SerializeField] private float m_GravityMultiplier;
         [SerializeField] private MouseLook m_MouseLook;
@@ -27,6 +29,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
+
+		[SerializeField] private float movementVolume = 0.33f;
+		[SerializeField] private AnimationCurve jumpCurve;
+
+		private float jumpTimer = 0f;
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -52,20 +59,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_HeadBob.Setup(m_Camera, m_StepInterval);
             m_StepCycle = 0f;
             m_NextStep = m_StepCycle/2f;
+			m_JumpSpeed = m_BaseJumpSpeed;
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
         }
 
 
-        // Update is called once per frame
+        // Update is called once per frameh
         private void Update()
         {
             RotateView();
+
+			if (!m_Jumping && m_CharacterController.isGrounded)
+			{
+				if (CrossPlatformInputManager.GetButtonDown ("Jump")) {
+
+					jumpTimer = Time.time;
+				}
+			}
+
             // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
+            if (!m_Jump && m_CharacterController.isGrounded)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = CrossPlatformInputManager.GetButtonUp("Jump");
+				m_JumpSpeed = m_BaseJumpSpeed *(1 + m_JumpChargeCoeff * jumpCurve.Evaluate (Mathf.Clamp(Time.time-jumpTimer,0f,1f)));
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -74,6 +92,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 PlayLandingSound();
                 m_MoveDir.y = 0f;
                 m_Jumping = false;
+				m_JumpSpeed = m_BaseJumpSpeed;
             }
             if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
             {
@@ -87,7 +106,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void PlayLandingSound()
         {
             m_AudioSource.clip = m_LandSound;
-            m_AudioSource.Play();
+            m_AudioSource.PlayOneShot(m_AudioSource.clip, movementVolume);
             m_NextStep = m_StepCycle + .5f;
         }
 
@@ -108,6 +127,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
+			//Debug.Log (m_CharacterController.isGrounded);
 
             if (m_CharacterController.isGrounded)
             {
@@ -137,7 +157,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void PlayJumpSound()
         {
             m_AudioSource.clip = m_JumpSound;
-            m_AudioSource.Play();
+			m_AudioSource.PlayOneShot(m_AudioSource.clip,movementVolume);
         }
 
 
@@ -170,7 +190,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // excluding sound at index 0
             int n = Random.Range(1, m_FootstepSounds.Length);
             m_AudioSource.clip = m_FootstepSounds[n];
-            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+			m_AudioSource.PlayOneShot(m_AudioSource.clip,movementVolume);
             // move picked sound to index 0 so it's not picked next time
             m_FootstepSounds[n] = m_FootstepSounds[0];
             m_FootstepSounds[0] = m_AudioSource.clip;

@@ -51,9 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\InfectionRaycast.cs" />
-     <Compile Include="Assets\OceanSpawner.cs" />
-     <Compile Include="Assets\Oscillator.cs" />
+     <Compile Include="Assets\_SCRIPTS\InfectionRaycast.cs" />
+     <Compile Include="Assets\_SCRIPTS\OceanSpawner.cs" />
+     <Compile Include="Assets\_SCRIPTS\Oscillator.cs" />
+     <Compile Include="Assets\_SCRIPTS\VirusInfectOnCollision.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -104,7 +105,6 @@
      <Compile Include="Assets\PrimitivePlus\Scripts\PrimitivePlusMeshes.cs" />
      <Compile Include="Assets\PrimitivePlus\Scripts\PrimitivePlusObject.cs" />
      <Compile Include="Assets\PrimitivePlus\Scripts\PrimitivePlusType.cs" />
-     <Compile Include="Assets\VirusInfectOnCollision.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
