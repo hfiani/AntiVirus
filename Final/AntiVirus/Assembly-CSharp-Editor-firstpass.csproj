@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{AC14D4A0-8D93-6174-3700-8227FFBE87FE}</ProjectGuid>
+    <ProjectGuid>{0956752C-81E7-D356-4771-097116EFA5CD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
@@ -52,10 +52,51 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
+     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
+     <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
      <None Include="Assets\PrimitivePlus\Documentation\ReadMe.txt" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
+     <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\TAA.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -116,7 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{B771FB82-1C9D-0A16-7137-26A65D333EB6}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{A037B36F-E623-B035-6BF2-4BA23CB14459}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

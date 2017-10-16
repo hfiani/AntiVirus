@@ -29,15 +29,17 @@ public class InfectionRaycast : MonoBehaviour
 		Vector3.left, Vector3.right,
 		Vector3.forward, Vector3.back
 	};
+	private MaterialPropertyBlock matBlock;
 	#endregion
 
 	// Use this for initialization
 	void Start ()
 	{
+		matBlock = new MaterialPropertyBlock();
 		timeToDestruction *= 1000;
 		timeToInfection *= 1000;
 		timeBetweenInfections *= 1000;
-		ChangeColor (transform, new Vector3 (0.5f, 0.33f, 1.0f));
+		//ChangeColor (transform, new Vector3 (0.5f, 0.5f, 0.5f));
 	}
 
 	/// <summary>
@@ -55,8 +57,12 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			GameObject child = trans.GetChild (i).gameObject;
 			if (child.GetComponent<MeshRenderer> ())
+
+				matBlock.SetColor("_Color", new Color(color.x, color.y, color.z));
 			{
-				child.GetComponent<MeshRenderer> ().materials [0].color = new Color (color.x, color.y, color.z);
+				//child.GetComponent<MeshRenderer> ().materials [0].color = new Color (color.x, color.y, color.z);
+				child.GetComponent<MeshRenderer> ().SetPropertyBlock(matBlock);
+
 			}
 		}
 	}
