@@ -53,7 +53,7 @@ public class Projectile : MonoBehaviour {
 
 		if (col.gameObject.GetComponent<InfectionRaycast> () != null && isAlive)
 		{
-			//col.gameObject.GetComponent<InfectionRaycast> ().CreateImmunity(col);
+			col.gameObject.GetComponent<InfectionRaycast> ().CreateImmunity();
 
 			isAlive = false;
 

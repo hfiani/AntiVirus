@@ -20,7 +20,7 @@ public class VirusInfectOnCollision : MonoBehaviour
 	{
 		if (col.gameObject.GetComponent<InfectionRaycast> () != null && isAlive)
 		{
-			col.gameObject.GetComponent<InfectionRaycast> ().CreateInfection(col.transform);
+			col.gameObject.GetComponent<InfectionRaycast> ().CreateInfection();
 
 			isAlive = false;
 
