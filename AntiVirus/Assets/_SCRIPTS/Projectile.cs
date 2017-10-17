@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour {
 	public float endSize = 1.0f;
 	public AnimationCurve sizeCurve;
 	public float growthTime = 2.0f;
+	public float lifetime = 2.0f;
 	#endregion
 
 	#region private variables
@@ -34,6 +35,7 @@ public class Projectile : MonoBehaviour {
 
 		updateSize ();
 
+		//updateFade ();
 		
 	}
 
@@ -42,7 +44,7 @@ public class Projectile : MonoBehaviour {
 		float scale = Mathf.Lerp (startSize,endSize,sizeCurve.Evaluate ((Time.time - timer) / growthTime)); 
 		//Debug.Log (scale);
 
-		transform.localScale  = new Vector3 (scale,scale,scale);
+		transform.localScale  = new Vector3 (scale,scale,20*scale);
 
 
 	}
@@ -51,11 +53,13 @@ public class Projectile : MonoBehaviour {
 
 		if (col.gameObject.GetComponent<InfectionRaycast> () != null && isAlive)
 		{
-			col.gameObject.GetComponent<InfectionRaycast> ().CreateImmunity(col.transform);
+			//col.gameObject.GetComponent<InfectionRaycast> ().CreateImmunity(col);
 
 			isAlive = false;
 
 			Destroy (gameObject);
 		}
 	}
+
+
 }

@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a0b5fa2736d9840be89feb50b35024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1250
-  startSize: 1
-  endSize: 2
+  speed: 3000
+  startSize: 0.25
+  endSize: 1
   sizeCurve:
     serializedVersion: 2
     m_Curve:
@@ -132,7 +132,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  growthTime: 0.25
+  growthTime: 2
 --- !u!135 &135574879117376242
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -143,5 +143,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.005
   m_Center: {x: 0, y: 0, z: -0.98}
