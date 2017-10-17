@@ -7,6 +7,7 @@ public class InfectionRaycast : MonoBehaviour
 {
 	#region enum
 	public enum VirusType{ALL_AT_ONCE, ONE_AT_TIME};
+	public enum BlockType{DESTRUCTABLE_INFECTABLE, UNDESTRUCTABLE_INFECTABLE, UNDESTRUCTABLE_UNINFECTABLE};
 	#endregion
 
 	#region public variables
@@ -14,15 +15,20 @@ public class InfectionRaycast : MonoBehaviour
 	public float distance = 0.03f;
 	public float timeToDestruction = 10.0f;
 	public float timeToInfection = 2.0f;
+	public float timeToRemoveImmunity = 20.0f;
 	public float timeBetweenInfections = 0.5f;
 	public bool infected = false;
+	public bool immune = false;
 	public VirusType virusType = VirusType.ALL_AT_ONCE;
+	public BlockType blockType = BlockType.DESTRUCTABLE_INFECTABLE;
+	public Material[] materialsInfection = new Material[7];
 	#endregion
 
 	#region private variables
 	private DateTime infection_time = new DateTime(0);
-	/*private int health_max = 100;
-	private int health = 100;*/
+	private DateTime immunity_time = new DateTime(0);
+	//private int health_max = 100;
+	//private int health = 100;
 	private int blockTurn = 0;
 	private Vector3[] directions = {
 		Vector3.up, Vector3.down,
@@ -32,6 +38,7 @@ public class InfectionRaycast : MonoBehaviour
 	private MaterialPropertyBlock matBlock;
 	#endregion
 
+	#region events
 	// Use this for initialization
 	void Start ()
 	{
@@ -39,7 +46,58 @@ public class InfectionRaycast : MonoBehaviour
 		timeToDestruction *= 1000;
 		timeToInfection *= 1000;
 		timeBetweenInfections *= 1000;
-		//ChangeColor (transform, new Vector3 (0.5f, 0.5f, 0.5f));
+		timeToRemoveImmunity *= 1000;
+
+		object[] materials_infection_object = Resources.LoadAll("Materials/Infections", typeof(Material));
+		materialsInfection = new Material[materials_infection_object.Length];
+		for (int i = 0; i < materials_infection_object.Length; i++)
+		{
+			materialsInfection [i] = (Material)materials_infection_object [i];
+		}
+
+		if (blockType == BlockType.UNDESTRUCTABLE_UNINFECTABLE)
+		{
+			ChangeMaterial(transform, Resources.Load<Material>("Materials/mat_cube - uninfectable"));
+		}
+
+		CreateImmunity (transform);
+	}
+	
+	// Update is called once per frame
+	void Update ()
+	{
+		if (infected)
+		{
+			// initialize infection time
+			if (infection_time == new DateTime (0))
+			{
+				infection_time = DateTime.Now;
+			}
+
+			float duration_infected = (float)(DateTime.Now - infection_time).TotalMilliseconds;
+
+			ManageSelfInfection (duration_infected);
+			InfectNeighbours (duration_infected);
+		}
+		else
+		{
+			float duration_immuned = (float)(DateTime.Now - immunity_time).TotalMilliseconds;
+			CheckImmunity (duration_immuned);
+		}
+	}
+	#endregion
+
+	#region private functions
+	/// <summary>
+	/// Checks the immunity.
+	/// </summary>
+	/// <param name="duration_immuned">Duration immuned.</param>
+	void CheckImmunity(float duration_immuned)
+	{
+		if (immune && duration_immuned >= timeToRemoveImmunity)
+		{
+			RemoveImmunity (transform);
+		}
 	}
 
 	/// <summary>
@@ -57,32 +115,32 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			GameObject child = trans.GetChild (i).gameObject;
 			if (child.GetComponent<MeshRenderer> ())
-
-				matBlock.SetColor("_Color", new Color(color.x, color.y, color.z));
 			{
-				//child.GetComponent<MeshRenderer> ().materials [0].color = new Color (color.x, color.y, color.z);
+				matBlock.SetColor("_Color", new Color(color.x, color.y, color.z));
 				child.GetComponent<MeshRenderer> ().SetPropertyBlock(matBlock);
-
+				//child.GetComponent<MeshRenderer> ().materials [0].color = new Color (color.x, color.y, color.z);
 			}
 		}
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+	/// <summary>
+	/// Changes the material.
+	/// </summary>
+	/// <param name="trans">Trans.</param>
+	/// <param name="mat">Mat.</param>
+	void ChangeMaterial(Transform trans, Material mat)
 	{
-		if (infected)
+		if (trans.GetComponent<MeshRenderer> () != null)
 		{
-			// initialize infection time
-			if (infection_time == new DateTime(0))
+			trans.gameObject.GetComponent<MeshRenderer> ().material = mat;
+		}
+		for (int i = 0; i < trans.childCount; i++)
+		{
+			GameObject child = trans.GetChild (i).gameObject;
+			if (child.GetComponent<MeshRenderer> ())
 			{
-				infection_time = DateTime.Now;
+				child.GetComponent<MeshRenderer> ().material = mat;
 			}
-
-			float duration_infected = (float) (DateTime.Now - infection_time).TotalMilliseconds;
-
-			ManageSelfInfection (duration_infected);
-
-			InfectNeighbours (duration_infected);
 		}
 	}
 
@@ -92,17 +150,29 @@ public class InfectionRaycast : MonoBehaviour
 	/// <param name="duration_infected">Duration infected.</param>
 	void ManageSelfInfection(float duration_infected)
 	{
-		if(duration_infected >= timeToDestruction) // time's up -> destroy object
+		if (duration_infected >= timeToDestruction) // time's up -> destroy object
 		{
-			Destroy (gameObject);
+			if (blockType == BlockType.DESTRUCTABLE_INFECTABLE)
+			{
+				Destroy (gameObject);
+			}
+			else if (blockType == BlockType.UNDESTRUCTABLE_INFECTABLE)
+			{
+				ChangeMaterial(transform, Resources.Load<Material>("Materials/mat_cube - infection full"));
+			}
 		}
-		else if (duration_infected < timeToDestruction / 2) // green to yellow
+		/*else if (duration_infected < timeToDestruction / 2) // green to yellow
 		{
 			ChangeColor (transform, new Vector3 (duration_infected / (timeToDestruction / 2), 1, 0));
 		}
 		else if (duration_infected >= timeToDestruction / 2) // yellow to red
 		{
 			ChangeColor (transform, new Vector3 (1, 2 - duration_infected / (timeToDestruction / 2), 0));
+		}*/
+		else
+		{
+			int material_index = (int)Math.Floor (duration_infected * materialsInfection.Length / timeToDestruction);
+			ChangeMaterial(transform, materialsInfection[material_index]);
 		}
 	}
 
@@ -133,18 +203,6 @@ public class InfectionRaycast : MonoBehaviour
 			}
 		}
 	}
-		
-	/// <summary>
-	/// Creates the infection
-	/// </summary>
-	/// <param name="t">T.</param>
-	void CreateInfection(Transform t)
-	{
-		if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
-		{
-			t.gameObject.GetComponent<InfectionRaycast> ().infected = true;
-		}
-	}
 
 	/// <summary>
 	/// Gets the neighbour blocks using the direction vectors
@@ -172,4 +230,73 @@ public class InfectionRaycast : MonoBehaviour
 			return null;
 		}
 	}
+	#endregion
+
+	#region public functions
+	/// <summary>
+	/// Creates the infection
+	/// </summary>
+	/// <param name="t">T.</param>
+	public void CreateInfection(Transform t)
+	{
+		if (t != null &&
+			t.gameObject.GetComponent<InfectionRaycast> () != null &&
+			t.gameObject.GetComponent<InfectionRaycast> ().blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE &&
+			!t.gameObject.GetComponent<InfectionRaycast> ().immune)
+		{
+			t.gameObject.GetComponent<InfectionRaycast> ().infected = true;
+		}
+	}
+
+	/// <summary>
+	/// Removes the infection.
+	/// </summary>
+	/// <param name="t">T.</param>
+	public void RemoveInfection(Transform t)
+	{
+		if (t != null &&
+			t.gameObject.GetComponent<InfectionRaycast> () != null &&
+			t.gameObject.GetComponent<InfectionRaycast> ().blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE)
+		{
+			t.gameObject.GetComponent<InfectionRaycast> ().infected = false;
+			ChangeMaterial(t, Resources.Load<Material>("Materials/mat_cube"));
+		}
+	}
+
+	/// <summary>
+	/// Creates the immunity.
+	/// </summary>
+	/// <param name="t">T.</param>
+	public void CreateImmunity(Transform t)
+	{
+		if (t != null &&
+			t.gameObject.GetComponent<InfectionRaycast> () != null &&
+			t.gameObject.GetComponent<InfectionRaycast> ().blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE &&
+			!t.gameObject.GetComponent<InfectionRaycast> ().immune)
+		{
+			t.gameObject.GetComponent<InfectionRaycast> ().immune = true;
+			ChangeMaterial(t, Resources.Load<Material>("Materials/mat_cube - immune"));
+			immunity_time = DateTime.Now;
+
+			RemoveInfection(t);
+		}
+	}
+
+	/// <summary>
+	/// Removes the immunity.
+	/// </summary>
+	/// <param name="t">T.</param>
+	public void RemoveImmunity(Transform t)
+	{
+		if (t != null &&
+			t.gameObject.GetComponent<InfectionRaycast> () != null &&
+			t.gameObject.GetComponent<InfectionRaycast> ().blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE &&
+			t.gameObject.GetComponent<InfectionRaycast> ().immune)
+		{
+			t.gameObject.GetComponent<InfectionRaycast> ().immune = false;
+			ChangeMaterial(t, Resources.Load<Material>("Materials/mat_cube"));
+			immunity_time = new DateTime (0);
+		}
+	}
+	#endregion
 }
