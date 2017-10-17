@@ -1,11 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OceanSpawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_SCRIPTS\OceanSpawner.cs">
     <Files>
-      <File FileName="Assets\InfectionRaycast.cs" Line="1" Column="1" />
-      <File FileName="Assets\VirusInfectOnCollision.cs" Line="1" Column="1" />
-      <File FileName="Assets\OceanSpawner.cs" Line="48" Column="1" />
-      <File FileName="Assets\Oscillator.cs" Line="34" Column="46" />
+      <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="1" Column="1" />
+      <File FileName="Assets\_SCRIPTS\OceanSpawner.cs" Line="51" Column="73" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
