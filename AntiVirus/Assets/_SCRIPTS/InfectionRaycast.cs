@@ -20,6 +20,7 @@ public class InfectionRaycast : MonoBehaviour
 	public float timeToInfection = 2.0f;
 	public float timeBetweenInfectionsMin = 0.5f;
 	public float timeBetweenInfectionsMax = 5.0f;
+	public float timeInfectionStability = 20.0f;
 
 	public float timeToRemoveImmunity = 20.0f;
 	public float timeToRemoveRepairImmunity = 3.0f;
@@ -38,6 +39,7 @@ public class InfectionRaycast : MonoBehaviour
 	#region private variables
 	private Material original_material;
 	private float timeBetweenReparations;
+	private DateTime start_infection_time = new DateTime(0);
 	private DateTime reparation_time = new DateTime(0);
 	private DateTime infection_time = new DateTime(0);
 	private DateTime immunity_time = new DateTime(0);
@@ -63,6 +65,7 @@ public class InfectionRaycast : MonoBehaviour
 		timeBetweenInfectionsMax *= 1000;
 		timeToRemoveImmunity *= 1000;
 		timeToRemoveRepairImmunity *= 1000;
+		timeInfectionStability *= 1000;
 
 		timeBetweenReparations = timeBetweenInfectionsMin * factorRemoveInfection;
 
@@ -244,19 +247,20 @@ public class InfectionRaycast : MonoBehaviour
 					Transform t = GetNeighbourBlocks (direction, distance);
 					if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
 					{
-						t.gameObject.GetComponent<InfectionRaycast> ().CreateInfection ();
+						t.gameObject.GetComponent<InfectionRaycast> ().CreateInfection (start_infection_time);
 					}
 				}
 			}
 		}
 		else if (virusType == VirusType.ONE_AT_TIME) // serial infections
 		{
-			if (duration_infected >= timeToInfection + Mathf.Lerp(timeBetweenInfectionsMin, timeBetweenInfectionsMax, speedCurve.Evaluate(0)) * blockTurn && blockTurn < directions.Length)
+			float time_step = speedCurve.Evaluate((float) (DateTime.Now - start_infection_time).TotalMilliseconds / timeInfectionStability);
+			if (duration_infected >= timeToInfection + Mathf.Lerp(timeBetweenInfectionsMin, timeBetweenInfectionsMax, time_step) * blockTurn)
 			{
-				Transform t = GetNeighbourBlocks (directions [blockTurn], distance);
+				Transform t = GetNeighbourBlocks (directions [blockTurn % directions.Length], distance);
 				if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
 				{
-					t.gameObject.GetComponent<InfectionRaycast> ().CreateInfection ();
+					t.gameObject.GetComponent<InfectionRaycast> ().CreateInfection (start_infection_time);
 				}
 				blockTurn++;
 			}
@@ -330,10 +334,11 @@ public class InfectionRaycast : MonoBehaviour
 	/// <summary>
 	/// Creates the self infection.
 	/// </summary>
-	public void CreateInfection()
+	public void CreateInfection(DateTime startInfectionTime)
 	{
 		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && !immune && !repair_immune && !infected)
 		{
+			start_infection_time = startInfectionTime;
 			infection_time = DateTime.Now;
 			infected = true;
 		}
