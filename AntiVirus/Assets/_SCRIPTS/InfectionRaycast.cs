@@ -11,12 +11,15 @@ public class InfectionRaycast : MonoBehaviour
 	#endregion
 
 	#region public variables
+	public AnimationCurve speedCurve;
+
 	public float epsilon = 0.001f;
 	public float distance = 0.03f;
 
 	public float timeToDestruction = 10.0f;
 	public float timeToInfection = 2.0f;
-	public float timeBetweenInfections = 0.5f;
+	public float timeBetweenInfectionsMin = 0.5f;
+	public float timeBetweenInfectionsMax = 5.0f;
 
 	public float timeToRemoveImmunity = 20.0f;
 	public float timeToRemoveRepairImmunity = 3.0f;
@@ -56,11 +59,12 @@ public class InfectionRaycast : MonoBehaviour
 		matBlock = new MaterialPropertyBlock();
 		timeToDestruction *= 1000;
 		timeToInfection *= 1000;
-		timeBetweenInfections *= 1000;
+		timeBetweenInfectionsMin *= 1000;
+		timeBetweenInfectionsMax *= 1000;
 		timeToRemoveImmunity *= 1000;
 		timeToRemoveRepairImmunity *= 1000;
 
-		timeBetweenReparations = timeBetweenInfections * factorRemoveInfection;
+		timeBetweenReparations = timeBetweenInfectionsMin * factorRemoveInfection;
 
 		/*object[] materials_infection_object = Resources.LoadAll("Materials/Infections", typeof(Material));
 		materialsInfection = new Material[materials_infection_object.Length];
@@ -247,7 +251,7 @@ public class InfectionRaycast : MonoBehaviour
 		}
 		else if (virusType == VirusType.ONE_AT_TIME) // serial infections
 		{
-			if (duration_infected >= timeToInfection + timeBetweenInfections * blockTurn && blockTurn < directions.Length)
+			if (duration_infected >= timeToInfection + Mathf.Lerp(timeBetweenInfectionsMin, timeBetweenInfectionsMax, speedCurve.Evaluate(0)) * blockTurn && blockTurn < directions.Length)
 			{
 				Transform t = GetNeighbourBlocks (directions [blockTurn], distance);
 				if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
@@ -370,7 +374,7 @@ public class InfectionRaycast : MonoBehaviour
 	/// </summary>
 	public void RemoveImmunity()
 	{
-		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && immune)
+		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && (immune || repair_immune))
 		{
 			immune = false;
 			repair_immune = false;
@@ -393,6 +397,7 @@ public class InfectionRaycast : MonoBehaviour
 			infected = false;
 			repairing = true;
 			repair_immune = true;
+			ChangeMaterial(Resources.Load<Material>("Materials/mat_cube - immune"));
 			reparation_time = DateTime.Now;
 			blockTurn = 0;
 		}
