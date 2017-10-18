@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class VirusManager : MonoBehaviour
 {
@@ -14,9 +15,8 @@ public class VirusManager : MonoBehaviour
 	private float timer;
 	private bool isAlive;
 	private bool hasLanded;
+	private GameObject blockInfected;
 	#endregion
-
-
 
 	#region events
 	// Use this for initialization
@@ -27,29 +27,27 @@ public class VirusManager : MonoBehaviour
 		timer = Time.time;
 	}
 
-	void Update(){
-
-
-		if (Time.time - timer > lifetime) {
+	void Update()
+	{
+		if (Time.time - timer > lifetime)
+		{
 
 			Debug.Log ("virus lifetime end");
 			Death ();
 		}
-
 	}
 
-	void OnLanding(){
-
+	void OnLanding()
+	{
 		hasLanded = true;
 
 		GetComponent<Rigidbody> ().isKinematic = true;
-
-
 	}
 
-	void Death(){
-
+	void Death()
+	{
 		Instantiate (explosionPrefab, transform.position, Quaternion.identity);
+		blockInfected.GetComponent<InfectionRaycast> ().RepairInfection ();
 
 		Destroy (gameObject);
 	}
@@ -58,7 +56,8 @@ public class VirusManager : MonoBehaviour
 	{
 		if (col.gameObject.GetComponent<InfectionRaycast> () != null && !hasLanded)
 		{
-			col.gameObject.GetComponent<InfectionRaycast> ().CreateInfection();
+			col.gameObject.GetComponent<InfectionRaycast> ().CreateInfection(DateTime.Now);
+			blockInfected = col.gameObject;
 
 			OnLanding ();
 
