@@ -117,20 +117,27 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
   epsilon: 0.001
   distance: 0.03
-  timeToDestruction: 60
-  timeToInfection: 0.5
-  timeBetweenInfectionsMin: 0.5
-  timeBetweenInfectionsMax: 5
+  timeToDestruction: 30
+  timeToInfection: 0.4
+  timeBetweenInfectionsMin: 0.05
+  timeBetweenInfectionsMax: 3
+  timeInfectionStability: 10
   timeToRemoveImmunity: 20
   timeToRemoveRepairImmunity: 5
   factorRemoveInfection: 0.2

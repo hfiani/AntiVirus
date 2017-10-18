@@ -40,6 +40,7 @@ public class InfectionRaycast : MonoBehaviour
 	private Material original_material;
 	private float timeBetweenReparations;
 	private DateTime start_infection_time = new DateTime(0);
+	private DateTime last_check_infection_time = new DateTime(0);
 	private DateTime reparation_time = new DateTime(0);
 	private DateTime infection_time = new DateTime(0);
 	private DateTime immunity_time = new DateTime(0);
@@ -255,7 +256,8 @@ public class InfectionRaycast : MonoBehaviour
 		else if (virusType == VirusType.ONE_AT_TIME) // serial infections
 		{
 			float time_step = speedCurve.Evaluate((float) (DateTime.Now - start_infection_time).TotalMilliseconds / timeInfectionStability);
-			if (duration_infected >= timeToInfection + Mathf.Lerp(timeBetweenInfectionsMin, timeBetweenInfectionsMax, time_step) * blockTurn)
+		
+			if (duration_infected > timeToInfection && duration_infected - (last_check_infection_time - infection_time).TotalMilliseconds >= Mathf.Lerp(timeBetweenInfectionsMin, timeBetweenInfectionsMax, time_step))
 			{
 				Transform t = GetNeighbourBlocks (directions [blockTurn % directions.Length], distance);
 				if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
@@ -263,6 +265,7 @@ public class InfectionRaycast : MonoBehaviour
 					t.gameObject.GetComponent<InfectionRaycast> ().CreateInfection (start_infection_time);
 				}
 				blockTurn++;
+				last_check_infection_time = DateTime.Now;
 			}
 		}
 	}
@@ -339,6 +342,7 @@ public class InfectionRaycast : MonoBehaviour
 		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && !immune && !repair_immune && !infected)
 		{
 			start_infection_time = startInfectionTime;
+			last_check_infection_time = DateTime.Now;
 			infection_time = DateTime.Now;
 			infected = true;
 		}

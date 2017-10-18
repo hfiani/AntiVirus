@@ -8,14 +8,16 @@ public class VirusManager : MonoBehaviour
 
 	#region public variables
 	public float lifetime = 10.0f;
-	public GameObject explosionPrefab = null;
+	public GameObject redExplosionPrefab = null;
+	public GameObject greenExplosionPrefab = null;
 	#endregion
 
 	#region private variables
-	private float timer;
+	private float timerAge;
+	private float timerUpdate;
 	private bool isAlive;
 	private bool hasLanded;
-	private GameObject blockInfected;
+	private GameObject firstInfectedBlock;
 	#endregion
 
 	#region events
@@ -24,16 +26,23 @@ public class VirusManager : MonoBehaviour
 	{
 		isAlive = true;
 		hasLanded = false;
-		timer = Time.time;
+		timerAge = Time.time;
+		timerUpdate = Time.time;
 	}
 
 	void Update()
 	{
-		if (Time.time - timer > lifetime)
+		if (Time.time - timerAge > lifetime && isAlive)
 		{
+			DeathFromAge ();
+		}
 
-			Debug.Log ("virus lifetime end");
-			Death ();
+		// re-infect first block
+		if (hasLanded && Time.time - timerUpdate > 0.25 && isAlive && firstInfectedBlock != null)
+		{
+			firstInfectedBlock.GetComponent<InfectionRaycast> ().CreateInfection(DateTime.Now);
+
+			timerUpdate = Time.time;
 		}
 	}
 
@@ -44,22 +53,40 @@ public class VirusManager : MonoBehaviour
 		GetComponent<Rigidbody> ().isKinematic = true;
 	}
 
-	void Death()
+	void DeathFromAge()
 	{
-		Instantiate (explosionPrefab, transform.position, Quaternion.identity);
-		blockInfected.GetComponent<InfectionRaycast> ().RepairInfection ();
+		isAlive = false;
+		Instantiate (redExplosionPrefab, transform.position, Quaternion.identity);
+
+		Destroy (gameObject);
+	}
+
+	void DeathFromPlayer()
+	{
+		isAlive = false;
+		Instantiate (greenExplosionPrefab, transform.position, Quaternion.identity);
+		firstInfectedBlock.GetComponent<InfectionRaycast> ().RepairInfection ();
 
 		Destroy (gameObject);
 	}
 
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.gameObject.GetComponent<InfectionRaycast> () != null && !hasLanded)
+		if (col.gameObject.GetComponent<InfectionRaycast> () != null && !hasLanded && isAlive)
 		{
 			col.gameObject.GetComponent<InfectionRaycast> ().CreateInfection(DateTime.Now);
-			blockInfected = col.gameObject;
+			firstInfectedBlock = col.gameObject;
 
 			OnLanding ();
+
+			//Destroy (gameObject);
+		}
+
+		if (col.gameObject.GetComponent<Projectile> () != null && isAlive)
+		{
+			DeathFromPlayer ();
+
+			Destroy (col.gameObject);
 
 			//Destroy (gameObject);
 		}
