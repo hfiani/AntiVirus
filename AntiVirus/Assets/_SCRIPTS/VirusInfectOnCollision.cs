@@ -24,7 +24,7 @@ public class VirusInfectOnCollision : MonoBehaviour
 
 			isAlive = false;
 
-			Destroy (gameObject);
+			//Destroy (gameObject);
 		}
 	}
 	#endregion
