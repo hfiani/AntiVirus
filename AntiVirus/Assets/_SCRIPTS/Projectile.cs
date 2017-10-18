@@ -36,6 +36,11 @@ public class Projectile : MonoBehaviour {
 		updateSize ();
 
 		//updateFade ();
+
+		if (Time.time - timer > lifetime) {
+
+			Destroy (gameObject);
+		}
 		
 	}
 
@@ -44,7 +49,7 @@ public class Projectile : MonoBehaviour {
 		float scale = Mathf.Lerp (startSize,endSize,sizeCurve.Evaluate ((Time.time - timer) / growthTime)); 
 		//Debug.Log (scale);
 
-		transform.localScale  = new Vector3 (scale,scale,20*scale);
+		transform.localScale  = new Vector3 (scale,scale,2*scale);
 
 
 	}

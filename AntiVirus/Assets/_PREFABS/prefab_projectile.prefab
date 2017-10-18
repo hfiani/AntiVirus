@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   startSize: 0.25
-  endSize: 1
+  endSize: 3
   sizeCurve:
     serializedVersion: 2
     m_Curve:
@@ -132,7 +132,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  growthTime: 2
+  growthTime: 1
+  lifetime: 2
 --- !u!135 &135574879117376242
 SphereCollider:
   m_ObjectHideFlags: 1
