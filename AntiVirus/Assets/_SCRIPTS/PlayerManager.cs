@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour {
 	#region public variables
 	public Transform _ProjectileSpawnPoint = null;
 	public GameObject _ProjectilePrefab = null;
-	public RectTransform _energyBar = null;
+
 
 	public float _FireDelay = 0.2f;
 	public float _ShootingCost = 1.0f;
@@ -23,6 +23,7 @@ public class PlayerManager : MonoBehaviour {
 	private float _energy = 0.0f;
 	private float _maxEnergy = 100.0f;
 	private float _energyBarWidth, _energyBarHeight;
+	private GameObject _energyBar = null;
 
 	#endregion
 
@@ -30,8 +31,9 @@ public class PlayerManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_energyBarHeight = _energyBar.rect.height;
-		_energyBarWidth = _energyBar.rect.width;
+		_energyBar = GameObject.FindGameObjectWithTag ("EnergyBar");
+		_energyBarHeight = _energyBar.GetComponent<RectTransform>(). rect.height;
+		_energyBarWidth = _energyBar.GetComponent<RectTransform>(). rect.width;
 		EnergyUpdate (_maxEnergy);
 	}
 
@@ -76,9 +78,7 @@ public class PlayerManager : MonoBehaviour {
 		}
 
 
-		_energyBar.sizeDelta = new Vector2 (_energyBarWidth * _energy / _maxEnergy,_energyBarHeight);
-
-
+		_energyBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_energyBarWidth * _energy / _maxEnergy,_energyBarHeight);
 
 	}
 

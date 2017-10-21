@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a0b5fa2736d9840be89feb50b35024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3000
-  startSize: 0.25
-  endSize: 5
+  speed: 2000
+  startSize: 0.5
+  endSize: 3
   sizeCurve:
     serializedVersion: 2
     m_Curve:
@@ -133,7 +133,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   growthTime: 1
-  lifetime: 0.6
+  lifetime: 1
 --- !u!135 &135574879117376242
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -17,13 +17,13 @@ public class OceanSpawner : MonoBehaviour {
 	#endregion
 
 	#region private variables
-	private GameObject player;
+	private GameManager GM;
 	#endregion
 
 	// Use this for initialization
 	void Start () {
 
-		player = GameObject.FindGameObjectWithTag ("Player");
+		GM = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager>();
 
 		Vector3 offset = new Vector3 ();
 
@@ -45,16 +45,26 @@ public class OceanSpawner : MonoBehaviour {
 
 	void Update(){
 
-		Vector3 playerPositionProjected = player.transform.position;
+		if (GM.GetPlayer ()) {
+
+			FollowPlayer ();
+		}
+
+
+
+	}
+
+	void FollowPlayer(){
+
+		Vector3 playerPositionProjected = GM.GetPlayer().transform.position;
 		playerPositionProjected.y = transform.position.y;
 		float distToPlayer = Vector3.Distance (transform.position, playerPositionProjected);
 		float speed = followPlayerSpeed * distToPlayer / followPlayerDistance;
 
-		if (player!=null && distToPlayer > followPlayerDistance) {
+		if (distToPlayer > followPlayerDistance) {
 
 			transform.position += (playerPositionProjected - transform.position).normalized * speed * Time.deltaTime;
 		}
-
 	}
 
 }

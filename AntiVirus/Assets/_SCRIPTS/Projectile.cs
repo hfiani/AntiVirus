@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour {
 	#region private variables
 	private float timer;
 	private bool isAlive = true;
+	private Color startColor;
 	#endregion
 
 	// Use this for initialization
@@ -27,6 +28,8 @@ public class Projectile : MonoBehaviour {
 		transform.localScale = new Vector3 (1, 1, 1) * startSize;
 
 		GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+
+		startColor = GetComponent<Renderer> ().material.GetColor ("_Color");
 		
 	}
 	
@@ -35,7 +38,7 @@ public class Projectile : MonoBehaviour {
 
 		updateSize ();
 
-		//updateFade ();
+		updateFade ();
 
 		if (Time.time - timer > lifetime) {
 
@@ -44,10 +47,20 @@ public class Projectile : MonoBehaviour {
 		
 	}
 
+	void updateFade(){
+
+		float alpha = Mathf.Lerp (1,0,sizeCurve.Evaluate ((Time.time - timer) / growthTime)); 
+
+		Color newColor = new Color (startColor.r, startColor.g, startColor.b, alpha);
+
+		GetComponent<Renderer> ().material.SetColor ("_Color", newColor);
+	
+
+	}
+
 	void updateSize(){
 
 		float scale = Mathf.Lerp (startSize,endSize,sizeCurve.Evaluate ((Time.time - timer) / growthTime)); 
-		//Debug.Log (scale);
 
 		transform.localScale  = new Vector3 (scale,scale,2*scale);
 
@@ -56,14 +69,21 @@ public class Projectile : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 
-		if (col.gameObject.GetComponent<InfectionRaycast> () != null && isAlive)
-		{
-			col.gameObject.GetComponent<InfectionRaycast> ().CreateImmunity();
+		if (isAlive) {
+
+			if (col.gameObject.GetComponent<InfectionRaycast> () != null)
+			{
+				col.gameObject.GetComponent<InfectionRaycast> ().CreateImmunity();
+
+			
+			}
 
 			isAlive = false;
 
 			Destroy (gameObject);
 		}
+
+	
 	}
 
 

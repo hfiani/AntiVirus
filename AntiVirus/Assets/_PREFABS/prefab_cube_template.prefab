@@ -134,13 +134,13 @@ MonoBehaviour:
   epsilon: 0.001
   distance: 0.03
   timeToDestruction: 30
-  timeToInfection: 0.4
+  timeToInfection: 0.5
   timeBetweenInfectionsMin: 0.05
-  timeBetweenInfectionsMax: 3
+  timeBetweenInfectionsMax: 1.5
   timeInfectionStability: 10
   timeToRemoveImmunity: 20
   timeToRemoveRepairImmunity: 5
-  factorRemoveInfection: 0.2
+  factorRemoveInfection: 5
   infected: 0
   immune: 0
   repair_immune: 0
