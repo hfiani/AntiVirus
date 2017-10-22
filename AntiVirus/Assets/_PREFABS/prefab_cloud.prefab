@@ -131,5 +131,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  _waveSpeed: 10
-  _waveHeight: 5
+  _waveSpeed: 15
+  _waveHeight: 7

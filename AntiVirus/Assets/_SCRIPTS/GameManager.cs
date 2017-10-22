@@ -4,54 +4,162 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+	#region public variables
 	public GameObject PlayerPrefab;
-	public Transform PlayerSpawn;
+	public GameObject GhostPlayerPrefab;
 
+	public GameObject PlayerSpawn;
+	public AudioClip DeathSound;
+	public AudioClip SpawnSound;
+	public float RespawnDelay = 4.0f;
+	public float StartLevelDelay = 2.0f;
+
+
+	#endregion
+
+	#region private variables
 	private GameObject Player;
+	private GameObject PlayerGhost;
+	private float respawnTimer;
 
-	public bool playerIsActive;
+	private float startLevelTimer;
+	private bool playerIsActive;
+	private bool playerRespawning = false;
+	private bool levelHasStarted = false;
+	private UI_Manager UI;
+	private GameObject LevelMusic;
+	private GameObject StartCamera;
+	private WaveController WC;
+	#endregion
 
 	// Use this for initialization
 	void Start () {
+		
+		UI = GameObject.FindGameObjectWithTag ("UI_Controller").GetComponent<UI_Manager> ();
+		WC = GetComponent<WaveController> ();
 
-		Player = GameObject.FindGameObjectWithTag ("Player");
+		LevelMusic = GameObject.FindGameObjectWithTag ("Music");
+		StartCamera = GameObject.FindGameObjectWithTag ("StartCamera");
 
-		if (!Player) {
-			SpawnPlayer ();
-		} else {
+		LevelMusic.GetComponent<AudioSource> ().Play ();
 
-			playerIsActive = true;
-		}
+		startLevelTimer = Time.time;
 
+		UI.HideAll ();
 
-
-
+		UI.SetStartScreen (true);
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		if (playerRespawning && Time.time - respawnTimer > RespawnDelay) {
+
+			SpawnPlayer ();
+
+
+		}
+
+		if (!levelHasStarted && Time.time - startLevelTimer > StartLevelDelay) {
+
+			StartLevel();
+		}
+
+	
+
 	}
 
-	public void SpawnPlayer(){
+	void StartLevel(){
 
-		Debug.Log ("Spawning Player...");
+		UI.SetStartScreen (false);
+		StartCamera.SetActive (false);
+
+		SpawnPlayer ();
+
+		levelHasStarted = true;
+
+		WC.StartWave ();
+
+		//virusSpawnTimer = Time.time;
+
+		//SpawnVirusAtRandomSpawner ();
+	}
+
+
+
+	public void PlayerDeath(){
+
+		Debug.Log ("Player Death");
+		
+		playerIsActive = false;
+		UI.SetCrosshair (false);
+		UI.SetEnergyBar (false);
+
+		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
+		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (PlayerSpawn, RespawnDelay);
+
+		//LevelMusic.GetComponent<AudioSource> ().Stop ();
+		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);
+
+		Destroy (Player.gameObject);
+
+		TriggerRespawn ();
+	}
+
+	void TriggerRespawn(){
+
+		UI.SetRespawnScreen (true);
+
+		respawnTimer = Time.time;
+
+		playerRespawning = true;
+	}
+
+	void SpawnPlayer(){
+
+		Debug.Log ("Spawning Player");
+
+
+		playerRespawning = false;
+		playerIsActive = true;
+
+		UI.SetRespawnScreen (false);
+		UI.SetCrosshair (true);
+		UI.SetEnergyBar (true);
 
 		if (Player != null) {
 			Destroy (Player.gameObject);
 		}
+		if (PlayerGhost != null) {
+			Destroy (PlayerGhost.gameObject);
+		}
 
-		Player = Instantiate (PlayerPrefab, PlayerSpawn.position, PlayerSpawn.rotation);
+		Player = Instantiate (PlayerPrefab, PlayerSpawn.transform.position, PlayerSpawn.transform.rotation);
+		Player.GetComponent<PlayerManager> ().Init ();
 
 		// add some text & sound ...
 
-		playerIsActive = true;
+
+		GetComponent<AudioSource> ().PlayOneShot (SpawnSound,1.0f);
+
 
 	}
+		
+	public Vector3 GetPlayerPosition(){
 
-	public GameObject GetPlayer(){
+		Vector3 position = Vector3.zero;
+		if (!levelHasStarted) {
+			position =  PlayerSpawn.transform.position;
+		} else if (playerIsActive) {
+			position = Player.transform.position;
+		} else {
+			position = PlayerGhost.transform.position;
+		}
+		
 
-		return Player;
+		return position;
 	}
+
+
 }

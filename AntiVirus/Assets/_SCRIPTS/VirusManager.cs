@@ -7,12 +7,16 @@ public class VirusManager : MonoBehaviour
 {
 
 	#region public variables
+	public bool killPlayerOnContact = true;
+	public bool canDieFromAge = false;
 	public float lifetime = 10.0f;
 	public GameObject redExplosionPrefab = null;
 	public GameObject greenExplosionPrefab = null;
 	public float maxHealth = 100;
 	public float damageTakenPerProjectile = 10;
 	public Color damagedColor;
+	public AudioClip damagedSound;
+	public float damagedVolume;
 	#endregion
 
 	#region private variables
@@ -23,21 +27,30 @@ public class VirusManager : MonoBehaviour
 
 	private bool hasLanded;
 	private Color startBaseColor;
+	private Color startFadeColor;
 	private Color startEmiColor;
 	private Color currentBaseColor;
+	private Color currentFadeColor;
 	private Color currentEmiColor;
+	private Color damagedColorFade;
+	private float sphereFadeAlpha;
 	private GameObject firstInfectedBlock;
+	private GameManager GM;
 	#endregion
 
 	#region events
 	// Use this for initialization
 	void Start ()
 	{
+		GM = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager>();
+
 		isAlive = true;
 		hasLanded = false;
-	
-		startBaseColor = GetComponent<Renderer> ().material.GetColor ("_Color");
-		startEmiColor = GetComponent<Renderer> ().material.GetColor ("_EmissionColor");
+
+		startBaseColor = transform.GetChild(0).GetComponent<Renderer> ().material.GetColor ("_Color");
+		startFadeColor = transform.GetChild(1).GetComponent<Renderer> ().material.GetColor ("_Color");
+		startEmiColor = transform.GetChild(0).GetComponent<Renderer> ().material.GetColor ("_EmissionColor");
+		damagedColorFade = new Color (damagedColor.r, damagedColor.g, damagedColor.b, startFadeColor.a);
 		currentBaseColor = startBaseColor;
 		currentEmiColor = startEmiColor;
 		health = maxHealth;
@@ -46,7 +59,7 @@ public class VirusManager : MonoBehaviour
 
 	void Update()
 	{
-		if (Time.time - timerAge > lifetime && isAlive && hasLanded)
+		if (Time.time - timerAge > lifetime && isAlive && hasLanded && canDieFromAge)
 		{
 			DeathFromAge ();
 		}
@@ -64,6 +77,10 @@ public class VirusManager : MonoBehaviour
 
 		health += value;
 
+		if (value < 0) {
+			GetComponent<AudioSource> ().PlayOneShot (damagedSound, damagedVolume);
+		}
+
 		if (health > maxHealth) {
 
 			health = maxHealth;
@@ -77,17 +94,25 @@ public class VirusManager : MonoBehaviour
 
 
 		currentBaseColor = Color.Lerp(damagedColor,startBaseColor,health/maxHealth);
+		currentFadeColor = Color.Lerp(damagedColorFade,startFadeColor,health/maxHealth);
 		currentEmiColor = Color.Lerp(damagedColor,startEmiColor,health/maxHealth);
 	
-		GetComponent<Renderer> ().material.SetColor ("_Color", currentBaseColor);
-		GetComponent<Renderer> ().material.SetColor ("_EmissionColor", currentEmiColor);
+		//GetComponent<Renderer> ().material.SetColor ("_Color", currentBaseColor);
+		//GetComponent<Renderer> ().material.SetColor ("_EmissionColor", currentEmiColor);
+
 
 		for (int i = 0; i < transform.childCount; i++)
 		{
 			GameObject child = transform.GetChild (i).gameObject;
 			if (child.GetComponent<MeshRenderer> ())
 			{
-				child.GetComponent<Renderer> ().material.SetColor ("_Color", currentBaseColor);
+				if (i == 1) {
+					child.GetComponent<Renderer> ().material.SetColor ("_Color", currentFadeColor);
+
+				} else {
+					child.GetComponent<Renderer> ().material.SetColor ("_Color", currentBaseColor);
+				
+				}
 				child.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", currentEmiColor);
 			}
 		}
@@ -125,7 +150,10 @@ public class VirusManager : MonoBehaviour
 	{
 		isAlive = false;
 		Instantiate (greenExplosionPrefab, transform.position, Quaternion.identity);
-		firstInfectedBlock.GetComponent<InfectionRaycast> ().RepairInfection ();
+		if (firstInfectedBlock) {
+			firstInfectedBlock.GetComponent<InfectionRaycast> ().RepairInfection ();
+		}
+	
 
 		Destroy (gameObject);
 	}
@@ -147,9 +175,12 @@ public class VirusManager : MonoBehaviour
 		{
 			updateHealth (-1*damageTakenPerProjectile);
 
-		
+		}
 
-			Debug.Log ("hit");
+		// kill player on contact
+		if (col.gameObject.CompareTag("Player") && isAlive)
+		{
+			GM.PlayerDeath ();
 
 		}
 	}

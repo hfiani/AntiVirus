@@ -10,6 +10,8 @@ public class Explosion : MonoBehaviour {
 	public AnimationCurve sizeCurve;
 	public float growthTime = 2.0f;
 	public float lifetime = 2.0f;
+	public AudioClip explosionSound;
+	public float explosionVolume = 1.0f;
 	#endregion
 
 	#region private variables
@@ -18,6 +20,8 @@ public class Explosion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		GetComponent<AudioSource> ().PlayOneShot (explosionSound, explosionVolume);
 
 		timer = Time.time;
 

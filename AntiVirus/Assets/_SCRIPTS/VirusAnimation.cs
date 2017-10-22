@@ -68,7 +68,7 @@ public class VirusAnimation : MonoBehaviour {
 
 		Color col = VM.GetCurrentEmiColor() * intensity;
 
-		GetComponent<Renderer> ().material.SetColor ("_EmissionColor", col);
+		//GetComponent<Renderer> ().material.SetColor ("_EmissionColor", col);
 
 		for (int i = 0; i < transform.childCount; i++) {
 			GameObject child = transform.GetChild (i).gameObject;

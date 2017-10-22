@@ -9,31 +9,37 @@ public class PlayerManager : MonoBehaviour {
 	public Transform _ProjectileSpawnPoint = null;
 	public GameObject _ProjectilePrefab = null;
 
-
 	public float _FireDelay = 0.2f;
 	public float _ShootingCost = 1.0f;
 	public float _EnergyRegen = 1.0f;
 
+	public AudioClip _ShootingSound;
+	public float _ShootingVolume=1.0f;
 	#endregion
 
-	#region private variables
 
+	#region private variables
 	private bool isShooting = false;
 	private float timer;
 	private float _energy = 0.0f;
 	private float _maxEnergy = 100.0f;
-	private float _energyBarWidth, _energyBarHeight;
-	private GameObject _energyBar = null;
-
+	private UI_Manager UI;
+	private AudioSource Audio;
 	#endregion
 
-
-
-	// Use this for initialization
+	// do not use, use init() instead
 	void Start () {
-		_energyBar = GameObject.FindGameObjectWithTag ("EnergyBar");
-		_energyBarHeight = _energyBar.GetComponent<RectTransform>(). rect.height;
-		_energyBarWidth = _energyBar.GetComponent<RectTransform>(). rect.width;
+
+
+	}
+
+	// called by GameManager
+	public void Init(){
+
+		this.gameObject.SetActive (true);
+		UI = GameObject.FindGameObjectWithTag ("UI_Controller").GetComponent<UI_Manager> ();
+		Audio = GetComponents<AudioSource>()[1];
+
 		EnergyUpdate (_maxEnergy);
 	}
 
@@ -47,8 +53,6 @@ public class PlayerManager : MonoBehaviour {
 
 		EnergyUpdate (_EnergyRegen*Time.deltaTime);
 
-
-
 	}
 
 	void Shoot(){
@@ -60,6 +64,8 @@ public class PlayerManager : MonoBehaviour {
 		Instantiate (_ProjectilePrefab, _ProjectileSpawnPoint.position, _ProjectileSpawnPoint.rotation);
 
 		EnergyUpdate (-_ShootingCost);
+
+		Audio.PlayOneShot (_ShootingSound, _ShootingVolume);
 
 	}
 
@@ -77,8 +83,10 @@ public class PlayerManager : MonoBehaviour {
 			_energy = 0f;
 		}
 
+		UI.UpdateEnergyBar (_energy/_maxEnergy);
 
-		_energyBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_energyBarWidth * _energy / _maxEnergy,_energyBarHeight);
+
+
 
 	}
 

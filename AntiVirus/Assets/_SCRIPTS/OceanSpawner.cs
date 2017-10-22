@@ -45,18 +45,13 @@ public class OceanSpawner : MonoBehaviour {
 
 	void Update(){
 
-		if (GM.GetPlayer ()) {
-
-			FollowPlayer ();
-		}
-
-
+		FollowPlayer ();
 
 	}
 
 	void FollowPlayer(){
 
-		Vector3 playerPositionProjected = GM.GetPlayer().transform.position;
+		Vector3 playerPositionProjected = GM.GetPlayerPosition();
 		playerPositionProjected.y = transform.position.y;
 		float distToPlayer = Vector3.Distance (transform.position, playerPositionProjected);
 		float speed = followPlayerSpeed * distToPlayer / followPlayerDistance;

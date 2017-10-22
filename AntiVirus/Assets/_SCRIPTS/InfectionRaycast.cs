@@ -208,7 +208,9 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			if (blockType == BlockType.DESTRUCTABLE_INFECTABLE)
 			{
-				Destroy (gameObject);
+				//Destroy (gameObject);
+				gameObject.layer = 11;
+				ChangeMaterial(Resources.Load<Material>("Materials/mat_cube - infection ghost"));
 			}
 			else if (blockType == BlockType.UNDESTRUCTABLE_INFECTABLE)
 			{
@@ -357,6 +359,7 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			infected = false;
 			ChangeMaterial(original_material);
+			gameObject.layer = 0;
 			infection_time = new DateTime (0);
 			blockTurn = 0;
 		}
