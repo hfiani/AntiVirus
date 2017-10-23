@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -33,18 +34,25 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             else
                 character.Move(Vector3.zero, false, false);
 
-			GameObject player = GameObject.FindGameObjectWithTag ("Player");
-			if (player && !target) {
-				SetTarget (player.transform);
-				Debug.Log ("target player");
-				
-			}
         }
+
+
 
 
         public void SetTarget(Transform target)
         {
             this.target = target;
         }
+			
+
+		public void TargetPlayerIfNoTarget(){
+
+			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+			if (player && !target) {
+				SetTarget (player.transform);
+				Debug.Log ("target player");
+
+			}
+		}
     }
 }

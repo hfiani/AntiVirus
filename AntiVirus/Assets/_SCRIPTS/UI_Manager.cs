@@ -14,6 +14,7 @@ public class UI_Manager : MonoBehaviour {
 	public GameObject _energyBar = null;
 	public GameObject _respawnScreen = null;
 	public GameObject _startScreen = null;
+	public GameObject _gameOverScreen = null;
 	public GameObject _crosshair = null;
 	#endregion
 
@@ -39,6 +40,7 @@ public class UI_Manager : MonoBehaviour {
 		_energyBar.transform.parent.gameObject.SetActive (false);
 		_respawnScreen.SetActive (false);
 		_crosshair.SetActive (false);
+		_gameOverScreen.SetActive (false);
 	}
 
 
@@ -69,6 +71,10 @@ public class UI_Manager : MonoBehaviour {
 	public void SetCrosshair(bool state) {
 
 		_crosshair.SetActive (state);
+	}
+	public void SetGameOverScreen(bool state) {
+
+		_gameOverScreen.SetActive (state);
 	}
 	#endregion
 }
