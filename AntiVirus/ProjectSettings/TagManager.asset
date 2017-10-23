@@ -9,6 +9,7 @@ TagManager:
   - Music
   - StartCamera
   - NPC
+  - Objective
   layers:
   - Default
   - TransparentFX

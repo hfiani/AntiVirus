@@ -141,6 +141,7 @@ public class GameManager : MonoBehaviour
 	public void GameOver()
 	{
 		Debug.Log ("Game Over");
+		SceneManager.LoadScene ("gameover");
 	}
 
 	public void CheckForVictory ()
