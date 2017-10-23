@@ -137,15 +137,11 @@ MonoBehaviour:
     type: 2}
   GhostPlayerPrefab: {fileID: 1530913379000098, guid: 14d3a697fdbecd544b5e2d8cad4a1a93,
     type: 2}
-  VirusPrefab: {fileID: 1889617103755860, guid: 0ad0de3751ad18145a253940df3b7563,
-    type: 2}
   PlayerSpawn: {fileID: 0}
   DeathSound: {fileID: 8300000, guid: 5736f4214cb637c43a315574ff00ecf2, type: 3}
   SpawnSound: {fileID: 8300000, guid: cba18852fc00a344fae37efcde164aba, type: 3}
   RespawnDelay: 3
-  StartLevelDelay: 2
-  VirusSpawners: {fileID: 0}
-  VirusSpawnDelay: 15
+  StartLevelDelay: 4
 --- !u!114 &114513342876871722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,3 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789e56f91f2f9f241a61ddaaa355c817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VirusPrefab: {fileID: 1889617103755860, guid: 0ad0de3751ad18145a253940df3b7563,
+    type: 2}
+  VirusSpawners: {fileID: 0}
+  VirusSpawnDelay: 15
