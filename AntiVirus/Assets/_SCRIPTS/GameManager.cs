@@ -177,7 +177,9 @@ public class GameManager : MonoBehaviour
 		UI.SetCrosshair (false);
 		UI.SetEnergyBar (false);
 
-		Destroy (Player.gameObject);
+		if (Player) {
+			Destroy (Player.gameObject);
+		}
 
 		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
 		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (PlayerSpawn, RespawnDelay);
@@ -198,8 +200,13 @@ public class GameManager : MonoBehaviour
 		UI.SetCrosshair (false);
 		UI.SetEnergyBar (false);
 
-		Destroy (Player.gameObject);
-		Destroy (PlayerGhost.gameObject);
+		if (Player) {
+			Destroy (Player.gameObject);
+		}
+		if (PlayerGhost) {
+			Destroy (PlayerGhost.gameObject);
+		}
+	
 
 		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
 		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (Objective, GameOverDelay);
