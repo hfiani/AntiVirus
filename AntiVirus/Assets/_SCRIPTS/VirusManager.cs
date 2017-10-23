@@ -67,14 +67,15 @@ public class VirusManager : MonoBehaviour
 		// re-infect first block
 		if (hasLanded && Time.time - timerUpdate > 0.25 && isAlive && firstInfectedBlock != null)
 		{
+			firstInfectedBlock.GetComponent<InfectionRaycast> ().RemoveImmunity ();
 			firstInfectedBlock.GetComponent<InfectionRaycast> ().CreateInfection(DateTime.Now);
 
 			timerUpdate = Time.time;
 		}
 	}
 
-	void updateHealth(float value){
-
+	void updateHealth(float value)
+	{
 		health += value;
 
 		if (value < 0) {
@@ -92,14 +93,12 @@ public class VirusManager : MonoBehaviour
 			DeathFromPlayer ();
 		}
 
-
 		currentBaseColor = Color.Lerp(damagedColor,startBaseColor,health/maxHealth);
 		currentFadeColor = Color.Lerp(damagedColorFade,startFadeColor,health/maxHealth);
 		currentEmiColor = Color.Lerp(damagedColor,startEmiColor,health/maxHealth);
-	
+
 		//GetComponent<Renderer> ().material.SetColor ("_Color", currentBaseColor);
 		//GetComponent<Renderer> ().material.SetColor ("_EmissionColor", currentEmiColor);
-
 
 		for (int i = 0; i < transform.childCount; i++)
 		{
@@ -116,14 +115,15 @@ public class VirusManager : MonoBehaviour
 				child.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", currentEmiColor);
 			}
 		}
-
-
 	}
 
-	public Color GetCurrentBaseColor(){
+	public Color GetCurrentBaseColor()
+	{
 		return currentBaseColor;
 	}
-	public Color GetCurrentEmiColor(){
+
+	public Color GetCurrentEmiColor()
+	{
 		return currentEmiColor;
 	}
 
@@ -142,6 +142,8 @@ public class VirusManager : MonoBehaviour
 		isAlive = false;
 		Instantiate (redExplosionPrefab, transform.position, Quaternion.identity);
 
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().IncrementVirusDeathNumber ();
+
 		Destroy (gameObject);
 	}
 
@@ -153,7 +155,8 @@ public class VirusManager : MonoBehaviour
 		if (firstInfectedBlock) {
 			firstInfectedBlock.GetComponent<InfectionRaycast> ().RepairInfection ();
 		}
-	
+
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().IncrementVirusDeathNumber ();
 
 		Destroy (gameObject);
 	}
@@ -167,21 +170,18 @@ public class VirusManager : MonoBehaviour
 			firstInfectedBlock = col.gameObject;
 
 			OnLanding ();
-
 		}
 
 		// take damage when hit by player's projectile
 		if (col.gameObject.GetComponent<Projectile> () != null && isAlive)
 		{
 			updateHealth (-1*damageTakenPerProjectile);
-
 		}
 
 		// kill player on contact
 		if (col.gameObject.CompareTag("Player") && isAlive)
 		{
 			GM.PlayerDeath ();
-
 		}
 	}
 	#endregion

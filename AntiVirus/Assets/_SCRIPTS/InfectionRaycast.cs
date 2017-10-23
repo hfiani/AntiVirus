@@ -7,7 +7,7 @@ public class InfectionRaycast : MonoBehaviour
 {
 	#region enum
 	public enum VirusType{ALL_AT_ONCE, ONE_AT_TIME};
-	public enum BlockType{DESTRUCTABLE_INFECTABLE, UNDESTRUCTABLE_INFECTABLE, UNDESTRUCTABLE_UNINFECTABLE};
+	public enum BlockType{DESTRUCTABLE_INFECTABLE, UNDESTRUCTABLE_INFECTABLE, UNDESTRUCTABLE_UNINFECTABLE, OBJECTIVE};
 	#endregion
 
 	#region public variables
@@ -52,6 +52,7 @@ public class InfectionRaycast : MonoBehaviour
 		Vector3.left, Vector3.right,
 		Vector3.forward, Vector3.back
 	};
+	private ArrayList directions_per_turn = new ArrayList();
 	private MaterialPropertyBlock matBlock;
 	#endregion
 
@@ -83,6 +84,9 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			ChangeMaterial(Resources.Load<Material>("Materials/mat_cube - uninfectable"));
 		}
+
+		ResetDirections ();
+		GameManager.TotalBlocks++;
 	}
 	
 	// Update is called once per frame
@@ -123,6 +127,36 @@ public class InfectionRaycast : MonoBehaviour
 	#endregion
 
 	#region private functions
+	/// <summary>
+	/// Resets the directions.
+	/// </summary>
+	void ResetDirections()
+	{
+		directions_per_turn.Clear ();
+		foreach (Vector3 direction in directions)
+		{
+			directions_per_turn.Add (direction);
+		}
+	}
+
+	/// <summary>
+	/// Gets the direction.
+	/// </summary>
+	/// <returns>The direction.</returns>
+	Vector3 GetDirection()
+	{
+		int rand_index = UnityEngine.Random.Range (0, directions_per_turn.Count);
+		Vector3 direction = (Vector3)directions_per_turn [rand_index];
+
+		directions_per_turn.RemoveAt (rand_index);
+		if (directions_per_turn.Count == 0)
+		{
+			ResetDirections ();
+		}
+
+		return direction;
+	}
+
 	/// <summary>
 	/// Checks the immunity.
 	/// </summary>
@@ -261,12 +295,12 @@ public class InfectionRaycast : MonoBehaviour
 		
 			if (duration_infected > timeToInfection && duration_infected - (last_check_infection_time - infection_time).TotalMilliseconds >= Mathf.Lerp(timeBetweenInfectionsMin, timeBetweenInfectionsMax, time_step))
 			{
-				Transform t = GetNeighbourBlocks (directions [blockTurn % directions.Length], distance);
+				Vector3 direction = GetDirection ();
+				Transform t = GetNeighbourBlocks (direction, distance);
 				if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
 				{
 					t.gameObject.GetComponent<InfectionRaycast> ().CreateInfection (start_infection_time);
 				}
-				blockTurn++;
 				last_check_infection_time = DateTime.Now;
 			}
 		}
@@ -293,7 +327,8 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			if (duration_repaired >= timeBetweenReparations * blockTurn && blockTurn < directions.Length)
 			{
-				Transform t = GetNeighbourBlocks (directions [blockTurn], distance);
+				Vector3 direction = GetDirection ();
+				Transform t = GetNeighbourBlocks (direction, distance);
 				if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
 				{
 					t.gameObject.GetComponent<InfectionRaycast> ().RepairInfection ();
@@ -341,12 +376,17 @@ public class InfectionRaycast : MonoBehaviour
 	/// </summary>
 	public void CreateInfection(DateTime startInfectionTime)
 	{
-		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && !immune && !repair_immune && !infected)
+		if (blockType == BlockType.OBJECTIVE)
+		{
+			GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ().GameOver ();
+		}
+		else if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && !immune && !repair_immune && !infected)
 		{
 			start_infection_time = startInfectionTime;
 			last_check_infection_time = DateTime.Now;
 			infection_time = DateTime.Now;
 			infected = true;
+			GameManager.InfectedBlocks++;
 		}
 	}
 
@@ -362,6 +402,7 @@ public class InfectionRaycast : MonoBehaviour
 			gameObject.layer = 0;
 			infection_time = new DateTime (0);
 			blockTurn = 0;
+			GameManager.InfectedBlocks--;
 		}
 	}
 
@@ -370,7 +411,7 @@ public class InfectionRaycast : MonoBehaviour
 	/// </summary>
 	public void CreateImmunity()
 	{
-		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE)
+		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && blockType != BlockType.OBJECTIVE)
 		{
 			RemoveInfection();
 
@@ -401,7 +442,7 @@ public class InfectionRaycast : MonoBehaviour
 	/// </summary>
 	public void RepairInfection()
 	{
-		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && infected)
+		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && infected && blockType != BlockType.OBJECTIVE)
 		{
 			RemoveInfection ();
 
@@ -412,6 +453,7 @@ public class InfectionRaycast : MonoBehaviour
 			ChangeMaterial(Resources.Load<Material>("Materials/mat_cube - immune"));
 			reparation_time = DateTime.Now;
 			blockTurn = 0;
+			ResetDirections ();
 		}
 	}
 	#endregion

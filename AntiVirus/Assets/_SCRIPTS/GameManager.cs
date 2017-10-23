@@ -1,8 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
+	#region public static variables
+	public static int Level = 0;
+	public static int InfectedBlocks = 0;
+	public static int TotalBlocks = 0;
+	#endregion
 
 	#region public variables
 	public GameObject PlayerPrefab;
@@ -13,15 +20,12 @@ public class GameManager : MonoBehaviour {
 	public AudioClip SpawnSound;
 	public float RespawnDelay = 4.0f;
 	public float StartLevelDelay = 2.0f;
-
-
 	#endregion
 
 	#region private variables
 	private GameObject Player;
 	private GameObject PlayerGhost;
 	private float respawnTimer;
-
 	private float startLevelTimer;
 	private bool playerIsActive;
 	private bool playerRespawning = false;
@@ -32,9 +36,10 @@ public class GameManager : MonoBehaviour {
 	private WaveController WC;
 	#endregion
 
+	#region events
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
 		UI = GameObject.FindGameObjectWithTag ("UI_Controller").GetComponent<UI_Manager> ();
 		WC = GetComponent<WaveController> ();
 
@@ -48,30 +53,35 @@ public class GameManager : MonoBehaviour {
 		UI.HideAll ();
 
 		UI.SetStartScreen (true);
-		
+		UI.SetLevelText ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (playerRespawning && Time.time - respawnTimer > RespawnDelay) {
-
 			SpawnPlayer ();
-
-
 		}
 
 		if (!levelHasStarted && Time.time - startLevelTimer > StartLevelDelay) {
-
 			StartLevel();
 		}
 
-	
-
+		if (levelHasStarted)
+		{
+			CheckForVictory ();
+		}
 	}
 
-	void StartLevel(){
+	void OnGUI()
+	{
+		GUI.TextArea(new Rect(50, 50, 100, 30), (100 * InfectedBlocks / TotalBlocks).ToString() + "%");
+	}
+	#endregion
 
+	#region private functions
+	void StartLevel()
+	{
 		UI.SetStartScreen (false);
 		StartCamera.SetActive (false);
 
@@ -79,6 +89,9 @@ public class GameManager : MonoBehaviour {
 
 		levelHasStarted = true;
 
+		float virusSpawnDelay = 5.0f / Level;
+		int virusNumber = Level;
+		WC.SetVirusParameters (virusSpawnDelay, virusNumber);
 		WC.StartWave ();
 
 		//virusSpawnTimer = Time.time;
@@ -86,28 +99,8 @@ public class GameManager : MonoBehaviour {
 		//SpawnVirusAtRandomSpawner ();
 	}
 
-
-
-	public void PlayerDeath(){
-
-		Debug.Log ("Player Death");
-		
-		playerIsActive = false;
-		UI.SetCrosshair (false);
-		UI.SetEnergyBar (false);
-
-		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
-		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (PlayerSpawn, RespawnDelay);
-
-		//LevelMusic.GetComponent<AudioSource> ().Stop ();
-		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);
-
-		Destroy (Player.gameObject);
-
-		TriggerRespawn ();
-	}
-
-	void TriggerRespawn(){
+	void TriggerRespawn()
+	{
 
 		UI.SetRespawnScreen (true);
 
@@ -116,10 +109,9 @@ public class GameManager : MonoBehaviour {
 		playerRespawning = true;
 	}
 
-	void SpawnPlayer(){
-
+	void SpawnPlayer()
+	{
 		Debug.Log ("Spawning Player");
-
 
 		playerRespawning = false;
 		playerIsActive = true;
@@ -142,12 +134,45 @@ public class GameManager : MonoBehaviour {
 
 
 		GetComponent<AudioSource> ().PlayOneShot (SpawnSound,1.0f);
+	}
+	#endregion
 
+	#region public functions
+	public void GameOver()
+	{
+		Debug.Log ("Game Over");
+	}
 
+	public void CheckForVictory ()
+	{
+		if (WC.VirusNumberKilled == WC.VirusNumber && InfectedBlocks == 0)
+		{
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+		}
+	}
+
+	public void PlayerDeath()
+	{
+
+		Debug.Log ("Player Death");
+		
+		playerIsActive = false;
+		UI.SetCrosshair (false);
+		UI.SetEnergyBar (false);
+
+		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
+		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (PlayerSpawn, RespawnDelay);
+
+		//LevelMusic.GetComponent<AudioSource> ().Stop ();
+		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);
+
+		Destroy (Player.gameObject);
+
+		TriggerRespawn ();
 	}
 		
-	public Vector3 GetPlayerPosition(){
-
+	public Vector3 GetPlayerPosition()
+	{
 		Vector3 position = Vector3.zero;
 		if (!levelHasStarted) {
 			position =  PlayerSpawn.transform.position;
@@ -156,10 +181,13 @@ public class GameManager : MonoBehaviour {
 		} else {
 			position = PlayerGhost.transform.position;
 		}
-		
 
 		return position;
 	}
 
-
+	public void IncrementVirusDeathNumber()
+	{
+		WC.VirusNumberKilled++;
+	}
+	#endregion
 }

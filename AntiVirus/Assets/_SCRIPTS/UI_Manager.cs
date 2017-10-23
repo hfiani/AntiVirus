@@ -1,31 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Manager : MonoBehaviour {
 
+	#region private variables
 	private float _energyBarWidth, _energyBarHeight;
+	#endregion
+
+	#region public variables
+	public string _textLevel = "LEVEL {1} STARTING ...";
 	public GameObject _energyBar = null;
 	public GameObject _respawnScreen = null;
 	public GameObject _startScreen = null;
 	public GameObject _crosshair = null;
+	#endregion
 
+	#region events
 	// Use this for initialization
-	void Start () {
-
-
+	void Start ()
+	{
 		_energyBarHeight = _energyBar.GetComponent<RectTransform>(). rect.height;
 		_energyBarWidth = _energyBar.GetComponent<RectTransform>(). rect.width;
-		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		
 	}
+	#endregion
 
-	public void HideAll(){
-
+	#region public functions
+	public void HideAll()
+	{
 		_startScreen.SetActive (false);
 		_energyBar.transform.parent.gameObject.SetActive (false);
 		_respawnScreen.SetActive (false);
@@ -48,13 +57,18 @@ public class UI_Manager : MonoBehaviour {
 		_respawnScreen.SetActive (state);
 	}
 
-	public void SetStartScreen(bool state){
+	public void SetLevelText() {
+		GameObject text_level = _startScreen.transform.GetChild (0).gameObject;
+		text_level.GetComponent<Text> ().text = _textLevel.Replace ("{1}", (++GameManager.Level).ToString());
+	}
 
+	public void SetStartScreen(bool state) {
 		_startScreen.SetActive (state);
 	}
 
-	public void SetCrosshair(bool state){
+	public void SetCrosshair(bool state) {
 
 		_crosshair.SetActive (state);
 	}
+	#endregion
 }
