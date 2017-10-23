@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 195037350561376480}
   - component: {fileID: 114733884860115530}
   - component: {fileID: 135532081777461624}
+  - component: {fileID: 114647863687592440}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -72,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1118128229936688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38, y: 1, z: 2}
+  m_LocalPosition: {x: -38, y: 1.57, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4218901636109068}
@@ -179,6 +180,22 @@ MonoBehaviour:
   walkRadius: 50
   targetPrefab: {fileID: 1916122368054810, guid: 45da08512e7328347acfde7a699a3924,
     type: 2}
+--- !u!114 &114647863687592440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1118128229936688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31554a241eeadc244aed42670cf19dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infected: 0
+  infectionMaterial: {fileID: 2100000, guid: d42d9ec7bcbbaeb4a8dcc58787f09f59, type: 2}
+  epsilon: 1
+  distance: 0.5
+  timeToDeinfection: 10
 --- !u!114 &114733884860115530
 MonoBehaviour:
   m_ObjectHideFlags: 1

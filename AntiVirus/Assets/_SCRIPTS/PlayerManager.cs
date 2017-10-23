@@ -63,7 +63,14 @@ public class PlayerManager : MonoBehaviour
 	{
 		if (c.tag == "NPC")
 		{
-			BuffSpeed (5, 1);
+			if (c.GetComponent<NPCInfection> ().infected)
+			{
+				BuffSpeed (0.2f, 2);
+			}
+			else
+			{
+				BuffSpeed (5, 1);
+			}
 		}
 	}
 	#endregion
@@ -81,13 +88,10 @@ public class PlayerManager : MonoBehaviour
 
 	public void BuffSpeed(float factorMax, float duration)
 	{
-		if (!_buffEnabled)
-		{
-			_buffFactor = factorMax;
-			_buffTime = DateTime.Now;
-			_buffDuration = duration * 1000;
-			_buffEnabled = true;
-		}
+		_buffFactor = factorMax;
+		_buffTime = DateTime.Now;
+		_buffDuration = duration * 1000;
+		_buffEnabled = true;
 	}
 	#endregion
 
