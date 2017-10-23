@@ -1532,7 +1532,7 @@ Rigidbody:
   m_GameObject: {fileID: 1889617103755860}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 1
+  m_Drag: 0.5
   m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1941,6 +1941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killPlayerOnContact: 1
+  canDieFromAge: 0
   lifetime: 20
   redExplosionPrefab: {fileID: 1044008195233094, guid: 24a660798d6c0c848a4bc19ffa682dfe,
     type: 2}

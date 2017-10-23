@@ -171,7 +171,7 @@ public class VirusManager : MonoBehaviour
 		}
 
 		// take damage when hit by player's projectile
-		if (col.gameObject.GetComponent<Projectile> () != null && isAlive && hasLanded)
+		if (col.gameObject.GetComponent<Projectile> () != null && isAlive)
 		{
 			updateHealth (-1*damageTakenPerProjectile);
 

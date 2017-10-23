@@ -32,6 +32,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 character.Move(agent.desiredVelocity, false, false);
             else
                 character.Move(Vector3.zero, false, false);
+
+			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+			if (player && !target) {
+				SetTarget (player.transform);
+				Debug.Log ("target player");
+				
+			}
         }
 
 
