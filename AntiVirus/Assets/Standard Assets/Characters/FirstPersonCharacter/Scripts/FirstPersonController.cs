@@ -47,7 +47,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_StepCycle;
         private float m_NextStep;
         private bool m_Jumping;
-        private AudioSource m_AudioSource;
+		private AudioSource m_AudioSource;
+
+		public float WalkingSpeed
+		{
+			get
+			{
+				return m_WalkSpeed;
+			}
+			set
+			{
+				m_WalkSpeed = value;
+			}
+		}
+
+		public float RunningSpeed
+		{
+			get
+			{
+				return m_RunSpeed;
+			}
+			set
+			{
+				m_RunSpeed = value;
+			}
+		}
 
         // Use this for initialization
         private void Start()

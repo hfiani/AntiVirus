@@ -421,6 +421,30 @@ MonoBehaviour:
   _EnergyRegen: 25
   _ShootingSound: {fileID: 8300000, guid: 94fdabeba88a6194ab7f2e190eb060e5, type: 3}
   _ShootingVolume: 0.15
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114915860186093510
 MonoBehaviour:
   m_ObjectHideFlags: 1
