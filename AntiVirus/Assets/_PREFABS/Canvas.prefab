@@ -449,6 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecf50c57d5e7c24295dfd4aba2aa901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _textLevel: LEVEL {1} STARTING ...
   _energyBar: {fileID: 1809170212193174}
   _respawnScreen: {fileID: 1784941177926486}
   _startScreen: {fileID: 1012790009949370}
