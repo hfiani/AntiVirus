@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/test_scene.unity
     guid: 4f50599bf135d5b4891535e8c8ed1e78
+  - enabled: 1
+    path: Assets/cityMap.unity
+    guid: 1290290500a751f40bb7dd0cbe633574
