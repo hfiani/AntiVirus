@@ -140,7 +140,7 @@ MonoBehaviour:
   distance: 0.03
   timeToDestruction: 20
   timeToInfection: 0.5
-  timeBetweenInfectionsMin: 0.05
+  timeBetweenInfectionsMin: 0.1
   timeBetweenInfectionsMax: 1
   timeInfectionStability: 10
   timeToRemoveImmunity: 20

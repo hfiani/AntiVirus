@@ -22,13 +22,13 @@ GameObject:
   - component: {fileID: 33999464883554966}
   - component: {fileID: 65688657244872568}
   - component: {fileID: 23243781175562482}
-  - component: {fileID: 114472574212833098}
+  - component: {fileID: 114209373539047472}
   m_Layer: 0
   m_Name: prefab_cube (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1061643874556714
 GameObject:
@@ -41,13 +41,13 @@ GameObject:
   - component: {fileID: 33424734817958178}
   - component: {fileID: 65116572554796166}
   - component: {fileID: 23045977137269028}
-  - component: {fileID: 114422791287564600}
+  - component: {fileID: 114816002676966370}
   m_Layer: 0
   m_Name: prefab_cube (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1121630315199100
 GameObject:
@@ -60,13 +60,13 @@ GameObject:
   - component: {fileID: 33071998280793746}
   - component: {fileID: 65906637958516158}
   - component: {fileID: 23594631987351192}
-  - component: {fileID: 114352423311467774}
+  - component: {fileID: 114864023844630848}
   m_Layer: 0
   m_Name: prefab_cube (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1161954302785766
 GameObject:
@@ -79,13 +79,13 @@ GameObject:
   - component: {fileID: 33245413211752606}
   - component: {fileID: 65228755280267274}
   - component: {fileID: 23406276847273410}
-  - component: {fileID: 114318871091036122}
+  - component: {fileID: 114915129220439078}
   m_Layer: 0
   m_Name: prefab_cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1172766309877068
 GameObject:
@@ -98,13 +98,13 @@ GameObject:
   - component: {fileID: 33436217004520986}
   - component: {fileID: 65727177485760856}
   - component: {fileID: 23914915085071798}
-  - component: {fileID: 114171342049173102}
+  - component: {fileID: 114734945542859820}
   m_Layer: 0
   m_Name: prefab_cube (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1177781251468976
 GameObject:
@@ -117,13 +117,13 @@ GameObject:
   - component: {fileID: 33487891344481720}
   - component: {fileID: 65187898695930556}
   - component: {fileID: 23624616308384198}
-  - component: {fileID: 114325431115724418}
+  - component: {fileID: 114342033481088576}
   m_Layer: 0
   m_Name: prefab_cube (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1203572609437600
 GameObject:
@@ -136,13 +136,13 @@ GameObject:
   - component: {fileID: 33760147044440958}
   - component: {fileID: 65331042605660878}
   - component: {fileID: 23111824520973630}
-  - component: {fileID: 114527575853315388}
+  - component: {fileID: 114520236595960968}
   m_Layer: 0
   m_Name: prefab_cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1299610737480840
 GameObject:
@@ -155,13 +155,13 @@ GameObject:
   - component: {fileID: 33176515619938484}
   - component: {fileID: 65178747875338404}
   - component: {fileID: 23030331153430532}
-  - component: {fileID: 114028590688428052}
+  - component: {fileID: 114018760918291522}
   m_Layer: 0
   m_Name: prefab_cube (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1312243532785610
 GameObject:
@@ -174,13 +174,13 @@ GameObject:
   - component: {fileID: 33286328958398446}
   - component: {fileID: 65647746257243912}
   - component: {fileID: 23973581144109184}
-  - component: {fileID: 114567488733894688}
+  - component: {fileID: 114601121854973548}
   m_Layer: 0
   m_Name: prefab_cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1325082111409878
 GameObject:
@@ -193,13 +193,13 @@ GameObject:
   - component: {fileID: 33479027992586616}
   - component: {fileID: 65992254149000286}
   - component: {fileID: 23495969616608948}
-  - component: {fileID: 114969103883641126}
+  - component: {fileID: 114042943878863912}
   m_Layer: 0
   m_Name: prefab_cube (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1335074778727772
 GameObject:
@@ -212,13 +212,13 @@ GameObject:
   - component: {fileID: 33273799015608720}
   - component: {fileID: 65820660464082534}
   - component: {fileID: 23017088339119296}
-  - component: {fileID: 114857066010252830}
+  - component: {fileID: 114316650972099200}
   m_Layer: 0
   m_Name: prefab_cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1411128362442408
 GameObject:
@@ -231,13 +231,13 @@ GameObject:
   - component: {fileID: 33680463801066472}
   - component: {fileID: 65480526902960888}
   - component: {fileID: 23272131606516338}
-  - component: {fileID: 114720139221104942}
+  - component: {fileID: 114529202634696762}
   m_Layer: 0
   m_Name: prefab_cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1414695299986712
 GameObject:
@@ -250,13 +250,13 @@ GameObject:
   - component: {fileID: 33007916307550742}
   - component: {fileID: 65395818690009926}
   - component: {fileID: 23464989118684398}
-  - component: {fileID: 114706867931695726}
+  - component: {fileID: 114380378643625570}
   m_Layer: 0
   m_Name: prefab_cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1422592061841104
 GameObject:
@@ -269,13 +269,13 @@ GameObject:
   - component: {fileID: 33271618088367020}
   - component: {fileID: 65332035930484214}
   - component: {fileID: 23219692730817368}
-  - component: {fileID: 114688438966674878}
+  - component: {fileID: 114846187903696766}
   m_Layer: 0
   m_Name: prefab_cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1443288824102574
 GameObject:
@@ -288,13 +288,13 @@ GameObject:
   - component: {fileID: 33026398506112104}
   - component: {fileID: 65612442623183968}
   - component: {fileID: 23657658872583282}
-  - component: {fileID: 114952804497316432}
+  - component: {fileID: 114076724667597362}
   m_Layer: 0
   m_Name: prefab_cube (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1443749212643498
 GameObject:
@@ -307,13 +307,13 @@ GameObject:
   - component: {fileID: 33839141725787754}
   - component: {fileID: 65950290583427028}
   - component: {fileID: 23906506320554810}
-  - component: {fileID: 114937694062529036}
+  - component: {fileID: 114198555951143094}
   m_Layer: 0
   m_Name: prefab_cube (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1470285077533890
 GameObject:
@@ -326,13 +326,13 @@ GameObject:
   - component: {fileID: 33005358860737962}
   - component: {fileID: 65535689386431840}
   - component: {fileID: 23721045554543292}
-  - component: {fileID: 114064784292104852}
+  - component: {fileID: 114630577993292830}
   m_Layer: 0
   m_Name: prefab_cube (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1472136111990868
 GameObject:
@@ -345,13 +345,13 @@ GameObject:
   - component: {fileID: 33006706024767206}
   - component: {fileID: 65086934946281848}
   - component: {fileID: 23921371459223980}
-  - component: {fileID: 114589705804709630}
+  - component: {fileID: 114347366860870318}
   m_Layer: 0
   m_Name: prefab_cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1501180299177084
 GameObject:
@@ -364,13 +364,13 @@ GameObject:
   - component: {fileID: 33766455392358754}
   - component: {fileID: 65009587872627048}
   - component: {fileID: 23988549027630370}
-  - component: {fileID: 114257488425502096}
+  - component: {fileID: 114295541589993392}
   m_Layer: 0
   m_Name: prefab_cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1544021160411894
 GameObject:
@@ -383,13 +383,13 @@ GameObject:
   - component: {fileID: 33755763993008104}
   - component: {fileID: 65391557248931692}
   - component: {fileID: 23615819029177644}
-  - component: {fileID: 114336337699170856}
+  - component: {fileID: 114498178686870176}
   m_Layer: 0
   m_Name: prefab_cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1563749318203874
 GameObject:
@@ -404,7 +404,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1596684668711820
 GameObject:
@@ -417,13 +417,13 @@ GameObject:
   - component: {fileID: 33417688031992932}
   - component: {fileID: 65682285827047992}
   - component: {fileID: 23004434244388278}
-  - component: {fileID: 114954163833085368}
+  - component: {fileID: 114008050175671456}
   m_Layer: 0
   m_Name: prefab_cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1623683063592820
 GameObject:
@@ -436,13 +436,13 @@ GameObject:
   - component: {fileID: 33326219872162972}
   - component: {fileID: 65232602472796692}
   - component: {fileID: 23211396995656156}
-  - component: {fileID: 114249097890132754}
+  - component: {fileID: 114594268282742634}
   m_Layer: 0
   m_Name: prefab_cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1658059942518782
 GameObject:
@@ -455,13 +455,13 @@ GameObject:
   - component: {fileID: 33841926934565440}
   - component: {fileID: 65449015915189828}
   - component: {fileID: 23916178986564916}
-  - component: {fileID: 114130335016652250}
+  - component: {fileID: 114714207237455942}
   m_Layer: 0
   m_Name: prefab_cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1691158141187146
 GameObject:
@@ -474,13 +474,13 @@ GameObject:
   - component: {fileID: 33368829517421908}
   - component: {fileID: 65830188076176328}
   - component: {fileID: 23003501416114976}
-  - component: {fileID: 114813822441480774}
+  - component: {fileID: 114847049675695456}
   m_Layer: 0
   m_Name: prefab_cube (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1720285083533846
 GameObject:
@@ -493,13 +493,13 @@ GameObject:
   - component: {fileID: 33315006013057496}
   - component: {fileID: 65260074621819376}
   - component: {fileID: 23563591732186920}
-  - component: {fileID: 114311326724158726}
+  - component: {fileID: 114960906486940194}
   m_Layer: 0
   m_Name: prefab_cube (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1774516626375098
 GameObject:
@@ -512,13 +512,13 @@ GameObject:
   - component: {fileID: 33634787979675942}
   - component: {fileID: 65882798728187976}
   - component: {fileID: 23116109594050502}
-  - component: {fileID: 114141486512635054}
+  - component: {fileID: 114415229667524128}
   m_Layer: 0
   m_Name: prefab_cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1823238992213478
 GameObject:
@@ -531,13 +531,13 @@ GameObject:
   - component: {fileID: 33486803786300768}
   - component: {fileID: 65702017505117542}
   - component: {fileID: 23302340702420720}
-  - component: {fileID: 114781767948171536}
+  - component: {fileID: 114478558053488616}
   m_Layer: 0
   m_Name: prefab_cube (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1880271054937190
 GameObject:
@@ -550,13 +550,13 @@ GameObject:
   - component: {fileID: 33007996053928852}
   - component: {fileID: 65575306668656410}
   - component: {fileID: 23843835959594616}
-  - component: {fileID: 114604826621973570}
+  - component: {fileID: 114872291264236592}
   m_Layer: 0
   m_Name: prefab_cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1947310730362292
 GameObject:
@@ -569,13 +569,13 @@ GameObject:
   - component: {fileID: 33230246438958468}
   - component: {fileID: 65814292533101300}
   - component: {fileID: 23254255427387264}
-  - component: {fileID: 114738021077873598}
+  - component: {fileID: 114856999593726596}
   m_Layer: 0
   m_Name: prefab_cube (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1957668368355590
 GameObject:
@@ -588,13 +588,13 @@ GameObject:
   - component: {fileID: 33502788003243196}
   - component: {fileID: 65434485664543818}
   - component: {fileID: 23485076951411048}
-  - component: {fileID: 114830963446305874}
+  - component: {fileID: 114626008415257576}
   m_Layer: 0
   m_Name: prefab_cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1971603476983098
 GameObject:
@@ -607,13 +607,13 @@ GameObject:
   - component: {fileID: 33413360408785820}
   - component: {fileID: 65674939214937960}
   - component: {fileID: 23046363342662262}
-  - component: {fileID: 114552328561880902}
+  - component: {fileID: 114922430213219556}
   m_Layer: 0
   m_Name: prefab_cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1972415128309068
 GameObject:
@@ -626,13 +626,13 @@ GameObject:
   - component: {fileID: 33571378747492362}
   - component: {fileID: 65585890370965060}
   - component: {fileID: 23612850971692368}
-  - component: {fileID: 114469807642044018}
+  - component: {fileID: 114526965387132806}
   m_Layer: 0
   m_Name: prefab_cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4005353891366362
 Transform:
@@ -2791,367 +2791,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114028590688428052
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1299610737480840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114064784292104852
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470285077533890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114130335016652250
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1658059942518782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114141486512635054
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1774516626375098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114171342049173102
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1172766309877068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114249097890132754
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1623683063592820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114257488425502096
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1501180299177084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114311326724158726
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1720285083533846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114318871091036122
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1161954302785766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114325431115724418
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1177781251468976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114336337699170856
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1544021160411894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114352423311467774
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121630315199100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114422791287564600
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1061643874556714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114469807642044018
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1972415128309068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114472574212833098
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1012883406451844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114527575853315388
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1203572609437600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114552328561880902
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1971603476983098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114567488733894688
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1312243532785610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114589705804709630
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1472136111990868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114604826621973570
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1880271054937190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114688438966674878
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1422592061841104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114706867931695726
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1414695299986712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114720139221104942
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1411128362442408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114738021077873598
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1947310730362292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114781767948171536
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1823238992213478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114813822441480774
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1691158141187146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114830963446305874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1957668368355590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114857066010252830
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1335074778727772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114937694062529036
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1443749212643498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114952804497316432
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1443288824102574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114954163833085368
+--- !u!114 &114008050175671456
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -3159,11 +2799,127 @@ MonoBehaviour:
   m_GameObject: {fileID: 1596684668711820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
---- !u!114 &114969103883641126
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114018760918291522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299610737480840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114042943878863912
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -3171,7 +2927,1915 @@ MonoBehaviour:
   m_GameObject: {fileID: 1325082111409878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573420966d3a02848a1061c7c29d9aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toCopyFrom: {fileID: 1086894744856708, guid: 4df2ea48265755f48ae8db7480a9c8cd, type: 2}
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114076724667597362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1443288824102574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114198555951143094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1443749212643498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114209373539047472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012883406451844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114295541589993392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1501180299177084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114316650972099200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335074778727772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114342033481088576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1177781251468976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114347366860870318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1472136111990868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114380378643625570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414695299986712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114415229667524128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774516626375098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114478558053488616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1823238992213478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114498178686870176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544021160411894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114520236595960968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1203572609437600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114526965387132806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1972415128309068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114529202634696762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1411128362442408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114594268282742634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1623683063592820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114601121854973548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1312243532785610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114626008415257576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957668368355590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114630577993292830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1470285077533890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114714207237455942
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658059942518782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114734945542859820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1172766309877068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114816002676966370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061643874556714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114846187903696766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422592061841104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114847049675695456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691158141187146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114856999593726596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1947310730362292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114864023844630848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121630315199100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114872291264236592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880271054937190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114915129220439078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1161954302785766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114922430213219556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971603476983098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}
+--- !u!114 &114960906486940194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720285083533846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.19739735
+      value: 0.03834624
+      inSlope: 0.4271325
+      outSlope: 0.4271325
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+    type: 2}
+  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+    type: 2}
+  epsilon: 0.001
+  distance: 0.03
+  timeToDestruction: 20
+  timeToInfection: 0.5
+  timeBetweenInfectionsMin: 0.1
+  timeBetweenInfectionsMax: 1
+  timeInfectionStability: 10
+  timeToRemoveImmunity: 20
+  timeToRemoveRepairImmunity: 5
+  factorRemoveInfection: 8
+  infected: 0
+  immune: 0
+  repair_immune: 0
+  repairing: 0
+  virusType: 1
+  blockType: 0
+  materialsInfection:
+  - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
+  - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
+  - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}
+  - {fileID: 2100000, guid: 474b840bb95afaf4889238d2ae4ba71f, type: 2}
+  - {fileID: 2100000, guid: 2d4c58df7287f0f4fbcc5690e091e905, type: 2}
+  - {fileID: 2100000, guid: 21d35eb143626ca47a2be5b2bddbcf9c, type: 2}
+  - {fileID: 2100000, guid: 5cdfe4742b3967c49ba6c84b0c0799e0, type: 2}

@@ -29,7 +29,7 @@ public class InfectionRaycast : MonoBehaviour
 	public float timeToRemoveImmunity = 20.0f;
 	public float timeToRemoveRepairImmunity = 3.0f;
 
-	public float factorRemoveInfection = 0.2f;
+	private float factorRemoveInfection = 4.0f;
 
 	public bool infected = false;
 	public bool immune = false;
@@ -63,6 +63,9 @@ public class InfectionRaycast : MonoBehaviour
 	#endregion
 
 	#region events
+	void Awake(){
+		//this.enabled = false;
+	}
 	// Use this for initialization
 	void Start ()
 	{
@@ -110,7 +113,10 @@ public class InfectionRaycast : MonoBehaviour
 
 		ResetDirections ();
 		GameManager.TotalBlocks++;
+		this.enabled = false;
 	}
+
+
 	
 	// Update is called once per frame
 	void Update ()
@@ -153,7 +159,7 @@ public class InfectionRaycast : MonoBehaviour
 		directions_per_turn.Clear ();
 		foreach (Vector3 direction in directions)
 		{
-			if (direction == Vector3.zero)
+			if (direction != Vector3.zero)
 			{
 				directions_per_turn.Add (direction);
 			}
@@ -217,12 +223,12 @@ public class InfectionRaycast : MonoBehaviour
 	{
 		if (meshrenderer != null)
 		{
-			return meshrenderer.material;
+			return meshrenderer.sharedMaterial;
 		}
 
 		if (meshrendererchildren[0] != null)
 		{
-			return meshrendererchildren[0].material;
+			return meshrendererchildren[0].sharedMaterial;
 		}
 		return null;
 	}
@@ -240,6 +246,7 @@ public class InfectionRaycast : MonoBehaviour
 				//Destroy (gameObject);
 				gameObject.layer = 11;
 				ChangeMaterial(materialInfectionGhost);
+				this.enabled = false;
 			}
 			else if (blockType == BlockType.UNDESTRUCTABLE_INFECTABLE)
 			{
@@ -398,6 +405,7 @@ public class InfectionRaycast : MonoBehaviour
 			infection_time = DateTime.Now;
 			infected = true;
 			GameManager.InfectedBlocks++;
+			this.enabled = true;
 		}
 	}
 
@@ -414,7 +422,7 @@ public class InfectionRaycast : MonoBehaviour
 			infection_time = new DateTime (0);
 			blockTurn = 0;
 			GameManager.InfectedBlocks--;
-			this.enabled = false;
+			//this.enabled = false;
 		}
 	}
 
@@ -467,6 +475,7 @@ public class InfectionRaycast : MonoBehaviour
 			reparation_time = DateTime.Now;
 			blockTurn = 0;
 			ResetDirections ();
+			this.enabled = true;
 		}
 	}
 	#endregion

@@ -40,6 +40,8 @@ public class VirusManager : MonoBehaviour
 	#endregion
 
 	#region events
+
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -156,6 +158,7 @@ public class VirusManager : MonoBehaviour
 		isAlive = false;
 		Instantiate (greenExplosionPrefab, transform.position, Quaternion.identity);
 		if (firstInfectedBlock) {
+			firstInfectedBlock.GetComponent<InfectionRaycast> ().infected = true;
 			firstInfectedBlock.GetComponent<InfectionRaycast> ().RepairInfection ();
 		}
 
@@ -170,6 +173,8 @@ public class VirusManager : MonoBehaviour
 		if (col.gameObject.GetComponent<InfectionRaycast> () != null && !hasLanded && isAlive)
 		{
 			col.gameObject.GetComponent<InfectionRaycast> ().enabled = true;
+			//col.gameObject.GetComponent<InfectionRaycast> ().Init ();
+			col.gameObject.GetComponent<InfectionRaycast> ().RemoveImmunity();
 			col.gameObject.GetComponent<InfectionRaycast> ().CreateInfection(DateTime.Now);
 			firstInfectedBlock = col.gameObject;
 
