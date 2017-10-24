@@ -10,6 +10,7 @@ public class ScriptInitializer : MonoBehaviour
 	void Start ()
 	{
 		CopyComponent<InfectionRaycast> (toCopyFrom.GetComponent<InfectionRaycast>(), gameObject);
+		this.enabled = false;
 	}
 	
 	// Update is called once per frame

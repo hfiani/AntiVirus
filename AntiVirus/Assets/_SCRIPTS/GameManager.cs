@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
 	private GameObject StartCamera;
 	private GameObject Objective;
 	private WaveController WC;
-	private List<GameObject> VirusCanvasList = new List<GameObject>();
 	#endregion
 
 	#region events
@@ -84,8 +83,6 @@ public class GameManager : MonoBehaviour
 		{
 			CheckForVictory ();
 		}
-
-		MoveCompass ();
 	}
 
 	void OnGUI()
@@ -95,87 +92,6 @@ public class GameManager : MonoBehaviour
 	#endregion
 
 	#region private functions
-	void MoveCompass()
-	{
-		GameObject player = GameObject.FindGameObjectWithTag ("Player");
-
-		if (player == null)
-		{
-			return;
-		}
-
-		/*
-		SetOnCompass (GameObject.Find("North"), Vector3.forward);
-		SetOnCompass (GameObject.Find("South"), Vector3.back);
-		SetOnCompass (GameObject.Find("West"), Vector3.left);
-		SetOnCompass (GameObject.Find("East"), Vector3.right);
-		*/
-
-		GameObject objective = GameObject.FindGameObjectWithTag ("Objective");
-		GameObject objective_canvas = GameObject.Find ("Objective");
-		if (objective_canvas != null && objective != null)
-		{
-			SetOnCompass (objective_canvas, objective.transform.position - player.transform.position);
-		}
-
-		foreach (GameObject virus in VirusCanvasList)
-		{
-			Destroy (virus);
-		}
-		VirusCanvasList.Clear ();
-
-		foreach (GameObject virus in WC.GetViruses())
-		{
-			GameObject virus_canvas = Instantiate (GameObject.Find ("Virus"), GameObject.Find ("Virus").transform.parent, true);
-			VirusCanvasList.Add (virus_canvas);
-			virus_canvas.GetComponent<Image> ().enabled = true;
-			if (virus_canvas != null && virus != null)
-			{
-				SetOnCompass (virus_canvas, virus.transform.position - player.transform.position);
-			}
-		}
-	}
-
-	void SetOnCompass(GameObject obj, Vector3 direction)
-	{
-		if (Camera.main != null)
-		{
-			float FOV = Camera.main.fieldOfView * 2; // here it is half the visible angle
-			float CompassWidth = GameObject.Find("CompassBase").GetComponent<RectTransform> ().rect.width;
-
-			GameObject player = GameObject.FindGameObjectWithTag ("Player");
-			if (player != null)
-			{
-				Vector3 xz_plan = Vector3.forward + Vector3.right;
-				Vector3 player_forward_xz = Vector3.Scale (player.transform.forward, xz_plan);
-				Vector3 direction_xz = Vector3.Scale (direction, xz_plan);
-
-				float north_angle = Vector3.Angle (player_forward_xz, direction_xz);
-				Vector3 cross = Vector3.Cross(player_forward_xz, direction_xz);
-				if (cross.y < 0) north_angle = -north_angle;
-				if (north_angle < FOV / 2 && north_angle > -FOV / 2)
-				{
-					obj.GetComponent<Image> ().enabled = true;
-					obj.GetComponent<RectTransform> ().localPosition = 
-						new Vector3(
-							north_angle * CompassWidth / FOV,
-							obj.GetComponent<RectTransform> ().localPosition.y,
-							obj.GetComponent<RectTransform> ().localPosition.z);
-					float alpha = Mathf.Clamp (20.0f / Vector3.Magnitude (direction_xz), 0.33f, 1.0f);
-					obj.GetComponent<Image> ().color = new Color(
-						obj.GetComponent<Image> ().color.r,
-						obj.GetComponent<Image> ().color.g,
-						obj.GetComponent<Image> ().color.b,
-						alpha);
-				}
-				else
-				{
-					obj.GetComponent<Image> ().enabled = false;
-				}
-			}
-		}
-	}
-
 	void StartLevel()
 	{
 		UI.SetStartScreen (false);

@@ -7,6 +7,12 @@ public class UI_Manager : MonoBehaviour {
 
 	#region private variables
 	private float _energyBarWidth, _energyBarHeight;
+	private List<GameObject> _virusCanvasList = new List<GameObject>();
+	private WaveController WC;
+	private GameObject _player;
+	private float _fov;
+	private float _compassWidth;
+	private GameObject _virus;
 	#endregion
 
 	#region public variables
@@ -23,14 +29,18 @@ public class UI_Manager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		WC = GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController> ();
 		_energyBarHeight = _energyBar.GetComponent<RectTransform>(). rect.height;
 		_energyBarWidth = _energyBar.GetComponent<RectTransform>(). rect.width;
+
+		_compassWidth = GameObject.Find("CompassBase").GetComponent<RectTransform> ().rect.width;
+		_virus = GameObject.Find ("Virus");
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		
+		//MoveCompass ();
 	}
 	#endregion
 
@@ -45,6 +55,92 @@ public class UI_Manager : MonoBehaviour {
 		_compass.SetActive (false);
 	}
 
+	void MoveCompass()
+	{
+		if (_player == null)
+		{
+			_player = GameObject.FindGameObjectWithTag ("Player");
+			return;
+		}
+
+		if (Camera.main != null && _fov == -1)
+		{
+			_fov = Camera.main.fieldOfView * 2; // here it is half the visible angle
+		}
+		else if(Camera.main == null)
+		{
+			return;
+		}
+
+		/*
+		SetOnCompass (GameObject.Find("North"), Vector3.forward);
+		SetOnCompass (GameObject.Find("South"), Vector3.back);
+		SetOnCompass (GameObject.Find("West"), Vector3.left);
+		SetOnCompass (GameObject.Find("East"), Vector3.right);
+		*/
+
+		GameObject objective = GameObject.FindGameObjectWithTag ("Objective");
+		GameObject objective_canvas = GameObject.Find ("Objective");
+		if (objective_canvas != null && objective != null)
+		{
+			SetOnCompass (objective_canvas, objective.transform.position - _player.transform.position);
+		}
+
+		foreach (GameObject virus in _virusCanvasList)
+		{
+			Destroy (virus);
+		}
+		_virusCanvasList.Clear ();
+
+		foreach (GameObject virus in WC.GetViruses())
+		{
+			GameObject virus_canvas = Instantiate (_virus, _virus.transform.parent, true);
+			_virusCanvasList.Add (virus_canvas);
+			virus_canvas.GetComponent<Image> ().enabled = true;
+			if (virus_canvas != null && virus != null)
+			{
+				SetOnCompass (virus_canvas, virus.transform.position - _player.transform.position);
+			}
+		}
+	}
+
+	void SetOnCompass(GameObject obj, Vector3 direction)
+	{
+		if (Camera.main != null)
+		{
+			if (_player != null)
+			{
+				Vector3 xz_plan = Vector3.forward + Vector3.right;
+				Vector3 player_forward_xz = Vector3.Scale (_player.transform.forward, xz_plan);
+				Vector3 direction_xz = Vector3.Scale (direction, xz_plan);
+				RectTransform rect = obj.GetComponent<RectTransform> ();
+				Image img = obj.GetComponent<Image> ();
+
+				float north_angle = Vector3.Angle (player_forward_xz, direction_xz);
+				Vector3 cross = Vector3.Cross(player_forward_xz, direction_xz);
+				if (cross.y < 0) north_angle = -north_angle;
+				if (north_angle < _fov / 2 && north_angle > -_fov / 2)
+				{
+					img.enabled = true;
+					rect.localPosition = 
+						new Vector3(
+							north_angle * _compassWidth / _fov,
+							rect.localPosition.y,
+							rect.localPosition.z);
+					float alpha = Mathf.Clamp (20.0f / Vector3.Magnitude (direction_xz), 0.33f, 1.0f);
+					img.color = new Color(
+						img.color.r,
+						img.color.g,
+						img.color.b,
+						alpha);
+				}
+				else
+				{
+					obj.GetComponent<Image> ().enabled = false;
+				}
+			}
+		}
+	}
 
 	public void UpdateEnergyBar(float percent){
 

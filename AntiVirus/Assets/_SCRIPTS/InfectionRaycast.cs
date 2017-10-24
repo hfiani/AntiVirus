@@ -92,12 +92,6 @@ public class InfectionRaycast : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		//to be removed
-		if (repairing && reparation_time == new DateTime (0))
-		{
-			RepairInfection ();
-		}
-
 		if (repairing)
 		{
 			float duration_repaired = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
@@ -111,14 +105,12 @@ public class InfectionRaycast : MonoBehaviour
 			ManageSelfInfection (duration_infected);
 			InfectNeighbours (duration_infected);
 		}
-
-		if (immune)
+		else if (immune)
 		{
 			float duration_immuned = (float)(DateTime.Now - immunity_time).TotalMilliseconds;
 			CheckImmunity (duration_immuned, timeToRemoveImmunity);
 		}
-
-		if (repair_immune)
+		else if (repair_immune)
 		{
 			float duration_repair_immuned = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
 			CheckImmunity (duration_repair_immuned, timeToRemoveRepairImmunity);
