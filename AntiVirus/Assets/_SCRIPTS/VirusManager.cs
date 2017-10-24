@@ -36,6 +36,7 @@ public class VirusManager : MonoBehaviour
 	private float sphereFadeAlpha;
 	private GameObject firstInfectedBlock;
 	private GameManager GM;
+	private WaveController WC;
 	#endregion
 
 	#region events
@@ -43,6 +44,7 @@ public class VirusManager : MonoBehaviour
 	void Start ()
 	{
 		GM = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager>();
+		WC =  GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController>();
 
 		isAlive = true;
 		hasLanded = false;
@@ -144,6 +146,7 @@ public class VirusManager : MonoBehaviour
 
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().IncrementVirusDeathNumber ();
 
+		WC.removeVirusFromList (this.gameObject);
 		Destroy (gameObject);
 	}
 
@@ -157,7 +160,7 @@ public class VirusManager : MonoBehaviour
 		}
 
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().IncrementVirusDeathNumber ();
-
+		WC.removeVirusFromList (this.gameObject);
 		Destroy (gameObject);
 	}
 

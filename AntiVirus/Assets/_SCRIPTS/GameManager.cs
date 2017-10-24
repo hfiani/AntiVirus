@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
 	void StartLevel()
 	{
 		UI.SetStartScreen (false);
-		StartCamera.SetActive (false);
+		StartCamera.GetComponent<AudioListener> ().enabled = false;
 
 		SpawnPlayer ();
 

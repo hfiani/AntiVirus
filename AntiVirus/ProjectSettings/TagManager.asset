@@ -10,6 +10,7 @@ TagManager:
   - StartCamera
   - NPC
   - Objective
+  - Screen
   layers:
   - Default
   - TransparentFX
