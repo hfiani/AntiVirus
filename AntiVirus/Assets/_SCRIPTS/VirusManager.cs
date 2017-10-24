@@ -44,7 +44,7 @@ public class VirusManager : MonoBehaviour
 	void Start ()
 	{
 		GM = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager>();
-		WC =  GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController>();
+		WC = GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController>();
 
 		isAlive = true;
 		hasLanded = false;

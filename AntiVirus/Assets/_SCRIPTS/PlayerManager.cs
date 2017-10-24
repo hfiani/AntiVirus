@@ -33,6 +33,7 @@ public class PlayerManager : MonoBehaviour
 	private UI_Manager UI;
 	private AudioSource Audio;
 
+
 	private float speedOriginValue;
 
 	private float _buffFactor;
@@ -132,6 +133,8 @@ public class PlayerManager : MonoBehaviour
 
 		Audio.PlayOneShot (_ShootingSound, _ShootingVolume);
 	}
+
+
 
 	void changeWalkingSpeed()
 	{
