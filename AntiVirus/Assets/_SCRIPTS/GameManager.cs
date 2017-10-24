@@ -154,6 +154,7 @@ public class GameManager : MonoBehaviour
 			return;
 		}
 		Debug.Log ("Game Over");
+		UI.HideAll ();
 		UI.SetGameOverScreen (true);
 		gameIsOver = true;
 		gameOverTimer = Time.time;
@@ -172,24 +173,23 @@ public class GameManager : MonoBehaviour
 
 	public void PlayerDeath()
 	{
-
+		if (!playerIsActive) {
+			return;
+		}
 		Debug.Log ("Player Death");
 		
 		playerIsActive = false;
 		UI.SetCrosshair (false);
 		UI.SetEnergyBar (false);
 
-		if (Player) {
-			Destroy (Player.gameObject);
-		}
+		Destroy (Player.gameObject);
+
 
 		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
 		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (PlayerSpawn, RespawnDelay);
 
 		//LevelMusic.GetComponent<AudioSource> ().Stop ();
 		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);
-
-
 
 		TriggerRespawn ();
 	}
@@ -198,18 +198,15 @@ public class GameManager : MonoBehaviour
 	{
 		playerIsActive = false;
 		playerRespawning = false;
-		UI.SetCrosshair (false);
-		UI.SetEnergyBar (false);
+	
 
 		if (Player) {
 			Destroy (Player.gameObject);
-		}
-		if (PlayerGhost) {
-			Destroy (PlayerGhost.gameObject);
+			PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
 		}
 	
 
-		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
+
 		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (Objective, GameOverDelay);
 
 		//LevelMusic.GetComponent<AudioSource> ().Stop ();

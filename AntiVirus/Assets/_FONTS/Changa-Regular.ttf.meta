@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: d9dd80e16537c04408848965a75d1ab8
+timeCreated: 1508833315
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Changa
+  fontNames:
+  - Changa
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1460ac07be97cde40a14ff5ce9fd180a, type: 3}
+  - {fileID: 12800000, guid: d95a62e837c02aa489fc0629097a0d1d, type: 3}
+  - {fileID: 12800000, guid: b7971d1cc8840c74db91026b1d3c3aa0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
