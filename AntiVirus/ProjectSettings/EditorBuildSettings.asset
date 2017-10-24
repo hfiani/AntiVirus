@@ -12,16 +12,8 @@ EditorBuildSettings:
     path: Assets/test_scene.unity
     guid: 4f50599bf135d5b4891535e8c8ed1e78
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/cityMap.unity
     guid: 1290290500a751f40bb7dd0cbe633574
   - enabled: 1
     path: Assets/gameover.unity
     guid: a56a056ad657a884f9a6e833793e3234
-=======
-    path: Assets/gameover.unity
-    guid: a56a056ad657a884f9a6e833793e3234
-  - enabled: 1
-    path: Assets/cityMap.unity
-    guid: 1290290500a751f40bb7dd0cbe633574
->>>>>>> 0607aa35c1d586dc1bc92831ef37f2b070521f22
