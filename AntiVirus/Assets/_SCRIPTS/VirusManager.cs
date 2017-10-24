@@ -169,6 +169,7 @@ public class VirusManager : MonoBehaviour
 		// infect when land on ground
 		if (col.gameObject.GetComponent<InfectionRaycast> () != null && !hasLanded && isAlive)
 		{
+			col.gameObject.GetComponent<InfectionRaycast> ().enabled = true;
 			col.gameObject.GetComponent<InfectionRaycast> ().CreateInfection(DateTime.Now);
 			firstInfectedBlock = col.gameObject;
 

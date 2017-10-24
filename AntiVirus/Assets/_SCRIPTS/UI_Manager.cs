@@ -13,6 +13,8 @@ public class UI_Manager : MonoBehaviour {
 	private float _fov = -1;
 	private float _compassWidth = -1;
 	private GameObject _virus = null;
+	private GameObject _objective;
+	private GameObject _objectiveCanvas;
 	#endregion
 
 	#region public variables
@@ -32,6 +34,9 @@ public class UI_Manager : MonoBehaviour {
 		WC = GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController> ();
 		_energyBarHeight = _energyBar.GetComponent<RectTransform>(). rect.height;
 		_energyBarWidth = _energyBar.GetComponent<RectTransform>(). rect.width;
+
+		_objective = GameObject.FindGameObjectWithTag ("Objective");
+		_objectiveCanvas = GameObject.Find ("Objective");
 	}
 	
 	// Update is called once per frame
@@ -54,31 +59,30 @@ public class UI_Manager : MonoBehaviour {
 
 	void MoveCompass()
 	{
-		if (_player == null ||
-		   _fov == -1 ||
-		   _compassWidth == -1 ||
-		   _virus == null)
+		if (_player == null)
 		{
-			if (_player == null)
-			{
-				_player = GameObject.FindGameObjectWithTag ("Player");
-			}
+			_player = GameObject.FindGameObjectWithTag ("Player");
+		}
 
-			if (Camera.main != null && _fov == -1)
+		if (_fov == -1)
+		{
+			if(Camera.main != null)
 			{
 				_fov = Camera.main.fieldOfView * 2; // here it is half the visible angle
 			}
+		}
 
-			if (_compassWidth == -1 && GameObject.Find ("CompassBase") != null && GameObject.Find ("CompassBase").GetComponent<RectTransform> () != null)
+		if (_compassWidth == -1)
+		{
+			if (GameObject.Find ("CompassBase") != null && GameObject.Find ("CompassBase").GetComponent<RectTransform> () != null)
 			{
 				_compassWidth = GameObject.Find ("CompassBase").GetComponent<RectTransform> ().rect.width;
 			}
+		}
 
-			if (GameObject.Find ("Virus") != null)
-			{
-				_virus = GameObject.Find ("Virus");
-			}
-			return;
+		if (_virus == null)
+		{
+			_virus = GameObject.Find ("Virus");
 		}
 
 		/*
@@ -88,11 +92,9 @@ public class UI_Manager : MonoBehaviour {
 		SetOnCompass (GameObject.Find("East"), Vector3.right);
 		*/
 
-		GameObject objective = GameObject.FindGameObjectWithTag ("Objective");
-		GameObject objective_canvas = GameObject.Find ("Objective");
-		if (objective_canvas != null && objective != null)
+		if (_objectiveCanvas != null && _objective != null)
 		{
-			SetOnCompass (objective_canvas, objective.transform.position - _player.transform.position);
+			SetOnCompass (_objectiveCanvas, _objective.transform.position - _player.transform.position);
 		}
 
 		foreach (GameObject virus in _virusCanvasList)
@@ -141,7 +143,8 @@ public class UI_Manager : MonoBehaviour {
 						img.color.r,
 						img.color.g,
 						img.color.b,
-						alpha);
+						alpha
+					);
 				}
 				else
 				{

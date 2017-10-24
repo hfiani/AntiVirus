@@ -14,6 +14,8 @@ public class InfectionRaycast : MonoBehaviour
 	public AnimationCurve speedCurve;
 
 	public Material materialImmune;
+	public Material materialInfectionGhost;
+	public Material materialInfectionFull;
 
 	public float epsilon = 0.001f;
 	public float distance = 0.03f;
@@ -39,6 +41,8 @@ public class InfectionRaycast : MonoBehaviour
 	#endregion
 
 	#region private variables
+	private MeshRenderer meshrenderer;
+	private MeshRenderer[] meshrendererchildren; 
 	private Material original_material;
 	private float timeBetweenReparations;
 	private DateTime start_infection_time = new DateTime(0);
@@ -79,6 +83,14 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			materialsInfection [i] = (Material)materials_infection_object [i];
 		}*/
+
+		meshrenderer = transform.GetComponent<MeshRenderer> ();
+		meshrendererchildren = new MeshRenderer[transform.childCount];
+		for (int i = 0; i < meshrendererchildren.Length; i++)
+		{
+			GameObject child = transform.GetChild (i).gameObject;
+			meshrendererchildren[i] = child.GetComponent<MeshRenderer> ();
+		}
 
 		original_material = GetMaterial();
 
@@ -179,48 +191,20 @@ public class InfectionRaycast : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Changes the color of the object given
-	/// </summary>
-	/// <param name="trans">Trans.</param>
-	/// <param name="color">Color.</param>
-	void ChangeColor(Transform trans, Vector3 color)
-	{
-		MeshRenderer meshrenderer = trans.GetComponent<MeshRenderer> ();
-		if (meshrenderer != null)
-		{
-			meshrenderer.materials [0].color = new Color (color.x, color.y, color.z);
-		}
-		for (int i = 0; i < trans.childCount; i++)
-		{
-			GameObject child = trans.GetChild (i).gameObject;
-			meshrenderer = child.GetComponent<MeshRenderer> ();
-			if (meshrenderer != null)
-			{
-				matBlock.SetColor("_Color", new Color(color.x, color.y, color.z));
-				meshrenderer.SetPropertyBlock(matBlock);
-				//child.GetComponent<MeshRenderer> ().materials [0].color = new Color (color.x, color.y, color.z);
-			}
-		}
-	}
-
-	/// <summary>
 	/// Changes the material.
 	/// </summary>
 	/// <param name="mat">Mat.</param>
 	void ChangeMaterial(Material mat)
 	{
-		MeshRenderer meshrenderer = transform.GetComponent<MeshRenderer> ();
 		if (meshrenderer != null)
 		{
 			meshrenderer.material = mat;
 		}
 		for (int i = 0; i < transform.childCount; i++)
 		{
-			GameObject child = transform.GetChild (i).gameObject;
-			meshrenderer = child.GetComponent<MeshRenderer> ();
-			if (meshrenderer != null)
+			if (meshrendererchildren[i] != null)
 			{
-				meshrenderer.material = mat;
+				meshrendererchildren[i].material = mat;
 			}
 		}
 	}
@@ -231,17 +215,14 @@ public class InfectionRaycast : MonoBehaviour
 	/// <returns>The material.</returns>
 	Material GetMaterial()
 	{
-		MeshRenderer meshrenderer = transform.GetComponent<MeshRenderer> ();
 		if (meshrenderer != null)
 		{
 			return meshrenderer.material;
 		}
 
-		GameObject child = transform.GetChild (0).gameObject;
-		meshrenderer = child.GetComponent<MeshRenderer> ();
-		if (meshrenderer != null)
+		if (meshrendererchildren[0] != null)
 		{
-			return meshrenderer.material;
+			return meshrendererchildren[0].material;
 		}
 		return null;
 	}
@@ -258,11 +239,11 @@ public class InfectionRaycast : MonoBehaviour
 			{
 				//Destroy (gameObject);
 				gameObject.layer = 11;
-				ChangeMaterial(Resources.Load<Material>("Materials/mat_cube - infection ghost"));
+				ChangeMaterial(materialInfectionGhost);
 			}
 			else if (blockType == BlockType.UNDESTRUCTABLE_INFECTABLE)
 			{
-				ChangeMaterial(Resources.Load<Material>("Materials/mat_cube - infection full"));
+				ChangeMaterial(materialInfectionFull);
 			}
 		}
 		/*else if (duration_infected < timeToDestruction / 2) // green to yellow
@@ -296,10 +277,13 @@ public class InfectionRaycast : MonoBehaviour
 				foreach (Vector3 direction in directions)
 				{
 					Transform t = GetNeighbourBlocks (direction, distance);
-					InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
-					if (t != null && r != null)
+					if (t != null)
 					{
-						r.CreateInfection (start_infection_time);
+						InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
+						if (r != null)
+						{
+							r.CreateInfection (start_infection_time);
+						}
 					}
 				}
 			}
@@ -312,10 +296,13 @@ public class InfectionRaycast : MonoBehaviour
 			{
 				Vector3 direction = GetDirection ();
 				Transform t = GetNeighbourBlocks (direction, distance);
-				InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
-				if (t != null && r != null)
+				if (t != null)
 				{
-					r.CreateInfection (start_infection_time);
+					InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
+					if (r != null)
+					{
+						r.CreateInfection (start_infection_time);
+					}
 				}
 				last_check_infection_time = DateTime.Now;
 			}
@@ -333,10 +320,13 @@ public class InfectionRaycast : MonoBehaviour
 			foreach (Vector3 direction in directions)
 			{
 				Transform t = GetNeighbourBlocks (direction, distance);
-				InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
-				if (t != null && r != null)
+				if (t != null)
 				{
-					r.RepairInfection ();
+					InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
+					if (r != null)
+					{
+						r.RepairInfection ();
+					}
 				}
 			}
 		}
@@ -346,10 +336,13 @@ public class InfectionRaycast : MonoBehaviour
 			{
 				Vector3 direction = GetDirection ();
 				Transform t = GetNeighbourBlocks (direction, distance);
-				InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
-				if (t != null && r != null)
+				if (t != null)
 				{
-					r.RepairInfection ();
+					InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
+					if (r != null)
+					{
+						r.RepairInfection ();
+					}
 				}
 				blockTurn++;
 			}
@@ -421,6 +414,7 @@ public class InfectionRaycast : MonoBehaviour
 			infection_time = new DateTime (0);
 			blockTurn = 0;
 			GameManager.InfectedBlocks--;
+			this.enabled = false;
 		}
 	}
 
@@ -452,6 +446,7 @@ public class InfectionRaycast : MonoBehaviour
 			ChangeMaterial(original_material);
 			immunity_time = new DateTime (0);
 			blockTurn = 0;
+			this.enabled = false;
 		}
 	}
 

@@ -73,13 +73,13 @@ public class Projectile : MonoBehaviour {
 
 			if (col.gameObject.GetComponent<InfectionRaycast> () != null)
 			{
+				col.gameObject.GetComponent<InfectionRaycast> ().enabled = true;
 				col.gameObject.GetComponent<InfectionRaycast> ().CreateImmunity();
-
-			
 			}
 			else if(col.gameObject.transform.parent)
 			{
 				if (col.gameObject.transform.parent.GetComponent<InfectionRaycast> () != null) {
+					col.gameObject.GetComponent<InfectionRaycast> ().enabled = true;
 					col.gameObject.transform.parent.GetComponent<InfectionRaycast> ().CreateImmunity ();
 				}
 			}
