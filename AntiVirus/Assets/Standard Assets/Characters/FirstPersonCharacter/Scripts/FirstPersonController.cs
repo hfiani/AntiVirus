@@ -13,8 +13,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
-        [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
-        [SerializeField] private float m_BaseJumpSpeed;
+		[SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
+		[SerializeField] private float m_BaseJumpSpeed;
+		[SerializeField] private float m_JumpTimeStop;
 		[SerializeField] private float m_JumpChargeCoeff;
 		private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -89,7 +90,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
         }
 
-
         // Update is called once per frameh
         private void Update()
         {
@@ -97,18 +97,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 			if (!m_Jumping && m_CharacterController.isGrounded)
 			{
-				if (CrossPlatformInputManager.GetButtonDown ("Jump")) {
-
+				if (CrossPlatformInputManager.GetButtonDown ("Jump"))
+				{
 					jumpTimer = Time.time;
 				}
 			}
 
             // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump && m_CharacterController.isGrounded)
-            {
-                m_Jump = CrossPlatformInputManager.GetButtonUp("Jump");
-				m_JumpSpeed = m_BaseJumpSpeed *(1 + m_JumpChargeCoeff * jumpCurve.Evaluate (Mathf.Clamp(Time.time-jumpTimer,0f,1f)));
-            }
+			if (!m_Jump && m_CharacterController.isGrounded)
+			{
+				m_Jump = CrossPlatformInputManager.GetButtonDown ("Jump");
+			}
+			else if (m_Jumping && !m_CharacterController.isGrounded)
+			{
+				if ((Time.time - jumpTimer) > m_JumpTimeStop || CrossPlatformInputManager.GetButtonUp ("Jump"))
+				{
+					m_Jumping = false;
+				}
+				else
+				{
+					//m_JumpSpeed = m_BaseJumpSpeed * (1 + m_JumpChargeCoeff * jumpCurve.Evaluate (Mathf.Clamp (Time.time - jumpTimer, 0f, 1f)));
+					float time_step = jumpCurve.Evaluate ((Time.time - jumpTimer) / m_JumpTimeStop);
+					m_JumpSpeed = Mathf.Lerp (m_BaseJumpSpeed, 0, time_step);
+				}
+			}
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
@@ -126,15 +138,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
-
-        private void PlayLandingSound()
-        {
-            m_AudioSource.clip = m_LandSound;
-            m_AudioSource.PlayOneShot(m_AudioSource.clip, movementVolume);
-            m_NextStep = m_StepCycle + .5f;
-        }
-
-
         private void FixedUpdate()
         {
             float speed;
@@ -151,8 +154,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
-			//Debug.Log (m_CharacterController.isGrounded);
-
             if (m_CharacterController.isGrounded)
             {
                 m_MoveDir.y = -m_StickToGroundForce;
@@ -168,6 +169,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             else
             {
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
+				if (m_Jumping)
+				{
+					m_MoveDir.y += m_JumpSpeed;
+				}
             }
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
@@ -175,15 +180,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
-        }
+		}
 
+		private void OnTriggerEnter(Collider c)
+		{
+			if (m_Jumping)
+			{
+				m_Jumping = false;
+				m_JumpSpeed = 0;
+				m_MoveDir.y = 0;
+			}
+		}
+
+		private void PlayLandingSound()
+		{
+			m_AudioSource.clip = m_LandSound;
+			m_AudioSource.PlayOneShot(m_AudioSource.clip, movementVolume);
+			m_NextStep = m_StepCycle + .5f;
+		}
 
         private void PlayJumpSound()
         {
             m_AudioSource.clip = m_JumpSound;
 			m_AudioSource.PlayOneShot(m_AudioSource.clip,movementVolume);
         }
-
 
         private void ProgressStepCycle(float speed)
         {
@@ -203,7 +223,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             PlayFootStepAudio();
         }
 
-
         private void PlayFootStepAudio()
         {
             if (!m_CharacterController.isGrounded)
@@ -219,7 +238,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_FootstepSounds[n] = m_FootstepSounds[0];
             m_FootstepSounds[0] = m_AudioSource.clip;
         }
-
 
         private void UpdateCameraPosition(float speed)
         {
@@ -243,7 +261,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             m_Camera.transform.localPosition = newCameraPosition;
         }
-
 
         private void GetInput(out float speed)
         {

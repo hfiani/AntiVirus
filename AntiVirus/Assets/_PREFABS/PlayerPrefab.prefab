@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 54233339139654816}
   - component: {fileID: 82390260445160478}
   - component: {fileID: 82584459774260024}
+  - component: {fileID: 135041145347846436}
   m_Layer: 9
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -467,10 +468,11 @@ MonoBehaviour:
   m_WalkSpeed: 10
   m_RunSpeed: 14
   m_RunstepLenghten: 0.7
-  m_BaseJumpSpeed: 10
+  m_BaseJumpSpeed: 5
+  m_JumpTimeStop: 1
   m_JumpChargeCoeff: 2
   m_StickToGroundForce: 0.5
-  m_GravityMultiplier: 2
+  m_GravityMultiplier: 5
   m_MouseLook:
     XSensitivity: 1
     YSensitivity: 1
@@ -550,8 +552,8 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 3.331673
+      outSlope: 3.331673
       tangentMode: 0
     - serializedVersion: 2
       time: 1
@@ -569,6 +571,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1214238177022476}
   m_Enabled: 1
+--- !u!135 &135041145347846436
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1557756155657518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!143 &143068660596176380
 CharacterController:
   m_ObjectHideFlags: 1

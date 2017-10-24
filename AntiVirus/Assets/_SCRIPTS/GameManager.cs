@@ -157,6 +157,7 @@ public class GameManager : MonoBehaviour
 		gameIsOver = true;
 		gameOverTimer = Time.time;
 		ShowGameOver ();
+		GameManager.Level--;
 		//SceneManager.LoadScene ("gameover");
 	}
 
@@ -194,7 +195,6 @@ public class GameManager : MonoBehaviour
 
 	public void ShowGameOver()
 	{
-
 		playerIsActive = false;
 		playerRespawning = false;
 		UI.SetCrosshair (false);
