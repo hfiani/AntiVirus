@@ -122,5 +122,10 @@ public class WaveController : MonoBehaviour
 		}
 		return shortestDistance;
 	}
+
+	public List<GameObject> GetViruses()
+	{
+		return virusList;
+	}
 	#endregion
 }

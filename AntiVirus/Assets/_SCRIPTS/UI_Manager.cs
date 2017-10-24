@@ -65,9 +65,9 @@ public class UI_Manager : MonoBehaviour {
 		GameObject text_level = _startScreen.transform.GetChild (0).gameObject;
 		text_level.GetComponent<Text> ().text = _textLevel.Replace ("{1}", (++GameManager.Level).ToString());
 
-        GameObject text_level2 = _startScreen.transform.GetChild(1).gameObject;
-        text_level2.GetComponent<Text>().text = text_level.GetComponent<Text>().text;
-    }
+		GameObject text_level2 = _startScreen.transform.GetChild(1).gameObject;
+		text_level2.GetComponent<Text>().text = text_level.GetComponent<Text>().text;
+	}
 
 	public void SetStartScreen(bool state) {
 		_startScreen.SetActive (state);

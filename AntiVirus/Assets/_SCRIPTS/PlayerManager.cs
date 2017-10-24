@@ -24,7 +24,6 @@ public class PlayerManager : MonoBehaviour
 	public bool usePixelation = false;
 	#endregion
 
-
 	#region private variables
 	private bool isShooting = false;
 	private float timer;
@@ -32,7 +31,6 @@ public class PlayerManager : MonoBehaviour
 	private float _maxEnergy = 100.0f;
 	private UI_Manager UI;
 	private AudioSource Audio;
-
 
 	private float speedOriginValue;
 
@@ -91,10 +89,12 @@ public class PlayerManager : MonoBehaviour
 			if (c.GetComponent<NPCInfection> ().infected)
 			{
 				BuffSpeed (0.2f, 2);
+				BuffEnergy (0);
 			}
 			else
 			{
 				BuffSpeed (5, 1);
+				BuffEnergy (100);
 			}
 		}
 	}
@@ -118,6 +118,11 @@ public class PlayerManager : MonoBehaviour
 		_buffDuration = duration * 1000;
 		_buffEnabled = true;
 	}
+
+	public void BuffEnergy(int setToPercentage)
+	{
+		_energy = _maxEnergy * setToPercentage / 100;
+	}
 	#endregion
 
 	#region private functions
@@ -133,8 +138,6 @@ public class PlayerManager : MonoBehaviour
 
 		Audio.PlayOneShot (_ShootingSound, _ShootingVolume);
 	}
-
-
 
 	void changeWalkingSpeed()
 	{
