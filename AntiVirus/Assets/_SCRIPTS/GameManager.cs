@@ -128,6 +128,7 @@ public class GameManager : MonoBehaviour
 		UI.SetRespawnScreen (false);
 		UI.SetCrosshair (true);
 		UI.SetEnergyBar (true);
+		UI.SetCompass (true);
 
 		if (Player != null) {
 			Destroy (Player.gameObject);

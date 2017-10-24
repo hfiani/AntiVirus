@@ -445,13 +445,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  _screen: {fileID: 0}
   _resoCurve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  usePixelation: 0
 --- !u!114 &114915860186093510
 MonoBehaviour:
   m_ObjectHideFlags: 1

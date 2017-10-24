@@ -16,6 +16,7 @@ public class UI_Manager : MonoBehaviour {
 	public GameObject _startScreen = null;
 	public GameObject _gameOverScreen = null;
 	public GameObject _crosshair = null;
+	public GameObject _compass = null;
 	#endregion
 
 	#region events
@@ -41,6 +42,7 @@ public class UI_Manager : MonoBehaviour {
 		_respawnScreen.SetActive (false);
 		_crosshair.SetActive (false);
 		_gameOverScreen.SetActive (false);
+		_compass.SetActive (false);
 	}
 
 
@@ -71,6 +73,10 @@ public class UI_Manager : MonoBehaviour {
 	public void SetCrosshair(bool state) {
 
 		_crosshair.SetActive (state);
+	}
+	public void SetCompass(bool state) {
+
+		_compass.SetActive (state);
 	}
 	public void SetGameOverScreen(bool state) {
 
