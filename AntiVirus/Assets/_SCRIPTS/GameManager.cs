@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 	public AudioClip DeathSound;
 	public AudioClip SpawnSound;
 	public float RespawnDelay = 4.0f;
+	public float GameOverDelay = 4.0f;
 	public float StartLevelDelay = 2.0f;
 	#endregion
 
@@ -26,13 +27,16 @@ public class GameManager : MonoBehaviour
 	private GameObject Player;
 	private GameObject PlayerGhost;
 	private float respawnTimer;
+	private float gameOverTimer;
 	private float startLevelTimer;
 	private bool playerIsActive;
 	private bool playerRespawning = false;
+	private bool gameIsOver = false;
 	private bool levelHasStarted = false;
 	private UI_Manager UI;
 	private GameObject LevelMusic;
 	private GameObject StartCamera;
+	private GameObject Objective;
 	private WaveController WC;
 	#endregion
 
@@ -43,6 +47,7 @@ public class GameManager : MonoBehaviour
 		UI = GameObject.FindGameObjectWithTag ("UI_Controller").GetComponent<UI_Manager> ();
 		WC = GetComponent<WaveController> ();
 
+		Objective = GameObject.FindGameObjectWithTag ("Objective");
 		LevelMusic = GameObject.FindGameObjectWithTag ("Music");
 		StartCamera = GameObject.FindGameObjectWithTag ("StartCamera");
 
@@ -61,6 +66,10 @@ public class GameManager : MonoBehaviour
 
 		if (playerRespawning && Time.time - respawnTimer > RespawnDelay) {
 			SpawnPlayer ();
+		}
+
+		if (gameIsOver && Time.time - gameOverTimer > GameOverDelay) {
+			SceneManager.LoadScene ("gameover");
 		}
 
 		if (!levelHasStarted && Time.time - startLevelTimer > StartLevelDelay) {
@@ -140,7 +149,15 @@ public class GameManager : MonoBehaviour
 	#region public functions
 	public void GameOver()
 	{
+		if (gameIsOver) {
+			return;
+		}
 		Debug.Log ("Game Over");
+		UI.SetGameOverScreen (true);
+		gameIsOver = true;
+		gameOverTimer = Time.time;
+		ShowGameOver ();
+		//SceneManager.LoadScene ("gameover");
 	}
 
 	public void CheckForVictory ()
@@ -160,15 +177,45 @@ public class GameManager : MonoBehaviour
 		UI.SetCrosshair (false);
 		UI.SetEnergyBar (false);
 
+		if (Player) {
+			Destroy (Player.gameObject);
+		}
+
 		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
 		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (PlayerSpawn, RespawnDelay);
 
 		//LevelMusic.GetComponent<AudioSource> ().Stop ();
 		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);
 
-		Destroy (Player.gameObject);
+
 
 		TriggerRespawn ();
+	}
+
+	public void ShowGameOver()
+	{
+
+		playerIsActive = false;
+		playerRespawning = false;
+		UI.SetCrosshair (false);
+		UI.SetEnergyBar (false);
+
+		if (Player) {
+			Destroy (Player.gameObject);
+		}
+		if (PlayerGhost) {
+			Destroy (PlayerGhost.gameObject);
+		}
+	
+
+		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
+		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (Objective, GameOverDelay);
+
+		//LevelMusic.GetComponent<AudioSource> ().Stop ();
+		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);
+
+		Destroy (Player.gameObject);
+
 	}
 		
 	public Vector3 GetPlayerPosition()

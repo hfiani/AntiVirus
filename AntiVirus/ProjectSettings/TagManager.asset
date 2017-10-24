@@ -8,6 +8,8 @@ TagManager:
   - UI_Controller
   - Music
   - StartCamera
+  - NPC
+  - Objective
   layers:
   - Default
   - TransparentFX

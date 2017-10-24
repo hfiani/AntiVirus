@@ -77,9 +77,11 @@ public class Projectile : MonoBehaviour {
 
 			
 			}
-			else if(col.gameObject.transform.parent.GetComponent<InfectionRaycast> () != null)
+			else if(col.gameObject.transform.parent)
 			{
-				col.gameObject.transform.parent.GetComponent<InfectionRaycast> ().CreateImmunity();
+				if (col.gameObject.transform.parent.GetComponent<InfectionRaycast> () != null) {
+					col.gameObject.transform.parent.GetComponent<InfectionRaycast> ().CreateImmunity ();
+				}
 			}
 
 			isAlive = false;
