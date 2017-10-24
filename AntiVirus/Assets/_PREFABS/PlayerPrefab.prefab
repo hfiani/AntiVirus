@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 54233339139654816}
   - component: {fileID: 82390260445160478}
   - component: {fileID: 82584459774260024}
+  - component: {fileID: 135041145347846436}
   m_Layer: 9
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -431,8 +432,8 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.5
-      value: 1
+      time: 0.30390787
+      value: 0.9935748
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -445,6 +446,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  _resoCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  usePixelation: 0
 --- !u!114 &114915860186093510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -460,10 +468,11 @@ MonoBehaviour:
   m_WalkSpeed: 10
   m_RunSpeed: 14
   m_RunstepLenghten: 0.7
-  m_BaseJumpSpeed: 10
+  m_BaseJumpSpeed: 2.5
+  m_JumpTimeStop: 0.75
   m_JumpChargeCoeff: 2
   m_StickToGroundForce: 0.5
-  m_GravityMultiplier: 2
+  m_GravityMultiplier: 2.5
   m_MouseLook:
     XSensitivity: 1
     YSensitivity: 1
@@ -536,21 +545,27 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f8b2d66d4023f754d958c73586af6904, type: 3}
   m_JumpSound: {fileID: 8300000, guid: e1849995e87877845bb9941105954c01, type: 3}
   m_LandSound: {fileID: 8300000, guid: c39a5a4e08ce34b42a87226d890bb600, type: 3}
-  movementVolume: 0.75
+  movementVolume: 0.6
   jumpCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0
+      time: -0.00092697144
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 5.72072
+      outSlope: 5.72072
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.26622754
+      value: 0.6928621
+      inSlope: 0.81091934
+      outSlope: 0.81091934
       tangentMode: 0
     - serializedVersion: 2
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 1.0717083
+      outSlope: 1.0717083
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -562,6 +577,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1214238177022476}
   m_Enabled: 1
+--- !u!135 &135041145347846436
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1557756155657518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0.99, z: 0}
 --- !u!143 &143068660596176380
 CharacterController:
   m_ObjectHideFlags: 1

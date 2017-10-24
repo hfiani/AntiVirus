@@ -17,6 +17,7 @@ public class WaveController : MonoBehaviour
 	private float virusSpawnTimer;
 	private bool waveHasStarted = false;
 	private List<int> freeSpawnerIndexes = new List<int>();
+	private List<GameObject> virusList = new List<GameObject> ();
 	#endregion
 
 	#region events
@@ -61,7 +62,7 @@ public class WaveController : MonoBehaviour
 		int index = freeSpawnerIndexes [r];
 
 		GameObject virus = Instantiate (VirusPrefab, VirusSpawners.transform.GetChild(index).position, Quaternion.identity);
-
+		virusList.Add (virus);
 		// add virus to its spawner
 		virus.transform.parent = VirusSpawners.transform.GetChild (index);
 
@@ -104,6 +105,22 @@ public class WaveController : MonoBehaviour
 		{
 			virusNumberKilled = value;
 		}
+	}
+
+	public void removeVirusFromList(GameObject virus){
+		virusList.Remove (virus);
+	}
+
+	public float getDistanceFromClosestVirus(Vector3 reference){
+		float shortestDistance=99999.0f;
+		for (int i = 0; i < virusList.Count; i++) {
+
+			float dist = Vector3.Distance (reference, virusList [i].transform.position);
+			if (dist < shortestDistance) {
+				shortestDistance = dist;
+			}
+		}
+		return shortestDistance;
 	}
 	#endregion
 }

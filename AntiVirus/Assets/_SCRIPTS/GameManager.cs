@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
 	void StartLevel()
 	{
 		UI.SetStartScreen (false);
-		StartCamera.SetActive (false);
+		StartCamera.GetComponent<AudioListener> ().enabled = false;
 
 		SpawnPlayer ();
 
@@ -128,6 +128,7 @@ public class GameManager : MonoBehaviour
 		UI.SetRespawnScreen (false);
 		UI.SetCrosshair (true);
 		UI.SetEnergyBar (true);
+		UI.SetCompass (true);
 
 		if (Player != null) {
 			Destroy (Player.gameObject);
@@ -153,10 +154,12 @@ public class GameManager : MonoBehaviour
 			return;
 		}
 		Debug.Log ("Game Over");
+		UI.HideAll ();
 		UI.SetGameOverScreen (true);
 		gameIsOver = true;
 		gameOverTimer = Time.time;
 		ShowGameOver ();
+		GameManager.Level--;
 		//SceneManager.LoadScene ("gameover");
 	}
 
@@ -170,16 +173,17 @@ public class GameManager : MonoBehaviour
 
 	public void PlayerDeath()
 	{
-
+		if (!playerIsActive) {
+			return;
+		}
 		Debug.Log ("Player Death");
 		
 		playerIsActive = false;
 		UI.SetCrosshair (false);
 		UI.SetEnergyBar (false);
 
-		if (Player) {
-			Destroy (Player.gameObject);
-		}
+		Destroy (Player.gameObject);
+
 
 		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
 		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (PlayerSpawn, RespawnDelay);
@@ -187,28 +191,22 @@ public class GameManager : MonoBehaviour
 		//LevelMusic.GetComponent<AudioSource> ().Stop ();
 		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);
 
-
-
 		TriggerRespawn ();
 	}
 
 	public void ShowGameOver()
 	{
-
 		playerIsActive = false;
 		playerRespawning = false;
-		UI.SetCrosshair (false);
-		UI.SetEnergyBar (false);
+	
 
 		if (Player) {
 			Destroy (Player.gameObject);
-		}
-		if (PlayerGhost) {
-			Destroy (PlayerGhost.gameObject);
+			PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
 		}
 	
 
-		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
+
 		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (Objective, GameOverDelay);
 
 		//LevelMusic.GetComponent<AudioSource> ().Stop ();

@@ -16,6 +16,7 @@ public class UI_Manager : MonoBehaviour {
 	public GameObject _startScreen = null;
 	public GameObject _gameOverScreen = null;
 	public GameObject _crosshair = null;
+	public GameObject _compass = null;
 	#endregion
 
 	#region events
@@ -41,6 +42,7 @@ public class UI_Manager : MonoBehaviour {
 		_respawnScreen.SetActive (false);
 		_crosshair.SetActive (false);
 		_gameOverScreen.SetActive (false);
+		_compass.SetActive (false);
 	}
 
 
@@ -62,7 +64,10 @@ public class UI_Manager : MonoBehaviour {
 	public void SetLevelText() {
 		GameObject text_level = _startScreen.transform.GetChild (0).gameObject;
 		text_level.GetComponent<Text> ().text = _textLevel.Replace ("{1}", (++GameManager.Level).ToString());
-	}
+
+        GameObject text_level2 = _startScreen.transform.GetChild(1).gameObject;
+        text_level2.GetComponent<Text>().text = text_level.GetComponent<Text>().text;
+    }
 
 	public void SetStartScreen(bool state) {
 		_startScreen.SetActive (state);
@@ -71,6 +76,10 @@ public class UI_Manager : MonoBehaviour {
 	public void SetCrosshair(bool state) {
 
 		_crosshair.SetActive (state);
+	}
+	public void SetCompass(bool state) {
+
+		_compass.SetActive (state);
 	}
 	public void SetGameOverScreen(bool state) {
 

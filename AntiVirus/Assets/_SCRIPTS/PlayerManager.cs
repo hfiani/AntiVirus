@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -18,6 +19,9 @@ public class PlayerManager : MonoBehaviour
 	public float _ShootingVolume=1.0f;
 
 	public AnimationCurve speedCurve;
+
+	public AnimationCurve _resoCurve;
+	public bool usePixelation = false;
 	#endregion
 
 
@@ -29,6 +33,7 @@ public class PlayerManager : MonoBehaviour
 	private UI_Manager UI;
 	private AudioSource Audio;
 
+
 	private float speedOriginValue;
 
 	private float _buffFactor;
@@ -36,14 +41,30 @@ public class PlayerManager : MonoBehaviour
 	private DateTime _buffTime;
 	private bool _buffEnabled;
 	private FirstPersonController FPS;
+	private WaveController WC;
+	private RawImage _screen = null;
+	private Camera _cam = null;
+	private RenderTexture[] _ScreenTexture = new RenderTexture[100];
 	#endregion
 
 	#region events
 	// do not use, use init() instead
 	void Start ()
 	{
+		WC =  GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController>();
+
+
 		FPS = GetComponent<FirstPersonController> ();
 		speedOriginValue = FPS.WalkingSpeed;
+		if (usePixelation) {
+			_screen = GameObject.FindGameObjectWithTag ("Screen").GetComponent<RawImage> ();
+			_cam = transform.GetChild (0).GetComponent<Camera> ();
+			GenerateRenderTextures ();
+			AdaptTexture (); 
+		}
+		else {
+			//_screen.gameObject.SetActive (false);
+		}
 	}
 
 	// Update is called once per frame
@@ -52,6 +73,10 @@ public class PlayerManager : MonoBehaviour
 		if (Input.GetMouseButton (0) && Time.time - timer > _FireDelay && _energy > 10.0f)
 		{
 			Shoot ();
+		}
+
+		if (usePixelation) {
+			AdaptTexture ();
 		}
 
 		EnergyUpdate (_EnergyRegen*Time.deltaTime);
@@ -109,6 +134,8 @@ public class PlayerManager : MonoBehaviour
 		Audio.PlayOneShot (_ShootingSound, _ShootingVolume);
 	}
 
+
+
 	void changeWalkingSpeed()
 	{
 		if (_buffEnabled)
@@ -142,6 +169,57 @@ public class PlayerManager : MonoBehaviour
 		}
 
 		UI.UpdateEnergyBar (_energy/_maxEnergy);
+	}
+
+	void GenerateRenderTextures(){
+
+		int n = 100;
+
+		for (int i = 0; i < n; i++) {
+
+			int resolution = 4+(int)(800*_resoCurve.Evaluate ((float)i/(n-1)));
+
+			RenderTexture tex = new RenderTexture(resolution,resolution,24);
+			tex.filterMode = FilterMode.Point;
+			tex.antiAliasing = 2;
+
+			_ScreenTexture [i] = tex;
+		}
+	}
+
+	void AdaptTexture(){
+
+
+		float pixelDist = 25.0f;
+		float distToVirus = WC.getDistanceFromClosestVirus (this.gameObject.transform.position);
+		int index = (int)Mathf.Clamp01((int)(distToVirus/pixelDist));
+
+		if (distToVirus < pixelDist) {
+
+			RenderTexture tex = new RenderTexture (128, 128, 24);
+			tex.filterMode = FilterMode.Point;
+			tex.antiAliasing = 2;
+
+			_screen.texture = tex;
+			_cam.targetTexture = tex;
+
+		} else {
+
+			RenderTexture tex = new RenderTexture (1024, 1024, 24);
+			tex.filterMode = FilterMode.Point;
+			tex.antiAliasing = 2;
+
+			_screen.texture = tex;
+			_cam.targetTexture = tex;
+
+
+		}
+
+
+		//_cam.targetTexture = _ScreenTexture[index];
+		//_camGun.targetTexture = _ScreenTexture[index];
+
+
 	}
 	#endregion
 }
