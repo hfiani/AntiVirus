@@ -13,6 +13,8 @@ public class InfectionRaycast : MonoBehaviour
 	#region public variables
 	public AnimationCurve speedCurve;
 
+	public Material materialImmune;
+
 	public float epsilon = 0.001f;
 	public float distance = 0.03f;
 
@@ -85,6 +87,15 @@ public class InfectionRaycast : MonoBehaviour
 			ChangeMaterial(Resources.Load<Material>("Materials/mat_cube - uninfectable"));
 		}
 
+		// check all valid directions
+		for (int i = 0; i < directions.Length; i++)
+		{
+			if (GetNeighbourBlocks (directions [i], distance) == null)
+			{
+				directions [i] = Vector3.zero;
+			}
+		}
+
 		ResetDirections ();
 		GameManager.TotalBlocks++;
 	}
@@ -92,28 +103,31 @@ public class InfectionRaycast : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (repairing)
+		if (repairing || infected || immune || repair_immune)
 		{
-			float duration_repaired = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
+			if (repairing)
+			{
+				float duration_repaired = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
 
-			RepairNeighbours (duration_repaired);
-		}
-		else if (infected)
-		{
-			float duration_infected = (float)(DateTime.Now - infection_time).TotalMilliseconds;
+				RepairNeighbours (duration_repaired);
+			}
+			else if (infected)
+			{
+				float duration_infected = (float)(DateTime.Now - infection_time).TotalMilliseconds;
 
-			ManageSelfInfection (duration_infected);
-			InfectNeighbours (duration_infected);
-		}
-		else if (immune)
-		{
-			float duration_immuned = (float)(DateTime.Now - immunity_time).TotalMilliseconds;
-			CheckImmunity (duration_immuned, timeToRemoveImmunity);
-		}
-		else if (repair_immune)
-		{
-			float duration_repair_immuned = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
-			CheckImmunity (duration_repair_immuned, timeToRemoveRepairImmunity);
+				ManageSelfInfection (duration_infected);
+				InfectNeighbours (duration_infected);
+			}
+			else if (immune)
+			{
+				float duration_immuned = (float)(DateTime.Now - immunity_time).TotalMilliseconds;
+				CheckImmunity (duration_immuned, timeToRemoveImmunity);
+			}
+			else if (repair_immune)
+			{
+				float duration_repair_immuned = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
+				CheckImmunity (duration_repair_immuned, timeToRemoveRepairImmunity);
+			}
 		}
 	}
 	#endregion
@@ -127,7 +141,10 @@ public class InfectionRaycast : MonoBehaviour
 		directions_per_turn.Clear ();
 		foreach (Vector3 direction in directions)
 		{
-			directions_per_turn.Add (direction);
+			if (direction == Vector3.zero)
+			{
+				directions_per_turn.Add (direction);
+			}
 		}
 	}
 
@@ -168,17 +185,19 @@ public class InfectionRaycast : MonoBehaviour
 	/// <param name="color">Color.</param>
 	void ChangeColor(Transform trans, Vector3 color)
 	{
-		if (trans.GetComponent<MeshRenderer> () != null)
+		MeshRenderer meshrenderer = trans.GetComponent<MeshRenderer> ();
+		if (meshrenderer != null)
 		{
-			trans.gameObject.GetComponent<MeshRenderer> ().materials [0].color = new Color (color.x, color.y, color.z);
+			meshrenderer.materials [0].color = new Color (color.x, color.y, color.z);
 		}
 		for (int i = 0; i < trans.childCount; i++)
 		{
 			GameObject child = trans.GetChild (i).gameObject;
-			if (child.GetComponent<MeshRenderer> ())
+			meshrenderer = child.GetComponent<MeshRenderer> ();
+			if (meshrenderer != null)
 			{
 				matBlock.SetColor("_Color", new Color(color.x, color.y, color.z));
-				child.GetComponent<MeshRenderer> ().SetPropertyBlock(matBlock);
+				meshrenderer.SetPropertyBlock(matBlock);
 				//child.GetComponent<MeshRenderer> ().materials [0].color = new Color (color.x, color.y, color.z);
 			}
 		}
@@ -190,17 +209,18 @@ public class InfectionRaycast : MonoBehaviour
 	/// <param name="mat">Mat.</param>
 	void ChangeMaterial(Material mat)
 	{
-
-		if (transform.GetComponent<MeshRenderer> () != null)
+		MeshRenderer meshrenderer = transform.GetComponent<MeshRenderer> ();
+		if (meshrenderer != null)
 		{
-			transform.gameObject.GetComponent<MeshRenderer> ().material = mat;
+			meshrenderer.material = mat;
 		}
 		for (int i = 0; i < transform.childCount; i++)
 		{
 			GameObject child = transform.GetChild (i).gameObject;
-			if (child.GetComponent<MeshRenderer> () != null)
+			meshrenderer = child.GetComponent<MeshRenderer> ();
+			if (meshrenderer != null)
 			{
-				child.GetComponent<MeshRenderer> ().material = mat;
+				meshrenderer.material = mat;
 			}
 		}
 	}
@@ -211,15 +231,17 @@ public class InfectionRaycast : MonoBehaviour
 	/// <returns>The material.</returns>
 	Material GetMaterial()
 	{
-		if (transform.GetComponent<MeshRenderer> () != null)
+		MeshRenderer meshrenderer = transform.GetComponent<MeshRenderer> ();
+		if (meshrenderer != null)
 		{
-			return transform.gameObject.GetComponent<MeshRenderer> ().material;
+			return meshrenderer.material;
 		}
 
 		GameObject child = transform.GetChild (0).gameObject;
-		if (child.GetComponent<MeshRenderer> () != null)
+		meshrenderer = child.GetComponent<MeshRenderer> ();
+		if (meshrenderer != null)
 		{
-			return child.GetComponent<MeshRenderer> ().material;
+			return meshrenderer.material;
 		}
 		return null;
 	}
@@ -274,9 +296,10 @@ public class InfectionRaycast : MonoBehaviour
 				foreach (Vector3 direction in directions)
 				{
 					Transform t = GetNeighbourBlocks (direction, distance);
-					if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
+					InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
+					if (t != null && r != null)
 					{
-						t.gameObject.GetComponent<InfectionRaycast> ().CreateInfection (start_infection_time);
+						r.CreateInfection (start_infection_time);
 					}
 				}
 			}
@@ -289,9 +312,10 @@ public class InfectionRaycast : MonoBehaviour
 			{
 				Vector3 direction = GetDirection ();
 				Transform t = GetNeighbourBlocks (direction, distance);
-				if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
+				InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
+				if (t != null && r != null)
 				{
-					t.gameObject.GetComponent<InfectionRaycast> ().CreateInfection (start_infection_time);
+					r.CreateInfection (start_infection_time);
 				}
 				last_check_infection_time = DateTime.Now;
 			}
@@ -309,9 +333,10 @@ public class InfectionRaycast : MonoBehaviour
 			foreach (Vector3 direction in directions)
 			{
 				Transform t = GetNeighbourBlocks (direction, distance);
-				if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
+				InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
+				if (t != null && r != null)
 				{
-					t.gameObject.GetComponent<InfectionRaycast> ().RepairInfection ();
+					r.RepairInfection ();
 				}
 			}
 		}
@@ -321,9 +346,10 @@ public class InfectionRaycast : MonoBehaviour
 			{
 				Vector3 direction = GetDirection ();
 				Transform t = GetNeighbourBlocks (direction, distance);
-				if (t != null && t.gameObject.GetComponent<InfectionRaycast> () != null)
+				InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
+				if (t != null && r != null)
 				{
-					t.gameObject.GetComponent<InfectionRaycast> ().RepairInfection ();
+					r.RepairInfection ();
 				}
 				blockTurn++;
 			}
@@ -409,7 +435,7 @@ public class InfectionRaycast : MonoBehaviour
 
 			immune = true;
 			repair_immune = false;
-			ChangeMaterial(Resources.Load<Material>("Materials/mat_cube - immune"));
+			ChangeMaterial(materialImmune);
 			immunity_time = DateTime.Now;
 		}
 	}
@@ -442,7 +468,7 @@ public class InfectionRaycast : MonoBehaviour
 			infected = false;
 			repairing = true;
 			repair_immune = true;
-			ChangeMaterial(Resources.Load<Material>("Materials/mat_cube - immune"));
+			ChangeMaterial(materialImmune);
 			reparation_time = DateTime.Now;
 			blockTurn = 0;
 			ResetDirections ();

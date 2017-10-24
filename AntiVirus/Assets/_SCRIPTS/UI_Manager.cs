@@ -10,9 +10,9 @@ public class UI_Manager : MonoBehaviour {
 	private List<GameObject> _virusCanvasList = new List<GameObject>();
 	private WaveController WC;
 	private GameObject _player;
-	private float _fov;
-	private float _compassWidth;
-	private GameObject _virus;
+	private float _fov = -1;
+	private float _compassWidth = -1;
+	private GameObject _virus = null;
 	#endregion
 
 	#region public variables
@@ -32,15 +32,12 @@ public class UI_Manager : MonoBehaviour {
 		WC = GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController> ();
 		_energyBarHeight = _energyBar.GetComponent<RectTransform>(). rect.height;
 		_energyBarWidth = _energyBar.GetComponent<RectTransform>(). rect.width;
-
-		_compassWidth = GameObject.Find("CompassBase").GetComponent<RectTransform> ().rect.width;
-		_virus = GameObject.Find ("Virus");
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		//MoveCompass ();
+		MoveCompass ();
 	}
 	#endregion
 
@@ -57,18 +54,30 @@ public class UI_Manager : MonoBehaviour {
 
 	void MoveCompass()
 	{
-		if (_player == null)
+		if (_player == null ||
+		   _fov == -1 ||
+		   _compassWidth == -1 ||
+		   _virus == null)
 		{
-			_player = GameObject.FindGameObjectWithTag ("Player");
-			return;
-		}
+			if (_player == null)
+			{
+				_player = GameObject.FindGameObjectWithTag ("Player");
+			}
 
-		if (Camera.main != null && _fov == -1)
-		{
-			_fov = Camera.main.fieldOfView * 2; // here it is half the visible angle
-		}
-		else if(Camera.main == null)
-		{
+			if (Camera.main != null && _fov == -1)
+			{
+				_fov = Camera.main.fieldOfView * 2; // here it is half the visible angle
+			}
+
+			if (_compassWidth == -1 && GameObject.Find ("CompassBase") != null && GameObject.Find ("CompassBase").GetComponent<RectTransform> () != null)
+			{
+				_compassWidth = GameObject.Find ("CompassBase").GetComponent<RectTransform> ().rect.width;
+			}
+
+			if (GameObject.Find ("Virus") != null)
+			{
+				_virus = GameObject.Find ("Virus");
+			}
 			return;
 		}
 
