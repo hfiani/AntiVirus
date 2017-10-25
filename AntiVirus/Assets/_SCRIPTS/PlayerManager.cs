@@ -65,12 +65,14 @@ public class PlayerManager : MonoBehaviour
 		FPS = GetComponent<FirstPersonController> ();
 
 		speedOriginValue = FPS.WalkingSpeed;
-		if (usePixelation) {
+		if (usePixelation)
+		{
 			_screen = GameObject.FindGameObjectWithTag ("Screen").GetComponent<RawImage> ();
 			GenerateRenderTextures ();
 			AdaptTexture (); 
 		}
-		else {
+		else
+		{
 			//_screen.gameObject.SetActive (false);
 		}
 	}
@@ -78,6 +80,10 @@ public class PlayerManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if (GameManager.Restart)
+		{
+			EnergyUpdate (_maxEnergy);
+		}
 		if (Input.GetMouseButton (0) && Time.time - timer > _FireDelay && _energy > 10.0f)
 		{
 			Shoot ();
