@@ -61,6 +61,8 @@ public class InfectionRaycast : MonoBehaviour
 		Vector3.forward, Vector3.back
 	};
 	private ArrayList directions_per_turn = new ArrayList();
+	private ArrayList neighbours = new ArrayList();
+	private ArrayList neighbours_per_turn = new ArrayList();
 	#endregion
 
 	#region events
@@ -94,21 +96,22 @@ public class InfectionRaycast : MonoBehaviour
 
 		original_material = GetMaterial();
 
-		if (blockType == BlockType.UNDESTRUCTABLE_UNINFECTABLE)
-		{
-			ChangeMaterial(Resources.Load<Material>("Materials/mat_cube - uninfectable"));
-		}
-
 		// check all valid directions
 		for (int i = 0; i < directions.Length; i++)
 		{
-			if (GetNeighbourBlocks (directions [i], distance) == null)
+			Transform neighbour = GetNeighbourBlocks (directions [i], distance);
+			if (neighbour == null)
 			{
 				directions [i] = Vector3.zero;
 			}
+			else
+			{
+				neighbours.Add (neighbour.gameObject);
+			}
 		}
 
-		ResetDirections ();
+		//ResetDirections ();
+		ResetNeighbours ();
 		GameManager.TotalBlocks++;
 		this.enabled = false;
 	}
@@ -179,6 +182,39 @@ public class InfectionRaycast : MonoBehaviour
 		}
 
 		return direction;
+	}
+
+	/// <summary>
+	/// Resets the neighbours.
+	/// </summary>
+	void ResetNeighbours()
+	{
+		neighbours_per_turn.Clear ();
+		foreach (GameObject neighbour in neighbours)
+		{
+			if (neighbour != null)
+			{
+				neighbours_per_turn.Add (neighbour);
+			}
+		}
+	}
+
+	/// <summary>
+	/// Gets the neighbour.
+	/// </summary>
+	/// <returns>The neighbour.</returns>
+	GameObject GetNeighbour()
+	{
+		int rand_index = UnityEngine.Random.Range (0, neighbours_per_turn.Count);
+		GameObject neighbour = (GameObject)neighbours_per_turn [rand_index];
+
+		neighbours_per_turn.RemoveAt (rand_index);
+		if (neighbours_per_turn.Count == 0)
+		{
+			ResetNeighbours ();
+		}
+
+		return neighbour;
 	}
 
 	/// <summary>
@@ -280,7 +316,8 @@ public class InfectionRaycast : MonoBehaviour
 			{
 				foreach (Vector3 direction in directions)
 				{
-					Transform t = GetNeighbourBlocks (direction, distance);
+					//Transform t = GetNeighbourBlocks (direction, distance);
+					Transform t = GetNeighbour ().transform;
 					if (t != null)
 					{
 						InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
@@ -298,8 +335,9 @@ public class InfectionRaycast : MonoBehaviour
 		
 			if (duration_infected > timeToInfection && duration_infected - (last_check_infection_time - infection_time).TotalMilliseconds >= Mathf.Lerp(timeBetweenInfectionsMin, timeBetweenInfectionsMax, time_step))
 			{
-				Vector3 direction = GetDirection ();
-				Transform t = GetNeighbourBlocks (direction, distance);
+				/*Vector3 direction = GetDirection ();
+				Transform t = GetNeighbourBlocks (direction, distance);*/
+				Transform t = GetNeighbour ().transform;
 				if (t != null)
 				{
 					InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
@@ -323,7 +361,8 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			foreach (Vector3 direction in directions)
 			{
-				Transform t = GetNeighbourBlocks (direction, distance);
+				//Transform t = GetNeighbourBlocks (direction, distance);
+				Transform t = GetNeighbour ().transform;
 				if (t != null)
 				{
 					InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
@@ -338,8 +377,9 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			if (duration_repaired >= timeBetweenReparations * blockTurn && blockTurn < directions.Length)
 			{
-				Vector3 direction = GetDirection ();
-				Transform t = GetNeighbourBlocks (direction, distance);
+				/*Vector3 direction = GetDirection ();
+				Transform t = GetNeighbourBlocks (direction, distance);*/
+				Transform t = GetNeighbour ().transform;
 				if (t != null)
 				{
 					InfectionRaycast r = t.gameObject.GetComponent<InfectionRaycast> ();
@@ -470,7 +510,8 @@ public class InfectionRaycast : MonoBehaviour
 			ChangeMaterial(materialImmune);
 			reparation_time = DateTime.Now;
 			blockTurn = 0;
-			ResetDirections ();
+			//ResetDirections ();
+			ResetNeighbours ();
 			this.enabled = true;
 		}
 	}

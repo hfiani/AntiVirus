@@ -144,10 +144,6 @@ MonoBehaviour:
   RespawnDelay: 3
   GameOverDelay: 4
   StartLevelDelay: 4
-  LevelMusic: {fileID: 0}
-  StartCamera: {fileID: 1930474781922196, guid: acf35131b9aa355439ae79dabd12b9cb,
-    type: 2}
-  Objective: {fileID: 1339695917829294, guid: 2968b473ebc69d840bf0fc3ea20bdc70, type: 2}
   WC: {fileID: 114513342876871722}
 --- !u!114 &114513342876871722
 MonoBehaviour:

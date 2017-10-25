@@ -6,7 +6,6 @@ public class WaveController : MonoBehaviour
 {
 	#region public variables
 	public GameObject VirusPrefab;
-
 	public float VirusSpawnDelay = 10.0f;
 	public int VirusNumber = 1;
 	#endregion
@@ -26,9 +25,8 @@ public class WaveController : MonoBehaviour
 	void Start ()
 	{
 		VirusSpawners = GameObject.FindGameObjectWithTag ("VirusSpawner");
-		
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
