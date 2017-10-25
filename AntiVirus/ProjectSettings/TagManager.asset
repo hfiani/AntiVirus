@@ -11,6 +11,8 @@ TagManager:
   - NPC
   - Objective
   - Screen
+  - PlayerSpawner
+  - VirusSpawner
   layers:
   - Default
   - TransparentFX

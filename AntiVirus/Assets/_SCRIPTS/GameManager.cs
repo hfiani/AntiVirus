@@ -17,20 +17,21 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject GhostPlayerPrefab;
 	[SerializeField] private int LevelMax = 5;
 
-	[SerializeField] private GameObject PlayerSpawn;
+
 	[SerializeField] private AudioClip DeathSound;
 	[SerializeField] private AudioClip SpawnSound;
 	[SerializeField] private float RespawnDelay = 4.0f;
 	[SerializeField] private float GameOverDelay = 4.0f;
 	[SerializeField] private float StartLevelDelay = 2.0f;
 
-	[SerializeField] private GameObject LevelMusic;
-	[SerializeField] private GameObject StartCamera;
-	[SerializeField] private GameObject Objective;
 	[SerializeField] private WaveController WC;
 	#endregion
 
 	#region private variables
+	private GameObject PlayerSpawn;
+	private GameObject LevelMusic;
+	private GameObject StartCamera;
+	private GameObject Objective;
 	private UI_Manager UI;
 	private GameObject PlayerGhost;
 	private GameObject Player;
@@ -51,11 +52,12 @@ public class GameManager : MonoBehaviour
 		UI = GameObject.FindGameObjectWithTag ("UI_Controller").GetComponent<UI_Manager> ();
 		//WC = GetComponent<WaveController> ();
 
-		//Objective = GameObject.FindGameObjectWithTag ("Objective");
-		//LevelMusic = GameObject.FindGameObjectWithTag ("Music");
-		//StartCamera = GameObject.FindGameObjectWithTag ("StartCamera");
+		Objective = GameObject.FindGameObjectWithTag ("Objective");
+		LevelMusic = GameObject.FindGameObjectWithTag ("Music");
+		StartCamera = GameObject.FindGameObjectWithTag ("StartCamera");
+		PlayerSpawn = GameObject.FindGameObjectWithTag ("PlayerSpawner");
 
-		LevelMusic.GetComponent<AudioSource> ().PlayDelayed(0);
+		LevelMusic.GetComponent<AudioSource> ().Play();
 
 		startLevelTimer = Time.time;
 

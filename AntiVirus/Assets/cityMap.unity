@@ -11734,12 +11734,12 @@ Prefab:
     - target: {fileID: 224616634770523862, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 403.5
+      value: 452.5
       objectReference: {fileID: 0}
     - target: {fileID: 224616634770523862, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 227
+      value: 254.5
       objectReference: {fileID: 0}
     - target: {fileID: 224616634770523862, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
@@ -11828,7 +11828,7 @@ Prefab:
     - target: {fileID: 224466808640490554, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 540.07434
+      value: 539.9337
       objectReference: {fileID: 0}
     - target: {fileID: 224210006954042636, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}

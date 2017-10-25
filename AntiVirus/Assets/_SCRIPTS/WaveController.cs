@@ -6,12 +6,13 @@ public class WaveController : MonoBehaviour
 {
 	#region public variables
 	public GameObject VirusPrefab;
-	public GameObject VirusSpawners;
+
 	public float VirusSpawnDelay = 10.0f;
 	public int VirusNumber = 1;
 	#endregion
 
 	#region private variables
+	private GameObject VirusSpawners;
 	private int virusNumberKilled;
 	private int virusNumberRemaining;
 	private float virusSpawnTimer;
@@ -24,6 +25,7 @@ public class WaveController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		VirusSpawners = GameObject.FindGameObjectWithTag ("VirusSpawner");
 		
 	}
 	
