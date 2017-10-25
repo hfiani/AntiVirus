@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
 	#region public static variables
 	public static int Level = 0;
+	public static bool Restart = false;
 	public static int InfectedBlocks = 0;
 	public static int TotalBlocks = 0;
 	#endregion
@@ -57,14 +58,9 @@ public class GameManager : MonoBehaviour
 		StartCamera = GameObject.FindGameObjectWithTag ("StartCamera");
 		PlayerSpawn = GameObject.FindGameObjectWithTag ("PlayerSpawner");
 
-		LevelMusic.GetComponent<AudioSource> ().Play();
+		LevelMusic.GetComponent<AudioSource> ().Play ();
 
-		startLevelTimer = Time.time;
-
-		UI.HideAll ();
-
-		UI.SetStartScreen (true);
-		UI.SetLevelText ();
+		RestartLevel ();
 	}
 	
 	// Update is called once per frame
@@ -90,7 +86,7 @@ public class GameManager : MonoBehaviour
 
 	void OnGUI()
 	{
-		GUI.TextArea(new Rect(50, 50, 100, 30), (100 * InfectedBlocks / TotalBlocks).ToString() + "%");
+		GUI.TextArea(new Rect(50, 50, 100, 30), (100 * InfectedBlocks / TotalBlocks).ToString() + "% - " + InfectedBlocks.ToString() + "/" + TotalBlocks.ToString());
 	}
 	#endregion
 
@@ -109,9 +105,26 @@ public class GameManager : MonoBehaviour
 		WC.SetVirusParameters (virusSpawnDelay, virusNumber);
 		WC.StartWave ();
 
+		Restart = false;
+
 		//virusSpawnTimer = Time.time;
 
 		//SpawnVirusAtRandomSpawner ();
+	}
+
+	void RestartLevel()
+	{
+		UI.HideAll ();
+
+		UI.SetStartScreen (true);
+		UI.SetLevelText ();
+
+		levelHasStarted = false;
+		startLevelTimer = Time.time;
+
+		InfectedBlocks = 0;
+		WC.VirusNumberKilled = 0;
+		WC.VirusNumber = 0;
 	}
 
 	void TriggerRespawn()
@@ -176,7 +189,7 @@ public class GameManager : MonoBehaviour
 		gameIsOver = true;
 		gameOverTimer = Time.time;
 		ShowGameOver ();
-		GameManager.Level--;
+		Level--;
 		//SceneManager.LoadScene ("gameover");
 	}
 
@@ -190,7 +203,9 @@ public class GameManager : MonoBehaviour
 			}
 			else
 			{
-				SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+				//SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+				Restart = true;
+				RestartLevel();
 			}
 		}
 	}

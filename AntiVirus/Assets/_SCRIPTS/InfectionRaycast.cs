@@ -116,11 +116,13 @@ public class InfectionRaycast : MonoBehaviour
 		this.enabled = false;
 	}
 
-
-	
 	// Update is called once per frame
 	void Update ()
 	{
+		if (GameManager.Restart)
+		{
+			RemoveImmunity ();
+		}
 		if (repairing || infected || immune || repair_immune)
 		{
 			if (repairing)
@@ -279,7 +281,7 @@ public class InfectionRaycast : MonoBehaviour
 				//Destroy (gameObject);
 				gameObject.layer = 11;
 				ChangeMaterial(materialInfectionGhost);
-				this.enabled = false;
+				//this.enabled = false;
 			}
 			else if (blockType == BlockType.UNDESTRUCTABLE_INFECTABLE)
 			{
@@ -459,6 +461,10 @@ public class InfectionRaycast : MonoBehaviour
 			infection_time = new DateTime (0);
 			blockTurn = 0;
 			GameManager.InfectedBlocks--;
+			if (GameManager.InfectedBlocks <= 0)
+			{
+				GameManager.InfectedBlocks = 0;
+			}
 		}
 	}
 
