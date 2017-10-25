@@ -419,33 +419,38 @@ MonoBehaviour:
     type: 2}
   _FireDelay: 0.1
   _ShootingCost: 10
-  _EnergyRegen: 25
+  _BaseEnergyRegen: 25
+  _BuffedEnergyRegen: 50
+  _DebuffedEnergyRegen: 0
   _ShootingSound: {fileID: 8300000, guid: 94fdabeba88a6194ab7f2e190eb060e5, type: 3}
   _ShootingVolume: 0.15
-  speedCurve:
+  buffSpeedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0
-      value: 0
+      time: -0.0018463135
+      value: 0.4988098
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.30390787
-      value: 0.9935748
-      inSlope: 0
-      outSlope: 0
+      time: 0.29886156
+      value: 0.9976456
+      inSlope: -0.009316718
+      outSlope: -0.009316718
       tangentMode: 0
     - serializedVersion: 2
-      time: 1
-      value: 0
+      time: 0.99816895
+      value: -0.00642395
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  buffDuration: 4
+  buffMaxSpeed: 2.5
+  debuffMaxSpeed: 0.33
   _resoCurve:
     serializedVersion: 2
     m_Curve: []
@@ -465,7 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 10
+  m_WalkSpeed: 14
   m_RunSpeed: 14
   m_RunstepLenghten: 0.7
   m_BaseJumpSpeed: 2.5

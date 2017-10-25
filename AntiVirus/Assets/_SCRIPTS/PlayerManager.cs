@@ -13,12 +13,17 @@ public class PlayerManager : MonoBehaviour
 
 	public float _FireDelay = 0.2f;
 	public float _ShootingCost = 1.0f;
-	public float _EnergyRegen = 1.0f;
+	public float _BaseEnergyRegen = 1.0f;
+	public float _BuffedEnergyRegen = 50.0f;
+	public float _DebuffedEnergyRegen = 0.0f;
 
 	public AudioClip _ShootingSound;
 	public float _ShootingVolume=1.0f;
 
-	public AnimationCurve speedCurve;
+	public AnimationCurve buffSpeedCurve;
+	public float buffDuration = 2.0f;
+	public float buffMaxSpeed = 3.0f;
+	public float debuffMaxSpeed = 0.33f;
 
 	public AnimationCurve _resoCurve;
 	public bool usePixelation = false;
@@ -26,9 +31,12 @@ public class PlayerManager : MonoBehaviour
 
 	#region private variables
 	private bool isShooting = false;
+	private bool isBuffed = false;
+	private bool isDebuffed = false;
 	private float timer;
 	private float _energy = 0.0f;
 	private float _maxEnergy = 100.0f;
+	private float _EnergyRegen;
 	private UI_Manager UI;
 	private AudioSource Audio;
 
@@ -79,7 +87,7 @@ public class PlayerManager : MonoBehaviour
 
 		EnergyUpdate (_EnergyRegen*Time.deltaTime);
 
-		changeWalkingSpeed ();
+		ManageBuff ();
 	}
 
 	void OnTriggerEnter(Collider c)
@@ -88,13 +96,23 @@ public class PlayerManager : MonoBehaviour
 		{
 			if (c.GetComponent<NPCInfection> ().infected)
 			{
-				BuffSpeed (0.2f, 2);
-				BuffEnergy (0);
+				BuffSpeed (debuffMaxSpeed, buffDuration);
+				EnergyUpdate (0);
+				_EnergyRegen = _DebuffedEnergyRegen;
+				isDebuffed = true;
+				isBuffed = false;
+				UI.SetBuffText (false);
+				UI.SetDeBuffText (true);
 			}
 			else
 			{
-				BuffSpeed (5, 1);
-				BuffEnergy (100);
+				BuffSpeed (buffMaxSpeed, buffDuration);
+				EnergyUpdate (_maxEnergy);
+				_EnergyRegen = _BuffedEnergyRegen;
+				isDebuffed = false;
+				isBuffed = true;
+				UI.SetBuffText (true);
+				UI.SetDeBuffText (false);
 			}
 		}
 	}
@@ -107,7 +125,7 @@ public class PlayerManager : MonoBehaviour
 		this.gameObject.SetActive (true);
 		UI = GameObject.FindGameObjectWithTag ("UI_Controller").GetComponent<UI_Manager> ();
 		Audio = GetComponents<AudioSource>()[1];
-
+		_EnergyRegen = _BaseEnergyRegen;
 		EnergyUpdate (_maxEnergy);
 	}
 
@@ -119,10 +137,7 @@ public class PlayerManager : MonoBehaviour
 		_buffEnabled = true;
 	}
 
-	public void BuffEnergy(int setToPercentage)
-	{
-		_energy = _maxEnergy * setToPercentage / 100;
-	}
+
 	#endregion
 
 	#region private functions
@@ -139,13 +154,13 @@ public class PlayerManager : MonoBehaviour
 		Audio.PlayOneShot (_ShootingSound, _ShootingVolume);
 	}
 
-	void changeWalkingSpeed()
+	void ManageBuff()
 	{
 		if (_buffEnabled)
 		{
 			if ((DateTime.Now - _buffTime).TotalMilliseconds < _buffDuration)
 			{
-				float time_step = speedCurve.Evaluate ((float)(DateTime.Now - _buffTime).TotalMilliseconds / _buffDuration);
+				float time_step = buffSpeedCurve.Evaluate ((float)(DateTime.Now - _buffTime).TotalMilliseconds / _buffDuration);
 
 				float factorNow = Mathf.Lerp (1, _buffFactor, time_step);
 				FPS.WalkingSpeed = speedOriginValue * factorNow;
@@ -153,6 +168,11 @@ public class PlayerManager : MonoBehaviour
 			else
 			{
 				_buffEnabled = false;
+				isDebuffed = false;
+				isBuffed = false;
+				_EnergyRegen = _BaseEnergyRegen;
+				UI.SetBuffText (false);
+				UI.SetDeBuffText (false);
 			}
 		}
 	}

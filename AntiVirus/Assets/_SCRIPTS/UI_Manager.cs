@@ -25,6 +25,8 @@ public class UI_Manager : MonoBehaviour {
 	public GameObject _gameOverScreen = null;
 	public GameObject _crosshair = null;
 	public GameObject _compass = null;
+	public GameObject _bufftext = null;
+	public GameObject _debufftext = null;
 	#endregion
 
 	#region events
@@ -55,7 +57,11 @@ public class UI_Manager : MonoBehaviour {
 		_crosshair.SetActive (false);
 		_gameOverScreen.SetActive (false);
 		_compass.SetActive (false);
+		_bufftext.SetActive (false);
+		_debufftext.SetActive (false);
 	}
+
+
 
 	void MoveCompass()
 	{
@@ -192,6 +198,12 @@ public class UI_Manager : MonoBehaviour {
 	public void SetGameOverScreen(bool state) {
 
 		_gameOverScreen.SetActive (state);
+	}
+	public void SetBuffText(bool state){
+		_bufftext.SetActive (state);
+	}
+	public void SetDeBuffText(bool state){
+		_debufftext.SetActive (state);
 	}
 	#endregion
 }
