@@ -38,6 +38,11 @@ public class WaveController : MonoBehaviour
 
 			virusSpawnTimer = Time.time;
 		}
+
+		if (GameManager.Restart)
+		{
+			RemoveViruses ();
+		}
 	}
 	#endregion
 
@@ -93,6 +98,15 @@ public class WaveController : MonoBehaviour
 		VirusSpawnDelay = virusSpawnDelay;
 		VirusNumber = virusNumber;
 		virusNumberRemaining = virusNumber;
+	}
+
+	public void RemoveViruses()
+	{
+		foreach (GameObject virus in virusList)
+		{
+			Destroy (virus);
+		}
+		virusList.Clear ();
 	}
 
 	public int VirusNumberKilled

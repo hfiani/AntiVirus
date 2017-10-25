@@ -23,6 +23,7 @@ public class UI_Manager : MonoBehaviour {
 	[SerializeField] private GameObject _respawnScreen = null;
 	[SerializeField] private GameObject _startScreen = null;
 	[SerializeField] private GameObject _gameOverScreen = null;
+	[SerializeField] private GameObject _gameOverRetryScreen = null;
 	[SerializeField] private GameObject _crosshair = null;
 	[SerializeField] private GameObject _compass = null;
 	[SerializeField] private string _textLevel = "LEVEL {1} STARTING ...";
@@ -79,6 +80,7 @@ public class UI_Manager : MonoBehaviour {
 		_respawnScreen.SetActive (false);
 		_crosshair.SetActive (false);
 		_gameOverScreen.SetActive (false);
+		_gameOverRetryScreen.SetActive (false);
 		_compass.SetActive (false);
 		_bufftext.SetActive (false);
 		_debufftext.SetActive (false);
@@ -232,8 +234,15 @@ public class UI_Manager : MonoBehaviour {
 
 	public void SetGameOverScreen(bool state)
 	{
-
 		_gameOverScreen.SetActive (state);
+	}
+
+	public void SetGameOverRetryScreen(bool state)
+	{
+		_gameOverRetryScreen.SetActive (state);
+
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
 	}
 
 	public void SetBuffText(bool state)

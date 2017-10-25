@@ -64,17 +64,21 @@ public class GameManager : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
-		if (playerRespawning && Time.time - respawnTimer > RespawnDelay) {
+	void Update ()
+	{
+		if (playerRespawning && Time.time - respawnTimer > RespawnDelay)
+		{
 			SpawnPlayer ();
 		}
 
-		if (gameIsOver && Time.time - gameOverTimer > GameOverDelay) {
-			SceneManager.LoadScene ("gameover");
+		if (gameIsOver && Time.time - gameOverTimer > GameOverDelay)
+		{
+			//SceneManager.LoadScene ("gameover");
+			UI.SetGameOverRetryScreen(true);
 		}
 
-		if (!levelHasStarted && Time.time - startLevelTimer > StartLevelDelay) {
+		if (!levelHasStarted && Time.time - startLevelTimer > StartLevelDelay)
+		{
 			StartLevel();
 		}
 
@@ -112,21 +116,6 @@ public class GameManager : MonoBehaviour
 		//SpawnVirusAtRandomSpawner ();
 	}
 
-	void RestartLevel()
-	{
-		UI.HideAll ();
-
-		UI.SetStartScreen (true);
-		UI.SetLevelText ();
-
-		levelHasStarted = false;
-		startLevelTimer = Time.time;
-
-		InfectedBlocks = 0;
-		WC.VirusNumberKilled = 0;
-		WC.VirusNumber = 0;
-	}
-
 	void TriggerRespawn()
 	{
 
@@ -149,10 +138,12 @@ public class GameManager : MonoBehaviour
 		UI.SetEnergyBar (true);
 		UI.SetCompass (true);
 
-		if (Player != null) {
+		if (Player != null)
+		{
 			Destroy (Player.gameObject);
 		}
-		if (PlayerGhost != null) {
+		if (PlayerGhost != null)
+		{
 			Destroy (PlayerGhost.gameObject);
 		}
 
@@ -161,12 +152,37 @@ public class GameManager : MonoBehaviour
 
 		// add some text & sound ...
 
-
 		GetComponent<AudioSource> ().PlayOneShot (SpawnSound,1.0f);
 	}
 	#endregion
 
 	#region public functions
+	public void RestartLevel()
+	{
+		Restart = true;
+		gameIsOver = false;
+		if (PlayerGhost != null)
+		{
+			Destroy (PlayerGhost.gameObject);
+		}
+
+		UI.HideAll ();
+		UI.SetGameOverScreen (false);
+		UI.SetStartScreen (true);
+		UI.SetLevelText ();
+
+		levelHasStarted = false;
+		startLevelTimer = Time.time;
+
+		StartCamera.GetComponent<AudioListener> ().enabled = true;
+		InfectedBlocks = 0;
+		WC.VirusNumberKilled = 0;
+		WC.VirusNumber = 0;
+
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+	}
+
 	public void GameWon()
 	{
 		if (gameIsWon)
@@ -204,7 +220,6 @@ public class GameManager : MonoBehaviour
 			else
 			{
 				//SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
-				Restart = true;
 				RestartLevel();
 			}
 		}
@@ -237,7 +252,8 @@ public class GameManager : MonoBehaviour
 		playerIsActive = false;
 		playerRespawning = false;
 
-		if (Player) {
+		if (Player)
+		{
 			Destroy (Player.gameObject);
 			PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
 		}
@@ -248,7 +264,6 @@ public class GameManager : MonoBehaviour
 		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);
 
 		Destroy (Player.gameObject);
-
 	}
 
 	public Vector3 GetPlayerPosition()

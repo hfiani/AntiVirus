@@ -40,8 +40,6 @@ public class VirusManager : MonoBehaviour
 	#endregion
 
 	#region events
-
-
 	// Use this for initialization
 	void Start ()
 	{
@@ -77,6 +75,35 @@ public class VirusManager : MonoBehaviour
 		}
 	}
 
+	void OnTriggerEnter(Collider col)
+	{
+		// infect when land on ground
+		if (col.gameObject.GetComponent<InfectionRaycast> () != null && !hasLanded && isAlive)
+		{
+			col.gameObject.GetComponent<InfectionRaycast> ().enabled = true;
+			//col.gameObject.GetComponent<InfectionRaycast> ().Init ();
+			col.gameObject.GetComponent<InfectionRaycast> ().RemoveImmunity();
+			col.gameObject.GetComponent<InfectionRaycast> ().CreateInfection(DateTime.Now);
+			firstInfectedBlock = col.gameObject;
+
+			OnLanding ();
+		}
+
+		// take damage when hit by player's projectile
+		if (col.gameObject.GetComponent<Projectile> () != null && isAlive)
+		{
+			updateHealth (-1*damageTakenPerProjectile);
+		}
+
+		// kill player on contact
+		if (col.gameObject.CompareTag("Player") && isAlive)
+		{
+			GM.PlayerDeath ();
+		}
+	}
+	#endregion
+
+	#region private functions
 	void updateHealth(float value)
 	{
 		health += value;
@@ -120,16 +147,6 @@ public class VirusManager : MonoBehaviour
 		}
 	}
 
-	public Color GetCurrentBaseColor()
-	{
-		return currentBaseColor;
-	}
-
-	public Color GetCurrentEmiColor()
-	{
-		return currentEmiColor;
-	}
-
 	void OnLanding()
 	{
 		hasLanded = true;
@@ -165,32 +182,17 @@ public class VirusManager : MonoBehaviour
 		WC.removeVirusFromList (this.gameObject);
 		Destroy (gameObject);
 	}
+	#endregion
 
-	void OnTriggerEnter(Collider col)
+	#region public region
+	public Color GetCurrentBaseColor()
 	{
-		// infect when land on ground
-		if (col.gameObject.GetComponent<InfectionRaycast> () != null && !hasLanded && isAlive)
-		{
-			col.gameObject.GetComponent<InfectionRaycast> ().enabled = true;
-			//col.gameObject.GetComponent<InfectionRaycast> ().Init ();
-			col.gameObject.GetComponent<InfectionRaycast> ().RemoveImmunity();
-			col.gameObject.GetComponent<InfectionRaycast> ().CreateInfection(DateTime.Now);
-			firstInfectedBlock = col.gameObject;
+		return currentBaseColor;
+	}
 
-			OnLanding ();
-		}
-
-		// take damage when hit by player's projectile
-		if (col.gameObject.GetComponent<Projectile> () != null && isAlive)
-		{
-			updateHealth (-1*damageTakenPerProjectile);
-		}
-
-		// kill player on contact
-		if (col.gameObject.CompareTag("Player") && isAlive)
-		{
-			GM.PlayerDeath ();
-		}
+	public Color GetCurrentEmiColor()
+	{
+		return currentEmiColor;
 	}
 	#endregion
 }

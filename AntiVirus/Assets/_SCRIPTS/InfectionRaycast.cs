@@ -121,6 +121,7 @@ public class InfectionRaycast : MonoBehaviour
 	{
 		if (GameManager.Restart)
 		{
+			RemoveInfection ();
 			RemoveImmunity ();
 		}
 		if (repairing || infected || immune || repair_immune)
