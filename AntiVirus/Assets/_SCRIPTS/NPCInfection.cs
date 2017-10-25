@@ -24,7 +24,7 @@ public class NPCInfection : MonoBehaviour
 	void Start ()
 	{
 		timeToDeinfection *= 1000;
-		_originalMaterial = transform.GetChild (0).GetComponent<MeshRenderer> ().material;
+		_originalMaterial = transform.GetChild (0).GetComponent<MeshRenderer> ().sharedMaterial;
 	}
 	
 	// Update is called once per frame
@@ -82,6 +82,7 @@ public class NPCInfection : MonoBehaviour
 			if (child.GetComponent<MeshRenderer> () != null)
 			{
 				child.GetComponent<MeshRenderer> ().material = mat;
+				child.GetComponent<GlowAnimation> ().UpdateEmiColor ();
 			}
 		}
 	}

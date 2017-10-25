@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 33182818737686432}
   - component: {fileID: 65379851394034304}
   - component: {fileID: 23169429074950336}
+  - component: {fileID: 114752766725748814}
+  - component: {fileID: 114563145861996346}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -94,7 +96,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e558f3b1d6eb3b144bc2f25b69a302d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -192,6 +194,43 @@ MonoBehaviour:
   walkRadius: 50
   targetPrefab: {fileID: 1916122368054810, guid: 45da08512e7328347acfde7a699a3924,
     type: 2}
+--- !u!114 &114563145861996346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574291542357254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe07c317b5962d4fb316fa95a285863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waveMovement:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.44587573
+      value: 0.9892628
+      inSlope: -0.0064459164
+      outSlope: -0.0064459164
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.9971924
+      value: -0.004283905
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _waveSpeed: 50
+  _waveHeight: 1
 --- !u!114 &114647863687592440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,10 +243,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infected: 0
-  infectionMaterial: {fileID: 2100000, guid: d42d9ec7bcbbaeb4a8dcc58787f09f59, type: 2}
+  infectionMaterial: {fileID: 2100000, guid: 41c0e1daffe41904bbd4b59c8b89588f, type: 2}
   epsilon: 1
   distance: 0.5
-  timeToDeinfection: 10
+  timeToDeinfection: 5
 --- !u!114 &114733884860115530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,6 +266,44 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 1
+--- !u!114 &114752766725748814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574291542357254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _AnimSpeed: 100
+  _EmiColorCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.5
+      value: 1
+      inSlope: -0.09746556
+      outSlope: -0.09746556
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.99902344
+      value: 0.0021400452
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _MinEmiIntensity: 0.25
+  _MaxEmiIntensity: 1.25
 --- !u!114 &114987300232704810
 MonoBehaviour:
   m_ObjectHideFlags: 1

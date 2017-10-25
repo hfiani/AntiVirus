@@ -23,8 +23,8 @@ public class GlowAnimation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		startEmiColor = GetComponent<Renderer> ().material.GetColor ("_EmissionColor");
 
+		UpdateEmiColor ();
 		_timer = Random.Range (0f, 1f);
 
 	}
@@ -62,6 +62,11 @@ public class GlowAnimation : MonoBehaviour {
 
 
 		}
+	}
+
+	public void UpdateEmiColor(){
+
+		startEmiColor = GetComponent<Renderer> ().material.GetColor ("_EmissionColor");
 	}
 
 
