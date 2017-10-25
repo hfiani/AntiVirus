@@ -1194,13 +1194,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecf50c57d5e7c24295dfd4aba2aa901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textLevel: LEVEL {1} STARTING ...
+  _virus: {fileID: 1347028070760848}
+  _compassBase: {fileID: 1591151906378068}
+  _objectiveCanvas: {fileID: 1229681906929222}
   _energyBar: {fileID: 1809170212193174}
   _respawnScreen: {fileID: 1784941177926486}
   _startScreen: {fileID: 1948560024396624}
   _gameOverScreen: {fileID: 1012790009949370}
   _crosshair: {fileID: 1396662800531484}
   _compass: {fileID: 1928150742870864}
+  _textLevel: LEVEL {1} STARTING ...
   _bufftext: {fileID: 1592266085842254}
   _debufftext: {fileID: 1018241317153216}
 --- !u!114 &114875096257973046

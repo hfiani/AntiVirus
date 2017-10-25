@@ -8,25 +8,29 @@ public class UI_Manager : MonoBehaviour {
 	#region private variables
 	private float _energyBarWidth, _energyBarHeight;
 	private List<GameObject> _virusCanvasList = new List<GameObject>();
+	private float _compassWidth = -1;
 	private WaveController WC;
+	private GameObject _objective;
 	private GameObject _player;
 	private float _fov = -1;
-	private float _compassWidth = -1;
-	private GameObject _virus = null;
-	private GameObject _objective;
-	private GameObject _objectiveCanvas;
+	#endregion
+
+	#region serialized private variables
+	[SerializeField] private GameObject _virus = null;
+	[SerializeField] private GameObject _compassBase = null;
+	[SerializeField] private GameObject _objectiveCanvas;
+	[SerializeField] private GameObject _energyBar = null;
+	[SerializeField] private GameObject _respawnScreen = null;
+	[SerializeField] private GameObject _startScreen = null;
+	[SerializeField] private GameObject _gameOverScreen = null;
+	[SerializeField] private GameObject _crosshair = null;
+	[SerializeField] private GameObject _compass = null;
+	[SerializeField] private string _textLevel = "LEVEL {1} STARTING ...";
+	[SerializeField] private GameObject _bufftext = null;
+	[SerializeField] private GameObject _debufftext = null;
 	#endregion
 
 	#region public variables
-	public string _textLevel = "LEVEL {1} STARTING ...";
-	public GameObject _energyBar = null;
-	public GameObject _respawnScreen = null;
-	public GameObject _startScreen = null;
-	public GameObject _gameOverScreen = null;
-	public GameObject _crosshair = null;
-	public GameObject _compass = null;
-	public GameObject _bufftext = null;
-	public GameObject _debufftext = null;
 	#endregion
 
 	#region events
@@ -34,17 +38,36 @@ public class UI_Manager : MonoBehaviour {
 	void Start ()
 	{
 		WC = GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController> ();
+		_objective = GameObject.FindGameObjectWithTag ("Objective");
+
 		_energyBarHeight = _energyBar.GetComponent<RectTransform>(). rect.height;
 		_energyBarWidth = _energyBar.GetComponent<RectTransform>(). rect.width;
 
-		_objective = GameObject.FindGameObjectWithTag ("Objective");
-		_objectiveCanvas = GameObject.Find ("Objective");
+		_compassWidth = _compassBase.GetComponent<RectTransform> ().rect.width;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		MoveCompass ();
+	}
+	#endregion
+
+	#region public fields
+	public GameObject Player
+	{
+		set
+		{
+			_player = value;
+		}
+	}
+
+	public float FOV
+	{
+		set
+		{
+			_fov = value;
+		}
 	}
 	#endregion
 
@@ -61,11 +84,9 @@ public class UI_Manager : MonoBehaviour {
 		_debufftext.SetActive (false);
 	}
 
-
-
 	void MoveCompass()
 	{
-		if (_player == null)
+		/*if (_player == null)
 		{
 			_player = GameObject.FindGameObjectWithTag ("Player");
 		}
@@ -76,20 +97,20 @@ public class UI_Manager : MonoBehaviour {
 			{
 				_fov = Camera.main.fieldOfView * 2; // here it is half the visible angle
 			}
-		}
+		}*/
 
-		if (_compassWidth == -1)
+		/*if (_compassWidth == -1)
 		{
 			if (GameObject.Find ("CompassBase") != null && GameObject.Find ("CompassBase").GetComponent<RectTransform> () != null)
 			{
 				_compassWidth = GameObject.Find ("CompassBase").GetComponent<RectTransform> ().rect.width;
 			}
-		}
+		}*/
 
-		if (_virus == null)
+		/*if (_virus == null)
 		{
 			_virus = GameObject.Find ("Virus");
-		}
+		}*/
 
 		/*
 		SetOnCompass (GameObject.Find("North"), Vector3.forward);
@@ -97,6 +118,11 @@ public class UI_Manager : MonoBehaviour {
 		SetOnCompass (GameObject.Find("West"), Vector3.left);
 		SetOnCompass (GameObject.Find("East"), Vector3.right);
 		*/
+
+		if (_player == null)
+		{
+			return;
+		}
 
 		if (_objectiveCanvas != null && _objective != null)
 		{
@@ -160,22 +186,26 @@ public class UI_Manager : MonoBehaviour {
 		}
 	}
 
-	public void UpdateEnergyBar(float percent){
+	public void UpdateEnergyBar(float percent)
+	{
 
 		_energyBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_energyBarWidth * percent,_energyBarHeight);
 	}
 
-	public void SetEnergyBar(bool state){
+	public void SetEnergyBar(bool state)
+	{
 
 		_energyBar.transform.parent.gameObject.SetActive (state);
 	}
 
-	public void SetRespawnScreen(bool state){
+	public void SetRespawnScreen(bool state)
+	{
 
 		_respawnScreen.SetActive (state);
 	}
 
-	public void SetLevelText() {
+	public void SetLevelText()
+	{
 		GameObject text_level = _startScreen.transform.GetChild (0).gameObject;
 		text_level.GetComponent<Text> ().text = _textLevel.Replace ("{1}", (++GameManager.Level).ToString());
 
@@ -183,26 +213,36 @@ public class UI_Manager : MonoBehaviour {
 		text_level2.GetComponent<Text>().text = text_level.GetComponent<Text>().text;
 	}
 
-	public void SetStartScreen(bool state) {
+	public void SetStartScreen(bool state)
+	{
 		_startScreen.SetActive (state);
 	}
 
-	public void SetCrosshair(bool state) {
+	public void SetCrosshair(bool state)
+	{
 
 		_crosshair.SetActive (state);
 	}
-	public void SetCompass(bool state) {
+
+	public void SetCompass(bool state)
+	{
 
 		_compass.SetActive (state);
 	}
-	public void SetGameOverScreen(bool state) {
+
+	public void SetGameOverScreen(bool state)
+	{
 
 		_gameOverScreen.SetActive (state);
 	}
-	public void SetBuffText(bool state){
+
+	public void SetBuffText(bool state)
+	{
 		_bufftext.SetActive (state);
 	}
-	public void SetDeBuffText(bool state){
+
+	public void SetDeBuffText(bool state)
+	{
 		_debufftext.SetActive (state);
 	}
 	#endregion

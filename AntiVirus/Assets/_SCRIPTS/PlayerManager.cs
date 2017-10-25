@@ -29,6 +29,9 @@ public class PlayerManager : MonoBehaviour
 	public bool usePixelation = false;
 	#endregion
 
+	#region serialized private variables
+	#endregion
+
 	#region private variables
 	private bool isShooting = false;
 	private bool isBuffed = false;
@@ -37,19 +40,19 @@ public class PlayerManager : MonoBehaviour
 	private float _energy = 0.0f;
 	private float _maxEnergy = 100.0f;
 	private float _EnergyRegen;
-	private UI_Manager UI;
-	private AudioSource Audio;
-
 	private float speedOriginValue;
-
 	private float _buffFactor;
 	private float _buffDuration;
 	private DateTime _buffTime;
 	private bool _buffEnabled;
+
+	private AudioSource Audio;
 	private FirstPersonController FPS;
 	private WaveController WC;
+	private UI_Manager UI;
 	private RawImage _screen = null;
 	private Camera _cam = null;
+
 	private RenderTexture[] _ScreenTexture = new RenderTexture[100];
 	#endregion
 
@@ -59,12 +62,11 @@ public class PlayerManager : MonoBehaviour
 	{
 		WC =  GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController>();
 
-
 		FPS = GetComponent<FirstPersonController> ();
+
 		speedOriginValue = FPS.WalkingSpeed;
 		if (usePixelation) {
 			_screen = GameObject.FindGameObjectWithTag ("Screen").GetComponent<RawImage> ();
-			_cam = transform.GetChild (0).GetComponent<Camera> ();
 			GenerateRenderTextures ();
 			AdaptTexture (); 
 		}
@@ -124,8 +126,14 @@ public class PlayerManager : MonoBehaviour
 	{
 		this.gameObject.SetActive (true);
 		UI = GameObject.FindGameObjectWithTag ("UI_Controller").GetComponent<UI_Manager> ();
+		_cam = transform.GetChild (0).GetComponent<Camera> ();
 		Audio = GetComponents<AudioSource>()[1];
+
 		_EnergyRegen = _BaseEnergyRegen;
+
+		UI.Player = gameObject;
+		UI.FOV = _cam.fieldOfView * 2; // here it is half the visible angle
+
 		EnergyUpdate (_maxEnergy);
 	}
 
@@ -136,8 +144,6 @@ public class PlayerManager : MonoBehaviour
 		_buffDuration = duration * 1000;
 		_buffEnabled = true;
 	}
-
-
 	#endregion
 
 	#region private functions

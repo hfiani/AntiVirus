@@ -11,36 +11,38 @@ public class InfectionRaycast : MonoBehaviour
 	#endregion
 
 	#region public variables
-	public AnimationCurve speedCurve;
-
-	public Material materialImmune;
-	public Material materialInfectionGhost;
-	public Material materialInfectionFull;
-
-	public float epsilon = 0.001f;
-	public float distance = 0.03f;
-
-	public float timeToDestruction = 10.0f;
-	public float timeToInfection = 2.0f;
-	public float timeBetweenInfectionsMin = 0.5f;
-	public float timeBetweenInfectionsMax = 5.0f;
-	public float timeInfectionStability = 20.0f;
-
-	public float timeToRemoveImmunity = 20.0f;
-	public float timeToRemoveRepairImmunity = 3.0f;
-
-	private float factorRemoveInfection = 4.0f;
-
 	public bool infected = false;
-	public bool immune = false;
-	public bool repair_immune = false;
-	public bool repairing = false;
-	public VirusType virusType = VirusType.ALL_AT_ONCE;
-	public BlockType blockType = BlockType.DESTRUCTABLE_INFECTABLE;
-	public Material[] materialsInfection = new Material[7];
+	#endregion
+
+	#region serialized private variables
+	[SerializeField] private AnimationCurve speedCurve;
+
+	[SerializeField] private Material materialImmune;
+	[SerializeField] private Material materialInfectionGhost;
+	[SerializeField] private Material materialInfectionFull;
+
+	[SerializeField] private float epsilon = 0.001f;
+	[SerializeField] private float distance = 0.03f;
+
+	[SerializeField] private float timeToDestruction = 10.0f;
+	[SerializeField] private float timeToInfection = 2.0f;
+	[SerializeField] private float timeBetweenInfectionsMin = 0.5f;
+	[SerializeField] private float timeBetweenInfectionsMax = 5.0f;
+	[SerializeField] private float timeInfectionStability = 20.0f;
+
+	[SerializeField] private float timeToRemoveImmunity = 20.0f;
+	[SerializeField] private float timeToRemoveRepairImmunity = 3.0f;
+
+	[SerializeField] private bool immune = false;
+	[SerializeField] private bool repair_immune = false;
+	[SerializeField] private bool repairing = false;
+	[SerializeField] private VirusType virusType = VirusType.ALL_AT_ONCE;
+	[SerializeField] private BlockType blockType = BlockType.DESTRUCTABLE_INFECTABLE;
+	[SerializeField] private Material[] materialsInfection = new Material[7];
 	#endregion
 
 	#region private variables
+	private float factorRemoveInfection = 4.0f;
 	private MeshRenderer meshrenderer;
 	private MeshRenderer[] meshrendererchildren; 
 	private Material original_material;
@@ -59,17 +61,12 @@ public class InfectionRaycast : MonoBehaviour
 		Vector3.forward, Vector3.back
 	};
 	private ArrayList directions_per_turn = new ArrayList();
-	private MaterialPropertyBlock matBlock;
 	#endregion
 
 	#region events
-	void Awake(){
-		//this.enabled = false;
-	}
 	// Use this for initialization
 	void Start ()
 	{
-		matBlock = new MaterialPropertyBlock();
 		timeToDestruction *= 1000;
 		timeToInfection *= 1000;
 		timeBetweenInfectionsMin *= 1000;
@@ -422,7 +419,6 @@ public class InfectionRaycast : MonoBehaviour
 			infection_time = new DateTime (0);
 			blockTurn = 0;
 			GameManager.InfectedBlocks--;
-			//this.enabled = false;
 		}
 	}
 

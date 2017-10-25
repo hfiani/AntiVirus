@@ -12,22 +12,28 @@ public class GameManager : MonoBehaviour
 	public static int TotalBlocks = 0;
 	#endregion
 
-	#region public variables
-	public GameObject PlayerPrefab;
-	public GameObject GhostPlayerPrefab;
-	public int LevelMax = 5;
+	#region serialized private variables
+	[SerializeField] private GameObject PlayerPrefab;
+	[SerializeField] private GameObject GhostPlayerPrefab;
+	[SerializeField] private int LevelMax = 5;
 
-	public GameObject PlayerSpawn;
-	public AudioClip DeathSound;
-	public AudioClip SpawnSound;
-	public float RespawnDelay = 4.0f;
-	public float GameOverDelay = 4.0f;
-	public float StartLevelDelay = 2.0f;
+	[SerializeField] private GameObject PlayerSpawn;
+	[SerializeField] private AudioClip DeathSound;
+	[SerializeField] private AudioClip SpawnSound;
+	[SerializeField] private float RespawnDelay = 4.0f;
+	[SerializeField] private float GameOverDelay = 4.0f;
+	[SerializeField] private float StartLevelDelay = 2.0f;
+
+	[SerializeField] private GameObject LevelMusic;
+	[SerializeField] private GameObject StartCamera;
+	[SerializeField] private GameObject Objective;
+	[SerializeField] private WaveController WC;
 	#endregion
 
 	#region private variables
-	private GameObject Player;
+	private UI_Manager UI;
 	private GameObject PlayerGhost;
+	private GameObject Player;
 	private float respawnTimer;
 	private float gameOverTimer;
 	private float startLevelTimer;
@@ -36,11 +42,6 @@ public class GameManager : MonoBehaviour
 	private bool gameIsOver = false;
 	private bool gameIsWon = false;
 	private bool levelHasStarted = false;
-	private UI_Manager UI;
-	private GameObject LevelMusic;
-	private GameObject StartCamera;
-	private GameObject Objective;
-	private WaveController WC;
 	#endregion
 
 	#region events
@@ -48,13 +49,13 @@ public class GameManager : MonoBehaviour
 	void Start ()
 	{
 		UI = GameObject.FindGameObjectWithTag ("UI_Controller").GetComponent<UI_Manager> ();
-		WC = GetComponent<WaveController> ();
+		//WC = GetComponent<WaveController> ();
 
-		Objective = GameObject.FindGameObjectWithTag ("Objective");
-		LevelMusic = GameObject.FindGameObjectWithTag ("Music");
-		StartCamera = GameObject.FindGameObjectWithTag ("StartCamera");
+		//Objective = GameObject.FindGameObjectWithTag ("Objective");
+		//LevelMusic = GameObject.FindGameObjectWithTag ("Music");
+		//StartCamera = GameObject.FindGameObjectWithTag ("StartCamera");
 
-		LevelMusic.GetComponent<AudioSource> ().Play ();
+		LevelMusic.GetComponent<AudioSource> ().PlayDelayed(0);
 
 		startLevelTimer = Time.time;
 

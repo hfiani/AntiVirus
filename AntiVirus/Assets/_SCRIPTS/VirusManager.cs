@@ -7,16 +7,16 @@ public class VirusManager : MonoBehaviour
 {
 
 	#region public variables
-	public bool killPlayerOnContact = true;
-	public bool canDieFromAge = false;
-	public float lifetime = 10.0f;
-	public GameObject redExplosionPrefab = null;
-	public GameObject greenExplosionPrefab = null;
-	public float maxHealth = 100;
-	public float damageTakenPerProjectile = 10;
-	public Color damagedColor;
-	public AudioClip damagedSound;
-	public float damagedVolume;
+	[SerializeField] private bool killPlayerOnContact = true;
+	[SerializeField] private bool canDieFromAge = false;
+	[SerializeField] private float lifetime = 10.0f;
+	[SerializeField] private GameObject redExplosionPrefab = null;
+	[SerializeField] private GameObject greenExplosionPrefab = null;
+	[SerializeField] private float maxHealth = 100;
+	[SerializeField] private float damageTakenPerProjectile = 10;
+	[SerializeField] private Color damagedColor;
+	[SerializeField] private AudioClip damagedSound;
+	[SerializeField] private float damagedVolume;
 	#endregion
 
 	#region private variables
@@ -58,7 +58,6 @@ public class VirusManager : MonoBehaviour
 		currentBaseColor = startBaseColor;
 		currentEmiColor = startEmiColor;
 		health = maxHealth;
-
 	}
 
 	void Update()
