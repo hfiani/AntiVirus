@@ -99,7 +99,7 @@ public class PlayerManager : MonoBehaviour
 			if (c.GetComponent<NPCInfection> ().infected)
 			{
 				BuffSpeed (debuffMaxSpeed, buffDuration);
-				EnergyUpdate (0);
+				EnergyUpdate (-_maxEnergy);
 				_EnergyRegen = _DebuffedEnergyRegen;
 				isDebuffed = true;
 				isBuffed = false;

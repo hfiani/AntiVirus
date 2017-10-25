@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-
 
 public class NPCManager : MonoBehaviour {
 
-	private UnityStandardAssets.Characters.ThirdPerson.AICharacterControl AIC;
+	private CharacterController CC;
 
 	public float destinationChangeDelay = 5.0f;
 	public float walkRadius = 10.0f;
-
+	public float moveSpeed = 10.0f;
 	public GameObject targetPrefab;
 
 	private float timer;
@@ -24,7 +22,7 @@ public class NPCManager : MonoBehaviour {
 
 		timer = Time.time;
 
-		AIC = GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ();
+		CC = GetComponent<CharacterController> ();
 		
 	}
 	
@@ -33,31 +31,31 @@ public class NPCManager : MonoBehaviour {
 
 		if (Time.time - timer > destinationChangeDelay) {
 
-			SetTargetPosition(randomPositionOnNavMesh());
+			SetTargetPosition(randomPosition());
 
 			timer = Time.time;
 		}
-		
-	}
 
-	Vector3 randomPositionOnNavMesh(){
-		
-		Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * walkRadius ;
-	
-		randomDirection += transform.position;
-		NavMeshHit hit;
-		NavMesh.SamplePosition(randomDirection, out hit, walkRadius, 1);
-		Vector3 finalPosition = hit.position;
-
-		return finalPosition;
-
-
+		MoveTowardTarget ();
 
 	}
 
+	Vector3 randomPosition(){
+		
+		Vector2 randomDirection = UnityEngine.Random.insideUnitCircle * walkRadius;
+
+		Vector3 position = new Vector3 (randomDirection.x, transform.position.y, randomDirection.y);
+
+		return position;
+
+	}
+	void MoveTowardTarget(){
+		Vector3 dir = target.transform.position - transform.position;
+		CC.Move (dir.normalized * moveSpeed * Time.deltaTime);
+	}
 	void SetTargetPosition(Vector3 position){
 		target.transform.position = position;
-		AIC.SetTarget (target.transform);
+
 
 	}
 }
