@@ -12,15 +12,22 @@ public class NPCManager : MonoBehaviour {
 	public GameObject targetPrefab;
 
 	private float timer;
+	private Vector3 startPos;
 
 	private GameObject target;
+
+	private bool canMove = false;
+	private float travelTime;
+	private float startY;
 
 	// Use this for initialization
 	void Start () {
 
+		startY = transform.position.y;
+
 		target = Instantiate (targetPrefab, transform.position, Quaternion.identity);
 
-		timer = Time.time;
+		timer = Time.time + Random.Range(0f,destinationChangeDelay);
 
 		CC = GetComponent<CharacterController> ();
 		
@@ -31,7 +38,7 @@ public class NPCManager : MonoBehaviour {
 
 		if (Time.time - timer > destinationChangeDelay) {
 
-			SetTargetPosition(randomPosition());
+			FindTarget();
 
 			timer = Time.time;
 		}
@@ -40,22 +47,56 @@ public class NPCManager : MonoBehaviour {
 
 	}
 
+	void FindTarget(){
+		Vector3 targetPos = transform.position;
+		bool success = false;
+		int max = 50;
+		int k = 0;
+		Vector3 dir;
+		Vector3 pos = transform.position;
+		float dist;
+		do{
+			targetPos = randomPosition();
+			dir = targetPos-transform.position;
+			dist = Vector3.Distance(transform.position,targetPos);
+			Ray ray = new Ray(pos,dir );
+			RaycastHit hit;
+			success = !Physics.Raycast(ray,out hit,dist);
+			travelTime = destinationChangeDelay;
+			if(!success && hit.distance>2.0f){
+				float alpha = Mathf.Clamp(hit.distance/dist,0.33f,0.66f);
+				targetPos = Vector3.Lerp(pos,targetPos,alpha);
+				success = true;
+				travelTime = destinationChangeDelay;
+			}
+
+			k++;
+		}while(!success && k<max);
+		canMove = success;
+		Debug.Log (k);
+		target.transform.position = targetPos;
+		startPos = transform.position;
+	}
+
 	Vector3 randomPosition(){
 		
 		Vector2 randomDirection = UnityEngine.Random.insideUnitCircle * walkRadius;
 
-		Vector3 position = new Vector3 (randomDirection.x, transform.position.y, randomDirection.y);
+		Vector3 position = transform.position + new Vector3 (randomDirection.x, 0, randomDirection.y);
 
 		return position;
 
 	}
 	void MoveTowardTarget(){
-		Vector3 dir = target.transform.position - transform.position;
-		CC.Move (dir.normalized * moveSpeed * Time.deltaTime);
-	}
-	void SetTargetPosition(Vector3 position){
-		target.transform.position = position;
+		if (!canMove) {
+			return;
+		}
+		float alpha = (Time.time - timer) / travelTime;
+
+		transform.position = Vector3.Lerp (startPos, target.transform.position, alpha);
 
 
+
 	}
+
 }

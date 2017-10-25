@@ -51,12 +51,12 @@ public class NPCInfection : MonoBehaviour
 		{
 			Vector3 direction = Vector3.down;
 			RaycastHit hit;
-			BoxCollider b = transform.GetChild(0).GetComponent<BoxCollider> ();
+			BoxCollider b = GetComponent<BoxCollider> ();
 
 			Vector3 ray_localPosition = new Vector3 (
-				direction.x * (transform.localScale.x * transform.GetChild(0).localScale.x * b.size.x / 2 - epsilon),
-				direction.y * (transform.localScale.y * transform.GetChild(0).localScale.y * b.size.y / 2 - epsilon),
-				direction.z * (transform.localScale.z * transform.GetChild(0).localScale.z * b.size.z / 2 - epsilon));
+				direction.x * (transform.localScale.x * b.size.x / 2 - epsilon),
+				direction.y * (transform.localScale.y * b.size.y / 2 - epsilon),
+				direction.z * (transform.localScale.z * b.size.z / 2 - epsilon));
 			Vector3 ray_pos = (transform.position + b.center) + ray_localPosition;
 
 			if (Physics.Raycast (ray_pos, direction, out hit, distance))
