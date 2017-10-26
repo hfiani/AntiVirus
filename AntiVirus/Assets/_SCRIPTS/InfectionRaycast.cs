@@ -65,6 +65,7 @@ public class InfectionRaycast : MonoBehaviour
 	private ArrayList neighbours_per_turn = new ArrayList();
 	private bool isInit = false;
 	private float initTimer;
+
 	#endregion
 
 	#region events
@@ -119,12 +120,14 @@ public class InfectionRaycast : MonoBehaviour
 		GameManager.TotalBlocks++;
 		this.enabled = false;
 
+
+
 	
 
 	}
 	void Start ()
 	{
-		initTimer = Time.time - UnityEngine.Random.Range (0, 1);
+		
 
 
 	}
@@ -142,8 +145,9 @@ public class InfectionRaycast : MonoBehaviour
 			RemoveInfection ();
 			RemoveImmunity ();
 		}
-		if (isInit && (repairing || infected || immune || repair_immune))
+		if (isInit && (repairing || infected || immune || repair_immune) )
 		{
+
 			if (repairing)
 			{
 				float duration_repaired = (float)(DateTime.Now - reparation_time).TotalMilliseconds;

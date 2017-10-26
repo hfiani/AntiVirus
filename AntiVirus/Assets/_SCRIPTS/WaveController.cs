@@ -84,7 +84,7 @@ public class WaveController : MonoBehaviour
 
 		for (int i = 0; i < VirusSpawners.transform.childCount; i++)
 		{
-			if (VirusSpawners.transform.GetChild (i).childCount == 0)
+			if (VirusSpawners.transform.GetChild (i).childCount == 0 && VirusSpawners.transform.GetChild (i).gameObject.activeSelf)
 			{
 				freeSpawnerIndexes.Add (i);
 			}
