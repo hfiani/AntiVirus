@@ -63,12 +63,16 @@ public class InfectionRaycast : MonoBehaviour
 	private ArrayList directions_per_turn = new ArrayList();
 	private ArrayList neighbours = new ArrayList();
 	private ArrayList neighbours_per_turn = new ArrayList();
+	private bool isInit = false;
+	private float initTimer;
 	#endregion
 
 	#region events
 	// Use this for initialization
-	void Start ()
-	{
+	void Init(){
+
+		isInit = true;
+
 		timeToDestruction *= 1000;
 		timeToInfection *= 1000;
 		timeBetweenInfectionsMin *= 1000;
@@ -114,17 +118,31 @@ public class InfectionRaycast : MonoBehaviour
 		ResetNeighbours ();
 		GameManager.TotalBlocks++;
 		this.enabled = false;
+
+	
+
+	}
+	void Start ()
+	{
+		initTimer = Time.time - UnityEngine.Random.Range (0, 1);
+
+
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
+		if (!isInit) {
+			
+			Init ();
+
+		}
 		if (GameManager.Restart)
 		{
 			RemoveInfection ();
 			RemoveImmunity ();
 		}
-		if (repairing || infected || immune || repair_immune)
+		if (isInit && (repairing || infected || immune || repair_immune))
 		{
 			if (repairing)
 			{
@@ -282,7 +300,7 @@ public class InfectionRaycast : MonoBehaviour
 				//Destroy (gameObject);
 				gameObject.layer = 11;
 				ChangeMaterial(materialInfectionGhost);
-				//this.enabled = false;
+				this.enabled = false;
 			}
 			else if (blockType == BlockType.UNDESTRUCTABLE_INFECTABLE)
 			{

@@ -73,7 +73,7 @@ public class NPCManager : MonoBehaviour {
 			k++;
 		}while(!success && k<max);
 		canMove = success;
-		Debug.Log (k);
+		//Debug.Log (k);
 		target.transform.position = targetPos;
 		startPos = transform.position;
 	}

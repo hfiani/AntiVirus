@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/startmenu.unity
     guid: 24951d52325200d46be1a7a301a59b5f
+  - enabled: 0
+    path: Assets/cityMapOld.unity
+    guid: 1290290500a751f40bb7dd0cbe633574
   - enabled: 1
     path: Assets/test_scene.unity
     guid: 4f50599bf135d5b4891535e8c8ed1e78
   - enabled: 1
-    path: Assets/cityMap.unity
-    guid: 1290290500a751f40bb7dd0cbe633574
-  - enabled: 1
     path: Assets/gameover.unity
     guid: a56a056ad657a884f9a6e833793e3234
+  - enabled: 1
+    path: Assets/cityMap.unity
+    guid: b754d8b402831b140b5f39a313120e29
+  - enabled: 1
+    path: Assets/loading.unity
+    guid: 2214f97e3fa72104fa3b5f2ee3da8b48

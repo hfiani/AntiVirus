@@ -39,10 +39,12 @@ public class GameManager : MonoBehaviour
 	private float respawnTimer;
 	private float gameOverTimer;
 	private float startLevelTimer;
+	private float initTimer;
 	private bool playerIsActive;
 	private bool playerRespawning = false;
 	private bool gameIsOver = false;
 	private bool gameIsWon = false;
+	private bool firstTime = false;
 	private bool levelHasStarted = false;
 	#endregion
 
@@ -60,12 +62,18 @@ public class GameManager : MonoBehaviour
 
 		LevelMusic.GetComponent<AudioSource> ().Play ();
 
+		firstTime = true;
+		initTimer = Time.time;
+
 		RestartLevel ();
+
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+
 		if (playerRespawning && Time.time - respawnTimer > RespawnDelay)
 		{
 			SpawnPlayer ();
@@ -87,11 +95,12 @@ public class GameManager : MonoBehaviour
 			CheckForVictory ();
 		}
 	}
-
+	/*
 	void OnGUI()
 	{
 		GUI.TextArea(new Rect(50, 50, 100, 30), (100 * InfectedBlocks / TotalBlocks).ToString() + "% - " + InfectedBlocks.ToString() + "/" + TotalBlocks.ToString());
 	}
+	*/
 	#endregion
 
 	#region private functions
@@ -111,9 +120,6 @@ public class GameManager : MonoBehaviour
 
 		Restart = false;
 
-		//virusSpawnTimer = Time.time;
-
-		//SpawnVirusAtRandomSpawner ();
 	}
 
 	void TriggerRespawn()
@@ -159,11 +165,30 @@ public class GameManager : MonoBehaviour
 	#region public functions
 	public void RestartLevel()
 	{
+		Debug.Log ("RESTART");
+
+		// except at the start of the game, clean all ghostcubes
+		if (firstTime) {
+			firstTime = false;
+		} else {
+			int layerMask = 1 << 11;
+			Vector3 pos = Objective.transform.position;
+			Collider[] cols = Physics.OverlapBox(pos,new Vector3(500,500,500),Quaternion.identity,layerMask);
+			for (int i = 0; i < cols.Length; i++) {
+				cols[i].gameObject.GetComponent<InfectionRaycast>().RemoveInfection ();
+			}
+			Debug.Log ("CLEANING GHOSTS; hits : "+cols.Length);
+		}
+	
 		Restart = true;
 		gameIsOver = false;
 		if (PlayerGhost != null)
 		{
 			Destroy (PlayerGhost.gameObject);
+		}
+		if (Player!= null)
+		{
+			Destroy (Player.gameObject);
 		}
 
 		UI.HideAll ();

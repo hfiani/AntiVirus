@@ -138,7 +138,6 @@ MonoBehaviour:
   GhostPlayerPrefab: {fileID: 1530913379000098, guid: 14d3a697fdbecd544b5e2d8cad4a1a93,
     type: 2}
   LevelMax: 5
-  PlayerSpawn: {fileID: 0}
   DeathSound: {fileID: 8300000, guid: 5736f4214cb637c43a315574ff00ecf2, type: 3}
   SpawnSound: {fileID: 8300000, guid: cba18852fc00a344fae37efcde164aba, type: 3}
   RespawnDelay: 3
@@ -158,6 +157,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VirusPrefab: {fileID: 1889617103755860, guid: 0ad0de3751ad18145a253940df3b7563,
     type: 2}
-  VirusSpawners: {fileID: 0}
-  VirusSpawnDelay: 15
+  VirusSpawnDelay: 20
   VirusNumber: 1

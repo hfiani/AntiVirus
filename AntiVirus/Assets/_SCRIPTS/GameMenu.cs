@@ -19,11 +19,14 @@ public class GameMenu : MonoBehaviour
 
 	public void Retry()
 	{
+		Debug.Log ("retry button");
 		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ().RestartLevel ();
 	}
 
 	public void MainMenu()
 	{
+		Debug.Log ("main menu button");
 		SceneManager.LoadScene ("startmenu");
+
 	}
 }

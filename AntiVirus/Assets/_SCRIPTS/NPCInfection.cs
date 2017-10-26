@@ -58,7 +58,7 @@ public class NPCInfection : MonoBehaviour
 				direction.y * (transform.localScale.y * b.size.y / 2 - epsilon),
 				direction.z * (transform.localScale.z * b.size.z / 2 - epsilon));
 			Vector3 ray_pos = (transform.position + b.center) + ray_localPosition;
-
+			Debug.DrawRay (ray_pos, direction.normalized*distance, Color.red);
 			if (Physics.Raycast (ray_pos, direction, out hit, distance))
 			{
 				GameObject obj = hit.transform.gameObject;
