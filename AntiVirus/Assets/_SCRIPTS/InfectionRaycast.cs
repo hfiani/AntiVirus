@@ -42,6 +42,7 @@ public class InfectionRaycast : MonoBehaviour
 	#endregion
 
 	#region private variables
+	private GameManager GM;
 	private float factorRemoveInfection = 4.0f;
 	private MeshRenderer meshrenderer;
 	private MeshRenderer[] meshrendererchildren; 
@@ -65,13 +66,61 @@ public class InfectionRaycast : MonoBehaviour
 	private ArrayList neighbours_per_turn = new ArrayList();
 	private bool isInit = false;
 	private float initTimer;
-
 	#endregion
 
 	#region events
-	// Use this for initialization
-	void Init(){
+	void Start ()
+	{
+		GM = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+	}
 
+	// Update is called once per frame
+	void Update ()
+	{
+		if (!isInit)
+		{
+			Init ();
+		}
+		if (GameManager.Restart)
+		{
+			RemoveInfection ();
+			RemoveImmunity ();
+		}
+		if (isInit && (repairing || infected || immune || repair_immune))
+		{
+			if (repairing)
+			{
+				float duration_repaired = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
+
+				RepairNeighbours (duration_repaired);
+			}
+			else if (infected)
+			{
+				float duration_infected = (float)(DateTime.Now - infection_time).TotalMilliseconds;
+
+				ManageSelfInfection (duration_infected);
+				InfectNeighbours (duration_infected);
+			}
+			else if (immune)
+			{
+				float duration_immuned = (float)(DateTime.Now - immunity_time).TotalMilliseconds;
+				CheckImmunity (duration_immuned, timeToRemoveImmunity);
+			}
+			else if (repair_immune)
+			{
+				float duration_repair_immuned = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
+				CheckImmunity (duration_repair_immuned, timeToRemoveRepairImmunity);
+			}
+		}
+	}
+	#endregion
+
+	#region private functions
+	/// <summary>
+	/// Use this for initialization
+	/// </summary>
+	void Init()
+	{
 		isInit = true;
 
 		timeToDestruction *= 1000;
@@ -119,63 +168,8 @@ public class InfectionRaycast : MonoBehaviour
 		ResetNeighbours ();
 		GameManager.TotalBlocks++;
 		this.enabled = false;
-
-
-
-	
-
-	}
-	void Start ()
-	{
-		
-
-
 	}
 
-	// Update is called once per frame
-	void Update ()
-	{
-		if (!isInit) {
-			
-			Init ();
-
-		}
-		if (GameManager.Restart)
-		{
-			RemoveInfection ();
-			RemoveImmunity ();
-		}
-		if (isInit && (repairing || infected || immune || repair_immune) )
-		{
-
-			if (repairing)
-			{
-				float duration_repaired = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
-
-				RepairNeighbours (duration_repaired);
-			}
-			else if (infected)
-			{
-				float duration_infected = (float)(DateTime.Now - infection_time).TotalMilliseconds;
-
-				ManageSelfInfection (duration_infected);
-				InfectNeighbours (duration_infected);
-			}
-			else if (immune)
-			{
-				float duration_immuned = (float)(DateTime.Now - immunity_time).TotalMilliseconds;
-				CheckImmunity (duration_immuned, timeToRemoveImmunity);
-			}
-			else if (repair_immune)
-			{
-				float duration_repair_immuned = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
-				CheckImmunity (duration_repair_immuned, timeToRemoveRepairImmunity);
-			}
-		}
-	}
-	#endregion
-
-	#region private functions
 	/// <summary>
 	/// Resets the directions.
 	/// </summary>
@@ -458,7 +452,7 @@ public class InfectionRaycast : MonoBehaviour
 	{
 		if (blockType == BlockType.OBJECTIVE)
 		{
-			GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ().GameOver ();
+			GM.GameOver ();
 		}
 		else if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && !immune && !repair_immune && !infected)
 		{
@@ -468,6 +462,14 @@ public class InfectionRaycast : MonoBehaviour
 			infected = true;
 			GameManager.InfectedBlocks++;
 			this.enabled = true;
+
+			gameObject.layer = 15;
+
+			/*float distance_to_objective = Vector3.Distance (transform.position, GM.Objective.transform.position);
+			if (distance_to_objective < GM.SmallestDistance)
+			{
+				GM.SmallestDistance = distance_to_objective;
+			}*/
 		}
 	}
 

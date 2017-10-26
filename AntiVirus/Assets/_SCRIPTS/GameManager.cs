@@ -28,11 +28,15 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private WaveController WC;
 	#endregion
 
+	#region public variables
+	public GameObject Objective;
+	public float SmallestDistance;
+	#endregion
+
 	#region private variables
 	private GameObject PlayerSpawn;
 	private GameObject LevelMusic;
 	private GameObject StartCamera;
-	private GameObject Objective;
 	private UI_Manager UI;
 	private GameObject PlayerGhost;
 	private GameObject Player;
@@ -66,14 +70,11 @@ public class GameManager : MonoBehaviour
 		initTimer = Time.time;
 
 		RestartLevel ();
-
-
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-
 		if (playerRespawning && Time.time - respawnTimer > RespawnDelay)
 		{
 			SpawnPlayer ();
@@ -93,8 +94,11 @@ public class GameManager : MonoBehaviour
 		if (levelHasStarted)
 		{
 			CheckForVictory ();
+
+			CheckInfectionLevel ();
 		}
 	}
+
 	/*
 	void OnGUI()
 	{
@@ -167,13 +171,14 @@ public class GameManager : MonoBehaviour
 	{
 		Debug.Log ("RESTART");
 
+		SmallestDistance = 999999;
 		// except at the start of the game, clean all ghostcubes
 		if (firstTime) {
 			firstTime = false;
 		} else {
 			int layerMask = 1 << 11;
 			Vector3 pos = Objective.transform.position;
-			Collider[] cols = Physics.OverlapBox(pos,new Vector3(500,500,500),Quaternion.identity,layerMask);
+			Collider[] cols = Physics.OverlapBox(pos, new Vector3(500,500,500), Quaternion.identity, layerMask);
 			for (int i = 0; i < cols.Length; i++) {
 				cols[i].gameObject.GetComponent<InfectionRaycast>().RemoveInfection ();
 			}
@@ -232,6 +237,37 @@ public class GameManager : MonoBehaviour
 		ShowGameOver ();
 		Level--;
 		//SceneManager.LoadScene ("gameover");
+	}
+
+	public void CheckInfectionLevel()
+	{
+		int layerMask = 1 << 15;
+		float coef = 40f;
+		float[] radiuses = {1f, 2f, 3f, 4f, 5f, 6f};
+		Vector3 pos = Objective.transform.position;
+		int noCollisionCount = 0;
+		foreach (float radius in radiuses)
+		{
+			Collider[] cols = Physics.OverlapSphere (pos, radius * coef, layerMask);
+			if (cols.Length > 0)
+			{
+				if (SmallestDistance > radius)
+				{
+					SmallestDistance = radius;
+					UI.UpdateInfectionBar ((float)(radiuses.Length - SmallestDistance) / radiuses.Length);
+				}
+				break;
+			}
+			else
+			{
+				noCollisionCount++;
+			}
+		}
+
+		if (noCollisionCount == radiuses.Length)
+		{
+			UI.UpdateInfectionBar (0);
+		}
 	}
 
 	public void CheckForVictory ()

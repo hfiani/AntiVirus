@@ -7,9 +7,11 @@ public class UI_Manager : MonoBehaviour {
 
 	#region private variables
 	private float _energyBarWidth, _energyBarHeight;
+	private float _infectionBarWidth, _infectionBarHeight;
 	private List<GameObject> _virusCanvasList = new List<GameObject>();
 	private float _compassWidth = -1;
 	private WaveController WC;
+	private GameManager GM;
 	private GameObject _objective;
 	private GameObject _player;
 	private float _fov = -1;
@@ -20,6 +22,7 @@ public class UI_Manager : MonoBehaviour {
 	[SerializeField] private GameObject _compassBase = null;
 	[SerializeField] private GameObject _objectiveCanvas;
 	[SerializeField] private GameObject _energyBar = null;
+	[SerializeField] private GameObject _infectionBar = null;
 	[SerializeField] private GameObject _respawnScreen = null;
 	[SerializeField] private GameObject _startScreen = null;
 	[SerializeField] private GameObject _gameOverScreen = null;
@@ -38,19 +41,35 @@ public class UI_Manager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		GM = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		WC = GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController> ();
 		_objective = GameObject.FindGameObjectWithTag ("Objective");
 
-		_energyBarHeight = _energyBar.GetComponent<RectTransform>(). rect.height;
-		_energyBarWidth = _energyBar.GetComponent<RectTransform>(). rect.width;
+		_energyBarWidth = _energyBar.GetComponent<RectTransform>().rect.width;
+		_energyBarHeight = _energyBar.GetComponent<RectTransform>().rect.height;
 
 		_compassWidth = _compassBase.GetComponent<RectTransform> ().rect.width;
+
+		_infectionBarWidth = _infectionBar.GetComponent<RectTransform>().rect.width;
+		_infectionBarHeight = _infectionBar.GetComponent<RectTransform>().rect.height;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		MoveCompass ();
+	}
+
+	void OnGUI()
+	{
+		/*if (GM.SmallestDistance >= 999999)
+		{
+			GUI.TextArea (new Rect (30, 30, 200, 25), "No infections");
+		}
+		else
+		{
+			GUI.TextArea (new Rect (30, 30, 200, 25), GM.SmallestDistance.ToString ());
+		}*/
 	}
 	#endregion
 
@@ -188,10 +207,16 @@ public class UI_Manager : MonoBehaviour {
 		}
 	}
 
+	public void UpdateInfectionBar(float percent)
+	{
+
+		_infectionBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_infectionBarWidth * percent, _infectionBarHeight);
+	}
+
 	public void UpdateEnergyBar(float percent)
 	{
 
-		_energyBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_energyBarWidth * percent,_energyBarHeight);
+		_energyBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_energyBarWidth * percent, _energyBarHeight);
 	}
 
 	public void SetEnergyBar(bool state)
