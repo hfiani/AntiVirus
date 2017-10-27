@@ -242,8 +242,8 @@ public class GameManager : MonoBehaviour
 	public void CheckInfectionLevel()
 	{
 		int layerMask = 1 << 15;
-		float coef = 40f;
-		float[] radiuses = {1f, 2f, 3f, 4f, 5f, 6f};
+		float coef = 24f;
+		float[] radiuses = {1f, 2f, 3f, 4f, 5f, 6f,7f,8f,9f,10f};
 		Vector3 pos = Objective.transform.position;
 		int noCollisionCount = 0;
 		foreach (float radius in radiuses)

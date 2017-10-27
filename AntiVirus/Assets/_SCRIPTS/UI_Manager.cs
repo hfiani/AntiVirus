@@ -18,6 +18,7 @@ public class UI_Manager : MonoBehaviour {
 	#endregion
 
 	#region serialized private variables
+	[SerializeField] private AnimationCurve infectionBarCurve;
 	[SerializeField] private GameObject _virus = null;
 	[SerializeField] private GameObject _compassBase = null;
 	[SerializeField] private GameObject _objectiveCanvas;
@@ -209,7 +210,7 @@ public class UI_Manager : MonoBehaviour {
 
 	public void UpdateInfectionBar(float percent)
 	{
-
+		percent = infectionBarCurve.Evaluate (percent);
 		_infectionBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_infectionBarWidth * percent, _infectionBarHeight);
 	}
 
