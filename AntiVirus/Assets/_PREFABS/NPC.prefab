@@ -195,7 +195,7 @@ MonoBehaviour:
   infected: 0
   infectionMaterial: {fileID: 2100000, guid: 41c0e1daffe41904bbd4b59c8b89588f, type: 2}
   epsilon: 1
-  distance: 0.5
+  distance: 2
   timeToDeinfection: 5
 --- !u!114 &114752766725748814
 MonoBehaviour:
