@@ -50,6 +50,14 @@ public class GameManager : MonoBehaviour
 	private bool gameIsWon = false;
 	private bool firstTime = false;
 	private bool levelHasStarted = false;
+	//check infection level
+	int layerMask = 1 << 15;
+	float coef = 15;
+	float[] radiuses = {1f, 2f, 3f, 4f, 5f, 6f,7f,8f,9f,10f};
+	int radiusIndex;
+	int noCollisionCount = 0;
+	float infectionCheckTimer;
+	float infectionCheckDelay = 0.25f;
 	#endregion
 
 	#region events
@@ -95,7 +103,9 @@ public class GameManager : MonoBehaviour
 		{
 			CheckForVictory ();
 
-			CheckInfectionLevel ();
+			if (Time.time - infectionCheckTimer > infectionCheckDelay) {
+				CheckInfectionLevel ();
+			}
 		}
 	}
 
@@ -124,6 +134,9 @@ public class GameManager : MonoBehaviour
 
 		Restart = false;
 
+		infectionCheckTimer = Time.time;
+		radiusIndex = 0;
+		UI.UpdateInfectionBar (0);
 	}
 
 	void TriggerRespawn()
@@ -241,33 +254,43 @@ public class GameManager : MonoBehaviour
 
 	public void CheckInfectionLevel()
 	{
-		int layerMask = 1 << 15;
-		float coef = 24f;
-		float[] radiuses = {1f, 2f, 3f, 4f, 5f, 6f,7f,8f,9f,10f};
-		Vector3 pos = Objective.transform.position;
-		int noCollisionCount = 0;
-		foreach (float radius in radiuses)
-		{
-			Collider[] cols = Physics.OverlapSphere (pos, radius * coef, layerMask);
-			if (cols.Length > 0)
-			{
-				if (SmallestDistance > radius)
-				{
-					SmallestDistance = radius;
-					UI.UpdateInfectionBar ((float)(radiuses.Length - SmallestDistance) / radiuses.Length);
-				}
-				break;
-			}
-			else
-			{
-				noCollisionCount++;
-			}
+		if (radiusIndex == radiuses.Length - 1) {
+			UI.UpdateInfectionBar ((float)(radiuses.Length - SmallestDistance) / radiuses.Length);
+			radiusIndex = 0;
+			noCollisionCount = 0;
+			SmallestDistance = 99999;
+
+
+			
 		}
 
+		Vector3 pos = Objective.transform.position;
+
+
+		Collider[] cols = Physics.OverlapSphere (pos, radiuses[radiusIndex] * coef, layerMask);
+		if (cols.Length > 0)
+		{
+			if (SmallestDistance > radiuses[radiusIndex] )
+			{
+				SmallestDistance = radiuses[radiusIndex] ;
+
+			}
+					
+		}
+		else
+		{
+			noCollisionCount++;
+		}
+
+		radiusIndex++;
+		infectionCheckTimer = Time.time;
+
+		/*
 		if (noCollisionCount == radiuses.Length)
 		{
 			UI.UpdateInfectionBar (0);
 		}
+		*/
 	}
 
 	public void CheckForVictory ()
