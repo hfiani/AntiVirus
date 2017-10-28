@@ -16,6 +16,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		[SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
 		[SerializeField] private float m_BaseJumpSpeed;
 		[SerializeField] private float m_JumpTimeStop;
+		[SerializeField] private float m_JumpTimeMinimum;
 		[SerializeField] private float m_JumpChargeCoeff;
 		private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -174,16 +175,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             else
             {
 				m_MoveDir += Physics.gravity * m_GravityMultiplier * Time.fixedDeltaTime;
-				if (m_Jumping)
+				if (m_Jumping || Time.time - jumpTimer < m_JumpTimeMinimum)
 				{
-					if ((Time.time - jumpTimer) > m_JumpTimeStop || CrossPlatformInputManager.GetButtonUp ("Jump"))
-						{
-							m_Jumping = false;
-							if ((Time.time - jumpTimer) > m_JumpTimeStop)
-							{
-								Debug.LogError ("time = " + (Time.time - jumpTimer));
-							}
-						}
+					if (Time.time - jumpTimer > m_JumpTimeStop || CrossPlatformInputManager.GetButtonUp ("Jump"))
+					{
+						m_Jumping = false;
+						Debug.LogError ("time=" + (Time.time - jumpTimer));
+					}
 					else
 					{
 						//m_JumpSpeed = m_BaseJumpSpeed * (1 + m_JumpChargeCoeff * jumpCurve.Evaluate (Mathf.Clamp (Time.time - jumpTimer, 0f, 1f)));
