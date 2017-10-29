@@ -56,7 +56,6 @@ public class PlayerManager : MonoBehaviour
 	#endregion
 
 	#region events
-	// do not use, use init() instead
 	void Start ()
 	{
 		WC =  GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController>();
@@ -131,6 +130,11 @@ public class PlayerManager : MonoBehaviour
 		UI.FOV = _cam.fieldOfView * 2; // here it is half the visible angle
 
 		EnergyUpdate (_maxEnergy);
+		isBuffed = false;
+		isDebuffed = false;
+		UI.SetBuffText (false);
+		UI.SetDeBuffText (false);
+
 	}
 
 	public void BuffSpeed(float factorMax, float duration)
