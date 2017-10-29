@@ -139,9 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0081168c4ca83564281aa7ec7cc14de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationChangeDelay: 3
-  walkRadius: 20
-  moveSpeed: 10
+  destinationChangeDelay: 5
+  walkRadius: 100
+  moveSpeed: 6
   targetPrefab: {fileID: 1916122368054810, guid: 45da08512e7328347acfde7a699a3924,
     type: 2}
 --- !u!114 &114563145861996346

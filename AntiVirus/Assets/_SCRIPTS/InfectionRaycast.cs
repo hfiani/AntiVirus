@@ -83,6 +83,7 @@ public class InfectionRaycast : MonoBehaviour
 		}
 		if (GameManager.Restart)
 		{
+			repairing = false;
 			RemoveInfection ();
 			RemoveImmunity ();
 		}

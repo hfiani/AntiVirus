@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSize: 2
-  endSize: 10
+  endSize: 15
   sizeCurve:
     serializedVersion: 2
     m_Curve:

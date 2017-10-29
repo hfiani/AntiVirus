@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject PlayerPrefab;
 	[SerializeField] private GameObject GhostPlayerPrefab;
 	[SerializeField] private int LevelMax = 5;
+	[SerializeField] private int VirusStartNumber = 1;
+	[SerializeField] private int VirusIncrementPerlevel = 1;
+	[SerializeField] private int VirusSpawnDelay = 10;
+	[SerializeField] private string victorySceneName = "victory";
 
 
 	[SerializeField] private AudioClip DeathSound;
@@ -72,7 +76,7 @@ public class GameManager : MonoBehaviour
 		StartCamera = GameObject.FindGameObjectWithTag ("StartCamera");
 		PlayerSpawn = GameObject.FindGameObjectWithTag ("PlayerSpawner");
 
-		LevelMusic.GetComponent<AudioSource> ().Play ();
+
 
 		firstTime = true;
 		initTimer = Time.time;
@@ -105,6 +109,8 @@ public class GameManager : MonoBehaviour
 
 			if (Time.time - infectionCheckTimer > infectionCheckDelay) {
 				CheckInfectionLevel ();
+				UI.UpdateCubeText (InfectedBlocks);
+				UI.UpdateVirusNumberText (WC.GetViruses ().Count);
 			}
 		}
 	}
@@ -127,9 +133,9 @@ public class GameManager : MonoBehaviour
 
 		levelHasStarted = true;
 
-		float virusSpawnDelay = 5.0f / Level;
-		int virusNumber = Level;
-		WC.SetVirusParameters (virusSpawnDelay, virusNumber);
+
+		int virusNumber = VirusStartNumber + VirusIncrementPerlevel * Level;
+		WC.SetVirusParameters (VirusSpawnDelay, virusNumber);
 		WC.StartWave ();
 
 		Restart = false;
@@ -184,6 +190,8 @@ public class GameManager : MonoBehaviour
 	{
 		Debug.Log ("RESTART");
 
+		LevelMusic.GetComponent<AudioSource> ().Play ();
+
 		SmallestDistance = 999999;
 		// except at the start of the game, clean all ghostcubes
 		if (firstTime) {
@@ -228,11 +236,12 @@ public class GameManager : MonoBehaviour
 
 	public void GameWon()
 	{
-		if (gameIsWon)
+		if (gameIsWon || gameIsOver)
 		{
 			return;
 		}
 		Debug.Log ("Game Won");
+		SceneManager.LoadScene (victorySceneName);
 		gameIsWon = true;
 	}
 
@@ -295,7 +304,7 @@ public class GameManager : MonoBehaviour
 
 	public void CheckForVictory ()
 	{
-		if (WC.VirusNumberKilled == WC.VirusNumber && InfectedBlocks == 0)
+		if (WC.VirusNumberKilled == WC.VirusNumber && InfectedBlocks <= 10)
 		{
 			if (Level == LevelMax)
 			{
@@ -342,7 +351,7 @@ public class GameManager : MonoBehaviour
 			PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
 		}
 
-		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (Objective, GameOverDelay);
+		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (PlayerSpawn, GameOverDelay);
 
 		//LevelMusic.GetComponent<AudioSource> ().Stop ();
 		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);

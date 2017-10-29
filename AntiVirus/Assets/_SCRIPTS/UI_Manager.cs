@@ -33,6 +33,8 @@ public class UI_Manager : MonoBehaviour {
 	[SerializeField] private string _textLevel = "LEVEL {1} STARTING ...";
 	[SerializeField] private GameObject _bufftext = null;
 	[SerializeField] private GameObject _debufftext = null;
+	[SerializeField] private GameObject _infectionCubes = null;
+	[SerializeField] private GameObject _virusNumber = null;
 	#endregion
 
 	#region public variables
@@ -269,6 +271,14 @@ public class UI_Manager : MonoBehaviour {
 
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
+	}
+
+	public void UpdateCubeText(int n){
+		_infectionCubes.GetComponent<Text> ().text = "CORRUPTED CUBES : " + n;
+	}
+
+	public void UpdateVirusNumberText(int n){
+		_virusNumber.GetComponent<Text> ().text = "VIRUS : " + n;
 	}
 
 	public void SetBuffText(bool state)

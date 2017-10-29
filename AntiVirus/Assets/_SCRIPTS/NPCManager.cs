@@ -15,6 +15,7 @@ public class NPCManager : MonoBehaviour {
 	private Vector3 startPos;
 
 	private GameObject target;
+	private GameObject parent;
 
 	private bool canMove = false;
 	private float travelTime;
@@ -22,6 +23,7 @@ public class NPCManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		parent = transform.parent.gameObject;
 
 		startY = transform.position.y;
 
@@ -62,12 +64,13 @@ public class NPCManager : MonoBehaviour {
 			Ray ray = new Ray(pos,dir );
 			RaycastHit hit;
 			success = !Physics.Raycast(ray,out hit,dist);
-			travelTime = destinationChangeDelay;
+			travelTime = dist/moveSpeed;
 			if(!success && hit.distance>2.0f){
 				float alpha = Mathf.Clamp(hit.distance/dist,0.33f,0.66f);
 				targetPos = Vector3.Lerp(pos,targetPos,alpha);
+				dist = Vector3.Distance(transform.position,targetPos);
 				success = true;
-				travelTime = destinationChangeDelay;
+				travelTime = dist/moveSpeed;
 			}
 
 			k++;
@@ -82,7 +85,7 @@ public class NPCManager : MonoBehaviour {
 		
 		Vector2 randomDirection = UnityEngine.Random.insideUnitCircle * walkRadius;
 
-		Vector3 position = transform.position + new Vector3 (randomDirection.x, 0, randomDirection.y);
+		Vector3 position = parent.transform.position + new Vector3 (randomDirection.x, 0, randomDirection.y);
 
 		return position;
 

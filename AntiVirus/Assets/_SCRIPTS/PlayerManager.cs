@@ -25,8 +25,7 @@ public class PlayerManager : MonoBehaviour
 	public float buffMaxSpeed = 3.0f;
 	public float debuffMaxSpeed = 0.33f;
 
-	public AnimationCurve _resoCurve;
-	public bool usePixelation = false;
+
 	#endregion
 
 	#region serialized private variables
@@ -40,7 +39,8 @@ public class PlayerManager : MonoBehaviour
 	private float _energy = 0.0f;
 	private float _maxEnergy = 100.0f;
 	private float _EnergyRegen;
-	private float speedOriginValue;
+	private float walkSpeedOriginValue;
+	private float runSpeedOriginValue;
 	private float _buffFactor;
 	private float _buffDuration;
 	private DateTime _buffTime;
@@ -50,10 +50,9 @@ public class PlayerManager : MonoBehaviour
 	private FirstPersonController FPS;
 	private WaveController WC;
 	private UI_Manager UI;
-	private RawImage _screen = null;
+
 	private Camera _cam = null;
 
-	private RenderTexture[] _ScreenTexture = new RenderTexture[100];
 	#endregion
 
 	#region events
@@ -64,17 +63,10 @@ public class PlayerManager : MonoBehaviour
 
 		FPS = GetComponent<FirstPersonController> ();
 
-		speedOriginValue = FPS.WalkingSpeed;
-		if (usePixelation)
-		{
-			_screen = GameObject.FindGameObjectWithTag ("Screen").GetComponent<RawImage> ();
-			GenerateRenderTextures ();
-			AdaptTexture (); 
-		}
-		else
-		{
-			//_screen.gameObject.SetActive (false);
-		}
+		walkSpeedOriginValue = FPS.WalkingSpeed;
+		runSpeedOriginValue = FPS.RunningSpeed;
+	
+	
 	}
 
 	// Update is called once per frame
@@ -89,9 +81,7 @@ public class PlayerManager : MonoBehaviour
 			Shoot ();
 		}
 
-		if (usePixelation) {
-			AdaptTexture ();
-		}
+	
 
 		EnergyUpdate (_EnergyRegen*Time.deltaTime);
 
@@ -175,7 +165,8 @@ public class PlayerManager : MonoBehaviour
 				float time_step = buffSpeedCurve.Evaluate ((float)(DateTime.Now - _buffTime).TotalMilliseconds / _buffDuration);
 
 				float factorNow = Mathf.Lerp (1, _buffFactor, time_step);
-				FPS.WalkingSpeed = speedOriginValue * factorNow;
+				FPS.WalkingSpeed = walkSpeedOriginValue * factorNow;
+				FPS.RunningSpeed =  runSpeedOriginValue * factorNow;
 			}
 			else
 			{
@@ -204,57 +195,6 @@ public class PlayerManager : MonoBehaviour
 		}
 
 		UI.UpdateEnergyBar (_energy/_maxEnergy);
-	}
-
-	void GenerateRenderTextures(){
-
-		int n = 100;
-
-		for (int i = 0; i < n; i++) {
-
-			int resolution = 4+(int)(800*_resoCurve.Evaluate ((float)i/(n-1)));
-
-			RenderTexture tex = new RenderTexture(resolution,resolution,24);
-			tex.filterMode = FilterMode.Point;
-			tex.antiAliasing = 2;
-
-			_ScreenTexture [i] = tex;
-		}
-	}
-
-	void AdaptTexture(){
-
-
-		float pixelDist = 25.0f;
-		float distToVirus = WC.getDistanceFromClosestVirus (this.gameObject.transform.position);
-		int index = (int)Mathf.Clamp01((int)(distToVirus/pixelDist));
-
-		if (distToVirus < pixelDist) {
-
-			RenderTexture tex = new RenderTexture (128, 128, 24);
-			tex.filterMode = FilterMode.Point;
-			tex.antiAliasing = 2;
-
-			_screen.texture = tex;
-			_cam.targetTexture = tex;
-
-		} else {
-
-			RenderTexture tex = new RenderTexture (1024, 1024, 24);
-			tex.filterMode = FilterMode.Point;
-			tex.antiAliasing = 2;
-
-			_screen.texture = tex;
-			_cam.targetTexture = tex;
-
-
-		}
-
-
-		//_cam.targetTexture = _ScreenTexture[index];
-		//_camGun.targetTexture = _ScreenTexture[index];
-
-
 	}
 	#endregion
 }

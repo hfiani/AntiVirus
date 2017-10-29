@@ -154,7 +154,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.05
   far clip plane: 90
   field of view: 60
   orthographic: 0
@@ -418,7 +418,7 @@ MonoBehaviour:
   _ProjectilePrefab: {fileID: 1441505045019692, guid: bfb77c201b7167043b148ed2efc48dfb,
     type: 2}
   _FireDelay: 0.1
-  _ShootingCost: 10
+  _ShootingCost: 9
   _BaseEnergyRegen: 25
   _BuffedEnergyRegen: 50
   _DebuffedEnergyRegen: 0
@@ -449,15 +449,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   buffDuration: 4
-  buffMaxSpeed: 2.5
-  debuffMaxSpeed: 0.33
-  _resoCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  usePixelation: 0
+  buffMaxSpeed: 2.2
+  debuffMaxSpeed: 0.4
 --- !u!114 &114915860186093510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -470,12 +463,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 14
-  m_RunSpeed: 14
+  m_WalkSpeed: 16
+  m_RunSpeed: 8
   m_RunstepLenghten: 0.7
   m_BaseJumpSpeed: 2.5
-  m_JumpTimeStop: 0.75
-  m_JumpTimeMinimum: 0.25
+  m_JumpTimeStop: 1
+  m_JumpTimeMinimum: 0.3
   m_JumpChargeCoeff: 2
   m_StickToGroundForce: 0.5
   m_GravityMultiplier: 2.5
@@ -545,13 +538,13 @@ MonoBehaviour:
   m_JumpBob:
     BobDuration: 0
     BobAmount: 0
-  m_StepInterval: 5
+  m_StepInterval: 6
   m_FootstepSounds:
   - {fileID: 8300000, guid: e1476cca750db5342ab82a697a507239, type: 3}
   - {fileID: 8300000, guid: f8b2d66d4023f754d958c73586af6904, type: 3}
   m_JumpSound: {fileID: 8300000, guid: e1849995e87877845bb9941105954c01, type: 3}
   m_LandSound: {fileID: 8300000, guid: c39a5a4e08ce34b42a87226d890bb600, type: 3}
-  movementVolume: 0.6
+  movementVolume: 0.66
   jumpCurve:
     serializedVersion: 2
     m_Curve:
@@ -606,7 +599,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.8
-  m_Radius: 0.33
+  m_Radius: 0.6
   m_SlopeLimit: 50
   m_StepOffset: 0.75
   m_SkinWidth: 0.08
