@@ -5,7 +5,6 @@ using System;
 
 public class VirusManager : MonoBehaviour
 {
-
 	#region public variables
 	[SerializeField] private bool killPlayerOnContact = true;
 	[SerializeField] private bool canDieFromAge = false;
