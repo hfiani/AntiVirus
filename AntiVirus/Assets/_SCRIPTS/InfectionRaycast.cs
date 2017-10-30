@@ -81,14 +81,14 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			Init ();
 		}
-		if (GameManager.Restart)
+		else if (repairing || infected || immune || repair_immune)
 		{
-			repairing = false;
-			RemoveInfection ();
-			RemoveImmunity ();
-		}
-		if (isInit && (repairing || infected || immune || repair_immune))
-		{
+			if (GameManager.Restart)
+			{
+				repairing = false;
+				RemoveInfection ();
+				RemoveImmunity ();
+			}
 			if (repairing)
 			{
 				float duration_repaired = (float)(DateTime.Now - reparation_time).TotalMilliseconds;
