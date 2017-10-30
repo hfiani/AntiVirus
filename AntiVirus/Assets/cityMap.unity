@@ -35393,12 +35393,12 @@ Prefab:
     - target: {fileID: 224616634770523862, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 597.5
+      value: 587.5
       objectReference: {fileID: 0}
     - target: {fileID: 224616634770523862, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 336
+      value: 330.5
       objectReference: {fileID: 0}
     - target: {fileID: 224616634770523862, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
@@ -35483,12 +35483,12 @@ Prefab:
     - target: {fileID: 224996820482256790, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 654.2001
+      value: 663.69995
       objectReference: {fileID: 0}
     - target: {fileID: 224996820482256790, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1966.6274
+      value: 462.69104
       objectReference: {fileID: 0}
     - target: {fileID: 224992096168152922, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
@@ -35503,7 +35503,7 @@ Prefab:
     - target: {fileID: 224466808640490554, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 539.84937
+      value: 549.151
       objectReference: {fileID: 0}
     - target: {fileID: 224287596755938624, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
@@ -35551,6 +35551,63 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224996820482256790, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -77.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 224996820482256790, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -296.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224466808640490554, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.099976
+      objectReference: {fileID: 0}
+    - target: {fileID: 114659607590119082, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1460ac07be97cde40a14ff5ce9fd180a,
+        type: 3}
+    - target: {fileID: 114097392877089086, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1460ac07be97cde40a14ff5ce9fd180a,
+        type: 3}
+    - target: {fileID: 114659607590119082, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114659607590119082, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.17647058
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097392877089086, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097392877089086, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.17647058
+      objectReference: {fileID: 0}
+    - target: {fileID: 114659607590119082, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.22758618
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097392877089086, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.22758618
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: deb23d5f06420824bb34799330385b8f, type: 2}
