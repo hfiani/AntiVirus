@@ -96,14 +96,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		{
 			RotateView();
 
-			if (!m_Jumping && m_CharacterController.isGrounded)
-			{
-				if (CrossPlatformInputManager.GetButtonDown ("Jump"))
-				{
-					jumpTimer = Time.time;
-				}
-			}
-
 			// the jump state needs to read here to make sure it is not missed
 			if (!m_Jump && m_CharacterController.isGrounded)
 			{
@@ -111,20 +103,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			}
 			else if (m_Jumping && !m_CharacterController.isGrounded)
 			{
-				/*if ((Time.time - jumpTimer) > m_JumpTimeStop || CrossPlatformInputManager.GetButtonUp ("Jump"))
-				{
-					m_Jumping = false;
-					if ((Time.time - jumpTimer) > m_JumpTimeStop)
-					{
-						Debug.LogError ("time = " + (Time.time - jumpTimer));
-					}
-				}
-				else
-				{
-					//m_JumpSpeed = m_BaseJumpSpeed * (1 + m_JumpChargeCoeff * jumpCurve.Evaluate (Mathf.Clamp (Time.time - jumpTimer, 0f, 1f)));
-					float time_step = jumpCurve.Evaluate ((Time.time - jumpTimer) / m_JumpTimeStop);
-					m_JumpSpeed = Mathf.Lerp (m_BaseJumpSpeed, 0, time_step);
-				}*/
+				
 			}
 
 			if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -159,6 +138,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MoveDir.x = desiredMove.x*speed;
 			m_MoveDir.z = desiredMove.z*speed;
 
+			if (!m_Jumping && m_CharacterController.isGrounded)
+			{
+				if (CrossPlatformInputManager.GetButtonDown ("Jump"))
+				{
+					jumpTimer = Time.fixedTime;
+				}
+			}
 
 			if (m_CharacterController.isGrounded)
 			{
@@ -184,7 +170,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 					}
 					else
 					{
-						//m_JumpSpeed = m_BaseJumpSpeed * (1 + m_JumpChargeCoeff * jumpCurve.Evaluate (Mathf.Clamp (Time.time - jumpTimer, 0f, 1f)));
 						float time_step = jumpCurve.Evaluate (time / m_JumpTimeStop);
 						m_JumpSpeed = Mathf.Lerp (m_BaseJumpSpeed, 0, time_step);
 						m_MoveDir.y += m_JumpSpeed;
