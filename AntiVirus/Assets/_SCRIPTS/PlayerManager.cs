@@ -32,6 +32,7 @@ public class PlayerManager : MonoBehaviour
 	#endregion
 
 	#region private variables
+	private int virusLayerMask = 1 << 10;
 	private float _timer;
 	private float _energy = 0.0f;
 	private float _maxEnergy = 100.0f;
@@ -48,8 +49,9 @@ public class PlayerManager : MonoBehaviour
 	private UI_Manager UI;
 	private Camera _cam = null;
 
-	private GameObject _crosshairVirus;
-	private GameObject _crosshairNoVirus;
+	private GameObject _crosshair;
+	private Image _crosshairVirus;
+	private Image _crosshairNoVirus;
 	#endregion
 
 	#region events
@@ -60,9 +62,12 @@ public class PlayerManager : MonoBehaviour
 		_walkSpeedOriginValue = FPS.WalkingSpeed;
 		_runSpeedOriginValue = FPS.RunningSpeed;
 
-		_crosshairVirus = GameObject.Find ("Image_virus");
-		_crosshairNoVirus = GameObject.Find ("Image_novirus");
-		_crosshairNoVirus.GetComponent<Image> ().enabled = false;
+		_crosshair = GameObject.FindGameObjectWithTag ("Crosshair");
+		_crosshairNoVirus =_crosshair.transform.GetChild(0).GetComponent<Image>();
+		_crosshairVirus = _crosshair.transform.GetChild(1).GetComponent<Image>();
+	
+		_crosshairNoVirus.enabled = true;
+		_crosshairVirus.enabled = false;
 	}
 
 	// Update is called once per frame
@@ -77,17 +82,17 @@ public class PlayerManager : MonoBehaviour
 			Shoot ();
 		}
 			
-		if (Physics.Raycast (transform.position, transform.forward, DistanceRaycast, 1 << 10))
+		if (Physics.Raycast (transform.position, transform.forward, DistanceRaycast, virusLayerMask))
 		{
 			
-			_crosshairVirus.GetComponent<Image> ().enabled = true;
-			_crosshairNoVirus.GetComponent<Image> ().enabled = false;
+			_crosshairVirus.enabled = true;
+			_crosshairNoVirus.enabled = false;
 		}
 		else
 		{
 
-			_crosshairVirus.GetComponent<Image> ().enabled = false;
-			_crosshairNoVirus.GetComponent<Image> ().enabled = true;
+			_crosshairVirus.enabled = false;
+			_crosshairNoVirus.enabled = true;
 		}
 
 		EnergyUpdate (_energyRegen*Time.deltaTime);
