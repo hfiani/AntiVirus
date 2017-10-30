@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WaveController : MonoBehaviour
 {
+	#region static variables
+	static int zoneIndex = 0;
+	#endregion
+
 	#region public variables
 	public GameObject VirusPrefab;
 	public float VirusSpawnDelay = 10.0f;
@@ -16,7 +20,7 @@ public class WaveController : MonoBehaviour
 	private int virusNumberRemaining;
 	private float virusSpawnTimer;
 	private bool waveHasStarted = false;
-	private List<int> freeSpawnerIndexes = new List<int>();
+	private List<int>[] freeSpawnerIndexes = new List<int>[4];
 	private List<GameObject> virusList = new List<GameObject> ();
 	#endregion
 
@@ -25,6 +29,13 @@ public class WaveController : MonoBehaviour
 	void Start ()
 	{
 		VirusSpawners = GameObject.FindGameObjectWithTag ("VirusSpawner");
+
+		freeSpawnerIndexes = new List<int>[VirusSpawners.transform.childCount];
+
+		for (int i = 0; i < freeSpawnerIndexes.Length; i++)
+		{
+			freeSpawnerIndexes[i] = new List<int> ();
+		}
 	}
 
 	// Update is called once per frame
@@ -57,36 +68,52 @@ public class WaveController : MonoBehaviour
 	void SpawnVirusAtRandomSpawner()
 	{
 		// if all spawners already have a virus, return
-		if (freeSpawnerIndexes.Count == 0)
+		int count = 0;
+		for (int i = 0; i < freeSpawnerIndexes.Length; i++)
+		{
+			if (freeSpawnerIndexes[i].Count == 0)
+			{
+				count++;
+			}
+		}
+		if (count == freeSpawnerIndexes.Length)
 		{
 			return;
 		}
 
 		// get random index picked from the free index list
-		int r = Random.Range (0, freeSpawnerIndexes.Count);
-		int index = freeSpawnerIndexes [r];
+		int r = Random.Range (0, freeSpawnerIndexes[zoneIndex].Count);
+		int index = freeSpawnerIndexes[zoneIndex] [r];
 
-		GameObject virus = Instantiate (VirusPrefab, VirusSpawners.transform.GetChild(index).position, Quaternion.identity);
+		Transform spawner = VirusSpawners.transform.GetChild (zoneIndex).GetChild (index);
+		GameObject virus = Instantiate (VirusPrefab, spawner.position, Quaternion.identity);
 		virusList.Add (virus);
 		// add virus to its spawner
-		virus.transform.parent = VirusSpawners.transform.GetChild (index);
+		virus.transform.parent = spawner;
 
 		// decrement number of viruses remaining
 		virusNumberRemaining --;
 		Debug.Log ("spawning virus #" + (VirusNumber - virusNumberRemaining));
 
 		UpdateFreeSpawnersIndexes ();
+
+		zoneIndex++;
+		if (zoneIndex == VirusSpawners.transform.childCount)
+		{
+			zoneIndex = 0;
+		}
 	}
 
 	void UpdateFreeSpawnersIndexes()
 	{
-		freeSpawnerIndexes.Clear ();
+		freeSpawnerIndexes[zoneIndex].Clear ();
 
-		for (int i = 0; i < VirusSpawners.transform.childCount; i++)
+		for (int i = 0; i < VirusSpawners.transform.GetChild (zoneIndex).childCount; i++)
 		{
-			if (VirusSpawners.transform.GetChild (i).childCount == 0 && VirusSpawners.transform.GetChild (i).gameObject.activeSelf)
+			Transform child = VirusSpawners.transform.GetChild (zoneIndex).GetChild (i);
+			if (child.childCount == 0 && child.gameObject.activeSelf)
 			{
-				freeSpawnerIndexes.Add (i);
+				freeSpawnerIndexes[zoneIndex].Add (i);
 			}
 		}
 	}
