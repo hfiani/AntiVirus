@@ -1972,7 +1972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecf50c57d5e7c24295dfd4aba2aa901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infectionBarCurve:
+  InfectionBarCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
