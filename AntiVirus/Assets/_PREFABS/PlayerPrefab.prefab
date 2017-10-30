@@ -451,7 +451,7 @@ MonoBehaviour:
   buffDuration: 4
   buffMaxSpeed: 2.2
   debuffMaxSpeed: 0.4
-  DistanceRaycast: 50
+  DistanceRaycast: 36
 --- !u!114 &114915860186093510
 MonoBehaviour:
   m_ObjectHideFlags: 1

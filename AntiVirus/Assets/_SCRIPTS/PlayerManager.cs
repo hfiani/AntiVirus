@@ -82,7 +82,7 @@ public class PlayerManager : MonoBehaviour
 			Shoot ();
 		}
 			
-		if (Physics.Raycast (transform.position, transform.forward, DistanceRaycast, virusLayerMask))
+		if (Physics.Raycast (transform.position, transform.GetChild(0). forward, DistanceRaycast))
 		{
 			
 			_crosshairVirus.enabled = true;
