@@ -138,15 +138,17 @@ MonoBehaviour:
   GhostPlayerPrefab: {fileID: 1530913379000098, guid: 14d3a697fdbecd544b5e2d8cad4a1a93,
     type: 2}
   LevelMax: 3
-  VirusStartNumber: 0
+  VirusStartNumber: 1
   VirusIncrementPerlevel: 2
   VirusSpawnDelay: 10
   victorySceneName: victory
   DeathSound: {fileID: 8300000, guid: 5736f4214cb637c43a315574ff00ecf2, type: 3}
   SpawnSound: {fileID: 8300000, guid: cba18852fc00a344fae37efcde164aba, type: 3}
+  alertDelay: 4
+  waveCompleteDelay: 4
   RespawnDelay: 3
   GameOverDelay: 4
-  StartLevelDelay: 3
+  StartLevelDelay: 4
   WC: {fileID: 114513342876871722}
   Objective: {fileID: 0}
   SmallestDistance: 0

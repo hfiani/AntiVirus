@@ -24,6 +24,7 @@ public class UI_Manager : MonoBehaviour {
 	[SerializeField] private GameObject _objectiveCanvas;
 	[SerializeField] private GameObject _energyBar = null;
 	[SerializeField] private GameObject _infectionBar = null;
+	[SerializeField] private GameObject _infectionBarGroup = null;
 	[SerializeField] private GameObject _respawnScreen = null;
 	[SerializeField] private GameObject _startScreen = null;
 	[SerializeField] private GameObject _gameOverScreen = null;
@@ -34,7 +35,10 @@ public class UI_Manager : MonoBehaviour {
 	[SerializeField] private GameObject _bufftext = null;
 	[SerializeField] private GameObject _debufftext = null;
 	[SerializeField] private GameObject _infectionCubes = null;
+	[SerializeField] private GameObject _alertMessageText = null;
 	[SerializeField] private GameObject _virusNumber = null;
+	[SerializeField] private GameObject _waveCompleteText = null;
+
 	#endregion
 
 	#region public variables
@@ -106,6 +110,8 @@ public class UI_Manager : MonoBehaviour {
 		_compass.SetActive (false);
 		_bufftext.SetActive (false);
 		_debufftext.SetActive (false);
+		_alertMessageText.SetActive (false);
+		_waveCompleteText.SetActive (false);
 	}
 
 	void MoveCompass()
@@ -212,6 +218,11 @@ public class UI_Manager : MonoBehaviour {
 
 	public void UpdateInfectionBar(float percent)
 	{
+		if (percent < 0.10) {
+			_infectionBarGroup.SetActive (false);
+		} else {
+			_infectionBarGroup.SetActive (true);
+		}
 		percent = infectionBarCurve.Evaluate (percent);
 		_infectionBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_infectionBarWidth * percent, _infectionBarHeight);
 	}
@@ -243,9 +254,19 @@ public class UI_Manager : MonoBehaviour {
 		text_level2.GetComponent<Text>().text = text_level.GetComponent<Text>().text;
 	}
 
+	public void SetWaveCompleteScreen(bool state)
+	{
+		_waveCompleteText.SetActive (state);
+	}
+
 	public void SetStartScreen(bool state)
 	{
 		_startScreen.SetActive (state);
+	}
+
+	public void SetAlertText(bool state)
+	{
+		_alertMessageText.SetActive (state);
 	}
 
 	public void SetCrosshair(bool state)

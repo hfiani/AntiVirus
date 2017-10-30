@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField] private AudioClip DeathSound;
 	[SerializeField] private AudioClip SpawnSound;
+	[SerializeField] private float alertDelay = 4.0f;
+	[SerializeField] private float waveCompleteDelay = 4.0f;
 	[SerializeField] private float RespawnDelay = 4.0f;
 	[SerializeField] private float GameOverDelay = 4.0f;
 	[SerializeField] private float StartLevelDelay = 2.0f;
@@ -54,14 +56,17 @@ public class GameManager : MonoBehaviour
 	private bool gameIsWon = false;
 	private bool firstTime = false;
 	private bool levelHasStarted = false;
+	private bool alertMessage = false;
+	private bool waveComplete = false;
 	//check infection level
 	int layerMask = 1 << 15;
-	float coef = 15;
+	float coef = 9;
 	float[] radiuses = {1f, 2f, 3f, 4f, 5f, 6f,7f,8f,9f,10f};
 	int radiusIndex;
 	int noCollisionCount = 0;
 	float infectionCheckTimer;
 	float infectionCheckDelay = 0.25f;
+	float waveCompleteTimer;
 	#endregion
 
 	#region events
@@ -103,9 +108,24 @@ public class GameManager : MonoBehaviour
 			StartLevel();
 		}
 
+
 		if (levelHasStarted)
 		{
 			CheckForVictory ();
+
+			if (waveComplete && Time.time - waveCompleteTimer > waveCompleteDelay) {
+				Endlevel ();
+				waveComplete = false;
+			}
+
+			if (!alertMessage && Time.time - startLevelTimer > StartLevelDelay + alertDelay) {
+				UI.SetAlertText (true);
+				alertMessage = true;
+			}
+			if (alertMessage && Time.time - startLevelTimer > StartLevelDelay + 3.0f*alertDelay) {
+				UI.SetAlertText (false);
+				alertMessage = false;
+			}
 
 			if (Time.time - infectionCheckTimer > infectionCheckDelay) {
 				CheckInfectionLevel ();
@@ -241,8 +261,9 @@ public class GameManager : MonoBehaviour
 			return;
 		}
 		Debug.Log ("Game Won");
-		SceneManager.LoadScene (victorySceneName);
 		gameIsWon = true;
+		SceneManager.LoadScene (victorySceneName);
+
 	}
 
 	public void GameOver()
@@ -304,17 +325,25 @@ public class GameManager : MonoBehaviour
 
 	public void CheckForVictory ()
 	{
-		if (WC.VirusNumberKilled == WC.VirusNumber && InfectedBlocks <= 10)
+		if (!waveComplete && WC.VirusNumberKilled == WC.VirusNumber && InfectedBlocks <= 1)
 		{
-			if (Level == LevelMax)
-			{
-				GameWon ();
-			}
-			else
-			{
-				//SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
-				RestartLevel();
-			}
+			Debug.Log ("wave complete");
+			waveComplete = true;
+			UI.SetWaveCompleteScreen (true);
+			waveCompleteTimer = Time.time;
+	
+		}
+	}
+
+	void Endlevel(){
+		if (Level == LevelMax)
+		{
+			GameWon ();
+		}
+		else
+		{
+			//SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+			RestartLevel();
 		}
 	}
 
