@@ -5,13 +5,12 @@ using UnityEngine;
 public class OceanSpawner : MonoBehaviour
 {
 	#region serialized private variables
-	[SerializeField] private float OceanSize = 100.0f;
-	[SerializeField] private float WaveSize = 10.0f;
-	[SerializeField] private float Altitude = -30.0f;
-	[SerializeField] private float OscillationPeriod = 1.0f;
-	[SerializeField] private GameObject WavePrefab = null;
-	[SerializeField] private float FollowPlayerDistance = 10.0f;
-	[SerializeField] private float FollowPlayerSpeed = 1.0f;
+	[SerializeField] private float oceanSize = 100.0f;
+	[SerializeField] private float waveSize = 10.0f;
+	[SerializeField] private float altitude = -30.0f;
+	[SerializeField] private GameObject wavePrefab = null;
+	[SerializeField] private float followPlayerDistance = 10.0f;
+	[SerializeField] private float followPlayerSpeed = 1.0f;
 	#endregion
 
 	#region private variables
@@ -25,15 +24,15 @@ public class OceanSpawner : MonoBehaviour
 		GM = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		Vector3 offset = new Vector3 ();
 
-		for (int i = 0; i < OceanSize; i++)
+		for (int i = 0; i < oceanSize; i++)
 		{
-			for (int j = 0; j < OceanSize; j++)
+			for (int j = 0; j < oceanSize; j++)
 			{
-				offset.x = (WaveSize * OceanSize / 2) - WaveSize * i;
-				offset.z = (WaveSize * OceanSize / 2) - WaveSize * j;
-				offset.y = Altitude;
-				GameObject obj = Instantiate (WavePrefab, offset, Quaternion.identity);
-				obj.transform.localScale = new Vector3 (WaveSize, WaveSize * 2, WaveSize);
+				offset.x = (waveSize * oceanSize / 2) - waveSize * i;
+				offset.z = (waveSize * oceanSize / 2) - waveSize * j;
+				offset.y = altitude;
+				GameObject obj = Instantiate (wavePrefab, offset, Quaternion.identity);
+				obj.transform.localScale = new Vector3 (waveSize, waveSize * 2, waveSize);
 				obj.transform.SetParent (gameObject.transform);
 			}
 		}
@@ -51,9 +50,9 @@ public class OceanSpawner : MonoBehaviour
 		Vector3 playerPositionProjected = GM.GetPlayerPosition ();
 		playerPositionProjected.y = transform.position.y;
 		float distToPlayer = Vector3.Distance (transform.position, playerPositionProjected);
-		float speed = FollowPlayerSpeed * distToPlayer / FollowPlayerDistance;
+		float speed = followPlayerSpeed * distToPlayer / followPlayerDistance;
 
-		if (distToPlayer > FollowPlayerDistance)
+		if (distToPlayer > followPlayerDistance)
 		{
 			transform.position += (playerPositionProjected - transform.position).normalized * speed * Time.deltaTime;
 		}

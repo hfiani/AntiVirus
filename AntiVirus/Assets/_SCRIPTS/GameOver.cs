@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
 	#region serialized private variables
-	[SerializeField] private float Delay = 3.0f;
-	[SerializeField] private string SceneToLoad;
+	[SerializeField] private float delay = 3.0f;
+	[SerializeField] private string sceneToLoad;
 	#endregion
 
 	#region private variables
@@ -15,17 +15,17 @@ public class GameOver : MonoBehaviour
 
 	#region events
 	void Start ()
-    {
+	{
 
 		_timer = Time.time;
 	
 	}
 
 	void Update ()
-    {
-		if (Time.time > _timer + Delay)
-        {
-			SceneManager.LoadScene (SceneToLoad);
+	{
+		if (Time.time > _timer + delay)
+	{
+			SceneManager.LoadScene (sceneToLoad);
 		}
 	}
 	#endregion

@@ -6,15 +6,15 @@ using System;
 public class VirusManager : MonoBehaviour
 {
 	#region public variables
-	[SerializeField] private bool CanDieFromAge = false;
-	[SerializeField] private float Lifetime = 10.0f;
-	[SerializeField] private GameObject RedExplosionPrefab = null;
-	[SerializeField] private GameObject GreenExplosionPrefab = null;
-	[SerializeField] private float MaxHealth = 100;
-	[SerializeField] private float DamageTakenPerProjectile = 10;
-	[SerializeField] private Color DamagedColor;
-	[SerializeField] private AudioClip DamagedSound;
-	[SerializeField] private float DamagedVolume;
+	[SerializeField] private bool canDieFromAge = false;
+	[SerializeField] private float lifetime = 10.0f;
+	[SerializeField] private GameObject redExplosionPrefab = null;
+	[SerializeField] private GameObject greenExplosionPrefab = null;
+	[SerializeField] private float maxHealth = 100;
+	[SerializeField] private float damageTakenPerProjectile = 10;
+	[SerializeField] private Color damagedColor;
+	[SerializeField] private AudioClip damagedSound;
+	[SerializeField] private float damagedVolume;
 	#endregion
 
 	#region private variables
@@ -50,15 +50,15 @@ public class VirusManager : MonoBehaviour
 		_startBaseColor = transform.GetChild(0).GetComponent<Renderer> ().material.GetColor ("_Color");
 		_startFadeColor = transform.GetChild(1).GetComponent<Renderer> ().material.GetColor ("_Color");
 		_startEmiColor = transform.GetChild(0).GetComponent<Renderer> ().material.GetColor ("_EmissionColor");
-		_damagedColorFade = new Color (DamagedColor.r, DamagedColor.g, DamagedColor.b, _startFadeColor.a);
+		_damagedColorFade = new Color (damagedColor.r, damagedColor.g, damagedColor.b, _startFadeColor.a);
 		_currentBaseColor = _startBaseColor;
 		_currentEmiColor = _startEmiColor;
-		_health = MaxHealth;
+		_health = maxHealth;
 	}
 
 	void Update()
 	{
-		if (Time.time - _timerAge > Lifetime && _isAlive && _hasLanded && CanDieFromAge)
+		if (Time.time - _timerAge > lifetime && _isAlive && _hasLanded && canDieFromAge)
 		{
 			DeathFromAge ();
 		}
@@ -90,7 +90,7 @@ public class VirusManager : MonoBehaviour
 		// take damage when hit by player's projectile
 		if (col.gameObject.GetComponent<Projectile> () != null && _isAlive)
 		{
-			updateHealth (-1*DamageTakenPerProjectile);
+			updateHealth (-1*damageTakenPerProjectile);
 		}
 
 		// kill player on contact
@@ -107,12 +107,12 @@ public class VirusManager : MonoBehaviour
 		_health += value;
 
 		if (value < 0) {
-			GetComponent<AudioSource> ().PlayOneShot (DamagedSound, DamagedVolume);
+			GetComponent<AudioSource> ().PlayOneShot (damagedSound, damagedVolume);
 		}
 
-		if (_health > MaxHealth) {
+		if (_health > maxHealth) {
 
-			_health = MaxHealth;
+			_health = maxHealth;
 		}
 
 		if (_health < 0f) {
@@ -121,9 +121,9 @@ public class VirusManager : MonoBehaviour
 			DeathFromPlayer ();
 		}
 
-		_currentBaseColor = Color.Lerp(DamagedColor,_startBaseColor,_health/MaxHealth);
-		_currentFadeColor = Color.Lerp(_damagedColorFade,_startFadeColor,_health/MaxHealth);
-		_currentEmiColor = Color.Lerp(DamagedColor,_startEmiColor,_health/MaxHealth);
+		_currentBaseColor = Color.Lerp(damagedColor,_startBaseColor,_health/maxHealth);
+		_currentFadeColor = Color.Lerp(_damagedColorFade,_startFadeColor,_health/maxHealth);
+		_currentEmiColor = Color.Lerp(damagedColor,_startEmiColor,_health/maxHealth);
 
 		//GetComponent<Renderer> ().material.SetColor ("_Color", currentBaseColor);
 		//GetComponent<Renderer> ().material.SetColor ("_EmissionColor", currentEmiColor);
@@ -158,7 +158,7 @@ public class VirusManager : MonoBehaviour
 	void DeathFromAge()
 	{
 		_isAlive = false;
-		Instantiate (RedExplosionPrefab, transform.position, Quaternion.identity);
+		Instantiate (redExplosionPrefab, transform.position, Quaternion.identity);
 
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().IncrementVirusDeathNumber ();
 
@@ -170,7 +170,7 @@ public class VirusManager : MonoBehaviour
 	void DeathFromPlayer()
 	{
 		_isAlive = false;
-		Instantiate (GreenExplosionPrefab, transform.position, Quaternion.identity);
+		Instantiate (greenExplosionPrefab, transform.position, Quaternion.identity);
 		if (_firstInfectedBlock) {
 			_firstInfectedBlock.GetComponent<InfectionRaycast> ().Infected = true;
 			_firstInfectedBlock.GetComponent<InfectionRaycast> ().RepairInfection ();

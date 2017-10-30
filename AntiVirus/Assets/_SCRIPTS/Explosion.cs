@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
+	/* Explosion
+	 * used to explode
+	 */
+
 	#region serialized private variables
-	[SerializeField] private float StartSize = 1.0f;
-	[SerializeField] private float EndSize = 1.0f;
-	[SerializeField] private AnimationCurve SizeCurve;
-	[SerializeField] private float GrowthTime = 2.0f;
-	[SerializeField] private float Lifetime = 2.0f;
-	[SerializeField] private AudioClip ExplosionSound;
-	[SerializeField] private float ExplosionVolume = 1.0f;
+	[SerializeField] private float startSize = 1.0f;
+	[SerializeField] private float endSize = 1.0f;
+	[SerializeField] private AnimationCurve sizeCurve;
+	[SerializeField] private float growthTime = 2.0f;
+	[SerializeField] private float lifetime = 2.0f;
+	[SerializeField] private AudioClip explosionSound;
+	[SerializeField] private float explosionVolume = 1.0f;
 	#endregion
 
 	#region private variables
@@ -22,9 +26,9 @@ public class Explosion : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		GetComponent<AudioSource> ().PlayOneShot (ExplosionSound, ExplosionVolume);
+		GetComponent<AudioSource> ().PlayOneShot (explosionSound, explosionVolume);
 		timer = Time.time;
-		transform.localScale = new Vector3 (1, 1, 1) * StartSize;
+		transform.localScale = new Vector3 (1, 1, 1) * startSize;
 	}
 	
 	// Update is called once per frame
@@ -32,7 +36,7 @@ public class Explosion : MonoBehaviour
 	{
 		updateSize ();
 		//updateFade ();
-		if (Time.time - timer > Lifetime)
+		if (Time.time - timer > lifetime)
 		{
 			Destroy (gameObject);
 		}
@@ -42,7 +46,7 @@ public class Explosion : MonoBehaviour
 	#region private functions
 	void updateSize()
 	{
-		float scale = Mathf.Lerp (StartSize,EndSize,SizeCurve.Evaluate ((Time.time - timer) / GrowthTime)); 
+		float scale = Mathf.Lerp (startSize,endSize,sizeCurve.Evaluate ((Time.time - timer) / growthTime)); 
 		//Debug.Log (scale);
 
 		transform.localScale  = new Vector3 (scale,scale,scale);

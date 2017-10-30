@@ -5,10 +5,10 @@ using UnityEngine;
 public class NPCManager : MonoBehaviour
 {
 	#region serialized private variables
-	[SerializeField] private float DestinationChangeDelay = 5.0f;
-	[SerializeField] private float WalkRadius = 10.0f;
-	[SerializeField] private float MoveSpeed = 10.0f;
-	[SerializeField] private GameObject TargetPrefab;
+	[SerializeField] private float destinationChangeDelay = 5.0f;
+	[SerializeField] private float walkRadius = 10.0f;
+	[SerializeField] private float moveSpeed = 10.0f;
+	[SerializeField] private GameObject targetPrefab;
 	#endregion
 
 	#region private variables
@@ -27,14 +27,14 @@ public class NPCManager : MonoBehaviour
 	void Start ()
 	{
 		_parent = transform.parent.gameObject;
-		_target = Instantiate (TargetPrefab, transform.position, Quaternion.identity);
-		_timer = Time.time + Random.Range(0f,DestinationChangeDelay);
+		_target = Instantiate (targetPrefab, transform.position, Quaternion.identity);
+		_timer = Time.time + Random.Range(0f,destinationChangeDelay);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Time.time - _timer > DestinationChangeDelay) {
+		if (Time.time - _timer > destinationChangeDelay) {
 
 			FindTarget();
 
@@ -63,14 +63,14 @@ public class NPCManager : MonoBehaviour
 			Ray ray = new Ray (pos, dir);
 			RaycastHit hit;
 			success = !Physics.Raycast (ray, out hit, dist);
-			_travelTime = dist / MoveSpeed;
+			_travelTime = dist / moveSpeed;
 			if (!success && hit.distance > 2.0f)
 			{
 				float alpha = Mathf.Clamp (hit.distance / dist, 0.33f, 0.66f);
 				targetPos = Vector3.Lerp (pos, targetPos, alpha);
 				dist = Vector3.Distance (transform.position, targetPos);
 				success = true;
-				_travelTime = dist / MoveSpeed;
+				_travelTime = dist / moveSpeed;
 			}
 
 			k++;
@@ -83,7 +83,7 @@ public class NPCManager : MonoBehaviour
 
 	Vector3 randomPosition()
 	{
-		Vector2 randomDirection = UnityEngine.Random.insideUnitCircle * WalkRadius;
+		Vector2 randomDirection = UnityEngine.Random.insideUnitCircle * walkRadius;
 		Vector3 position = _parent.transform.position + new Vector3 (randomDirection.x, 0, randomDirection.y);
 
 		return position;

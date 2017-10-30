@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+	/* 
+	 * 
+	 */
+
 	#region public static variables
 	public static int Level = 0;
 	public static bool Restart = false;
@@ -20,13 +24,13 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private int VirusStartNumber = 1;
 	[SerializeField] private int VirusIncrementPerlevel = 1;
 	[SerializeField] private int VirusSpawnDelay = 10;
-	[SerializeField] private string VictorySceneName = "victory";
+	[SerializeField] private string victorySceneName = "victory";
 
 
 	[SerializeField] private AudioClip DeathSound;
 	[SerializeField] private AudioClip SpawnSound;
-	[SerializeField] private float AlertDelay = 4.0f;
-	[SerializeField] private float WaveCompleteDelay = 4.0f;
+	[SerializeField] private float alertDelay = 4.0f;
+	[SerializeField] private float waveCompleteDelay = 4.0f;
 	[SerializeField] private float RespawnDelay = 4.0f;
 	[SerializeField] private float GameOverDelay = 4.0f;
 	[SerializeField] private float StartLevelDelay = 2.0f;
@@ -106,16 +110,16 @@ public class GameManager : MonoBehaviour
 		{
 			CheckForVictory ();
 
-			if (_waveComplete && Time.time - _waveCompleteTimer > WaveCompleteDelay) {
+			if (_waveComplete && Time.time - _waveCompleteTimer > waveCompleteDelay) {
 				Endlevel ();
 				_waveComplete = false;
 			}
 
-			if (!_alertMessage && Time.time - _startLevelTimer > StartLevelDelay + AlertDelay) {
+			if (!_alertMessage && Time.time - _startLevelTimer > StartLevelDelay + alertDelay) {
 				UI.SetAlertText (true);
 				_alertMessage = true;
 			}
-			if (_alertMessage && Time.time - _startLevelTimer > StartLevelDelay + 3.0f*AlertDelay) {
+			if (_alertMessage && Time.time - _startLevelTimer > StartLevelDelay + 3.0f*alertDelay) {
 				UI.SetAlertText (false);
 				_alertMessage = false;
 			}
@@ -248,7 +252,7 @@ public class GameManager : MonoBehaviour
 		}
 		Debug.Log ("Game Won");
 		_gameIsWon = true;
-		SceneManager.LoadScene (VictorySceneName);
+		SceneManager.LoadScene (victorySceneName);
 
 	}
 

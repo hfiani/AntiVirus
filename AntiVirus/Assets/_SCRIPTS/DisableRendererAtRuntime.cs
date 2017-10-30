@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DisableRendererAtRuntime : MonoBehaviour
 {
+	/* DisableRendererAtRuntime
+	 * 
+	 */
+
 	// Use this for initialization
 	void Start ()
 	{

@@ -107,7 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedCurve:
+  Infected: 0
+  SpeedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
@@ -131,27 +132,26 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  materialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
-  materialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
+  MaterialImmune: {fileID: 2100000, guid: 824dc262c5aeca0459fef57f72e4c49e, type: 2}
+  MaterialInfectionGhost: {fileID: 2100000, guid: 1943c424022aa554b8fe609cee86bc62,
     type: 2}
-  materialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
+  MaterialInfectionFull: {fileID: 2100000, guid: 11369de6cada6a748886d27b90553349,
     type: 2}
-  epsilon: 0.001
-  distance: 0.03
-  timeToDestruction: 20
-  timeToInfection: 0.5
-  timeBetweenInfectionsMin: 0.1
-  timeBetweenInfectionsMax: 1
-  timeInfectionStability: 10
-  timeToRemoveImmunity: 20
-  timeToRemoveRepairImmunity: 5
-  infected: 0
-  immune: 0
-  repair_immune: 0
-  repairing: 0
-  virusType: 1
-  blockType: 0
-  materialsInfection:
+  Epsilon: 0.001
+  Distance: 0.03
+  TimeToDestruction: 20
+  TimeToInfection: 0.5
+  TimeBetweenInfectionsMin: 0.1
+  TimeBetweenInfectionsMax: 1
+  TimeInfectionStability: 10
+  TimeToRemoveImmunity: 20
+  TimeToRemoveRepairImmunity: 5
+  Immune: 0
+  RepairImmune: 0
+  Repairing: 0
+  VirusTypeVar: 1
+  BlockTypeVar: 0
+  MaterialsInfection:
   - {fileID: 2100000, guid: 2699fec4846abba46a14fe1df62fa231, type: 2}
   - {fileID: 2100000, guid: a8df41d9640b1a947a08ad496e3ec3a8, type: 2}
   - {fileID: 2100000, guid: 51d3f0fa69430554b9e7567bf36a9111, type: 2}

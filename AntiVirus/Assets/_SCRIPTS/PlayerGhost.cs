@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerGhost : MonoBehaviour
 {
 	#region serialized private variables
-	[SerializeField] private AnimationCurve MovementCurve;
+	[SerializeField] private AnimationCurve movementCurve;
 	#endregion
 
 	#region private variables
@@ -45,8 +45,8 @@ public class PlayerGhost : MonoBehaviour
 			transform.position = _travelEndPosition;
 			transform.rotation = _travelEndOrientation;
 		}
-		transform.position = Vector3.Lerp (_travelStartPosition, _travelEndPosition, MovementCurve.Evaluate (alpha));
-		transform.rotation = Quaternion.Lerp (_travelStartOrientation, _travelEndOrientation, MovementCurve.Evaluate (alpha));
+		transform.position = Vector3.Lerp (_travelStartPosition, _travelEndPosition, movementCurve.Evaluate (alpha));
+		transform.rotation = Quaternion.Lerp (_travelStartOrientation, _travelEndOrientation, movementCurve.Evaluate (alpha));
 	}
  	#endregion
 

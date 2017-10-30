@@ -8,22 +8,22 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PlayerManager : MonoBehaviour
 {
 	#region serialized private variables
-	[SerializeField] private Transform ProjectileSpawnPoint = null;
-	[SerializeField] private GameObject ProjectilePrefab = null;
+	[SerializeField] private Transform _ProjectileSpawnPoint = null;
+	[SerializeField] private GameObject _ProjectilePrefab = null;
 
-	[SerializeField] private float FireDelay = 0.2f;
-	[SerializeField] private float ShootingCost = 1.0f;
-	[SerializeField] private float BaseEnergyRegen = 1.0f;
-	[SerializeField] private float BuffedEnergyRegen = 50.0f;
-	[SerializeField] private float DebuffedEnergyRegen = 0.0f;
+	[SerializeField] private float _FireDelay = 0.2f;
+	[SerializeField] private float _ShootingCost = 1.0f;
+	[SerializeField] private float _BaseEnergyRegen = 1.0f;
+	[SerializeField] private float _BuffedEnergyRegen = 50.0f;
+	[SerializeField] private float _DebuffedEnergyRegen = 0.0f;
 
-	[SerializeField] private AudioClip ShootingSound;
-	[SerializeField] private float ShootingVolume=1.0f;
+	[SerializeField] private AudioClip _ShootingSound;
+	[SerializeField] private float _ShootingVolume=1.0f;
 
-	[SerializeField] private AnimationCurve BuffSpeedCurve;
-	[SerializeField] private float BuffDuration = 2.0f;
-	[SerializeField] private float BuffMaxSpeed = 3.0f;
-	[SerializeField] private float DebuffMaxSpeed = 0.33f;
+	[SerializeField] private AnimationCurve buffSpeedCurve;
+	[SerializeField] private float buffDuration = 2.0f;
+	[SerializeField] private float buffMaxSpeed = 3.0f;
+	[SerializeField] private float debuffMaxSpeed = 0.33f;
 	[SerializeField] private float DistanceRaycast = 30.0f;
 	#endregion
 
@@ -71,7 +71,7 @@ public class PlayerManager : MonoBehaviour
 		{
 			EnergyUpdate (_maxEnergy);
 		}
-		if (Input.GetMouseButton (0) && Time.time - _timer > FireDelay && _energy > 10.0f)
+		if (Input.GetMouseButton (0) && Time.time - _timer > _FireDelay && _energy > 10.0f)
 		{
 			Shoot ();
 		}
@@ -97,19 +97,19 @@ public class PlayerManager : MonoBehaviour
 	{
 		if (c.tag == "NPC")
 		{
-			if (c.GetComponent<NPCInfection> ().Infected)
+			if (c.GetComponent<NPCInfection> ().infected)
 			{
-				BuffSpeed (DebuffMaxSpeed, BuffDuration);
+				BuffSpeed (debuffMaxSpeed, buffDuration);
 				EnergyUpdate (-_maxEnergy);
-				_energyRegen = DebuffedEnergyRegen;
+				_energyRegen = _DebuffedEnergyRegen;
 				UI.SetBuffText (false);
 				UI.SetDeBuffText (true);
 			}
 			else
 			{
-				BuffSpeed (BuffMaxSpeed, BuffDuration);
+				BuffSpeed (buffMaxSpeed, buffDuration);
 				EnergyUpdate (_maxEnergy);
-				_energyRegen = BuffedEnergyRegen;
+				_energyRegen = _BuffedEnergyRegen;
 				UI.SetBuffText (true);
 				UI.SetDeBuffText (false);
 			}
@@ -126,7 +126,7 @@ public class PlayerManager : MonoBehaviour
 		_cam = transform.GetChild (0).GetComponent<Camera> ();
 		Audio = GetComponents<AudioSource>()[1];
 
-		_energyRegen = BaseEnergyRegen;
+		_energyRegen = _BaseEnergyRegen;
 
 		UI.Player = gameObject;
 		UI.FOV = _cam.fieldOfView * 2; // here it is half the visible angle
@@ -142,9 +142,9 @@ public class PlayerManager : MonoBehaviour
 	void Shoot()
 	{
 		_timer = Time.time;
-		Instantiate (ProjectilePrefab, ProjectileSpawnPoint.position, ProjectileSpawnPoint.rotation);
-		EnergyUpdate (-ShootingCost);
-		Audio.PlayOneShot (ShootingSound, ShootingVolume);
+		Instantiate (_ProjectilePrefab, _ProjectileSpawnPoint.position, _ProjectileSpawnPoint.rotation);
+		EnergyUpdate (-_ShootingCost);
+		Audio.PlayOneShot (_ShootingSound, _ShootingVolume);
 	}
 
 	void BuffSpeed(float factorMax, float duration)
@@ -161,7 +161,7 @@ public class PlayerManager : MonoBehaviour
 		{
 			if ((DateTime.Now - _buffTime).TotalMilliseconds < _buffDuration)
 			{
-				float time_step = BuffSpeedCurve.Evaluate ((float)(DateTime.Now - _buffTime).TotalMilliseconds / _buffDuration);
+				float time_step = buffSpeedCurve.Evaluate ((float)(DateTime.Now - _buffTime).TotalMilliseconds / _buffDuration);
 
 				float factorNow = Mathf.Lerp (1, _buffFactor, time_step);
 				FPS.WalkingSpeed = _walkSpeedOriginValue * factorNow;
@@ -170,7 +170,7 @@ public class PlayerManager : MonoBehaviour
 			else
 			{
 				_buffEnabled = false;
-				_energyRegen = BaseEnergyRegen;
+				_energyRegen = _BaseEnergyRegen;
 				UI.SetBuffText (false);
 				UI.SetDeBuffText (false);
 			}
