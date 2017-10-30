@@ -35503,7 +35503,7 @@ Prefab:
     - target: {fileID: 224466808640490554, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 549.151
+      value: 549.1511
       objectReference: {fileID: 0}
     - target: {fileID: 224287596755938624, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
@@ -35565,7 +35565,7 @@ Prefab:
     - target: {fileID: 224466808640490554, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 9.099976
+      value: 9.100098
       objectReference: {fileID: 0}
     - target: {fileID: 114659607590119082, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
@@ -77026,7 +77026,12 @@ Prefab:
     - target: {fileID: 114043850227089004, guid: f46b903491d3cf54e910855e8644000c,
         type: 2}
       propertyPath: VirusStartNumber
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114043850227089004, guid: f46b903491d3cf54e910855e8644000c,
+        type: 2}
+      propertyPath: StartLevelDelay
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f46b903491d3cf54e910855e8644000c, type: 2}
