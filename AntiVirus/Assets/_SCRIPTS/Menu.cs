@@ -7,6 +7,10 @@ public class Menu : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject _LoadingPanel;
+	[SerializeField]
+	private GameObject _CreditsPanel;
+	[SerializeField]
+	private GameObject _InfoPanel;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +18,8 @@ public class Menu : MonoBehaviour {
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
 		_LoadingPanel.SetActive (false);
+		_CreditsPanel.SetActive (false);
+		_InfoPanel.SetActive (false);
 		
 	}
 	
@@ -27,9 +33,16 @@ public class Menu : MonoBehaviour {
 		SceneManager.LoadScene (sceneName);
 	}
 
-	public void ShowLoadingPanel(){
-		_LoadingPanel.SetActive (true);
+	public void SetLoadingPanel(bool state){
+		_LoadingPanel.SetActive (state);
 	}
+	public void SetCreditPanel(bool state){
+		_CreditsPanel.SetActive (state);
+	}
+	public void SetInfoPanel(bool state){
+		_InfoPanel.SetActive (state);
+	}
+
 		
 		
 
