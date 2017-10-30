@@ -55,9 +55,6 @@ public class PlayerManager : MonoBehaviour
 
 		_walkSpeedOriginValue = FPS.WalkingSpeed;
 		_runSpeedOriginValue = FPS.RunningSpeed;
-	
-		Projectile p = new Projectile ();
-		Destroy (p);
 
 		_crosshairVirus = GameObject.Find ("Image_virus");
 		_crosshairNoVirus = GameObject.Find ("Image_novirus");

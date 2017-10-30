@@ -15,30 +15,30 @@ public class InfectionRaycast : MonoBehaviour
 	#endregion
 
 	#region serialized private variables
-	[SerializeField] private AnimationCurve SpeedCurve;
+	[SerializeField] private AnimationCurve speedCurve;
 
-	[SerializeField] private Material MaterialImmune;
-	[SerializeField] private Material MaterialInfectionGhost;
-	[SerializeField] private Material MaterialInfectionFull;
+	[SerializeField] private Material materialImmune;
+	[SerializeField] private Material materialInfectionGhost;
+	[SerializeField] private Material materialInfectionFull;
 
-	[SerializeField] private float Epsilon = 0.001f;
-	[SerializeField] private float Distance = 0.03f;
+	[SerializeField] private float epsilon = 0.001f;
+	[SerializeField] private float distance = 0.03f;
 
-	[SerializeField] private float TimeToDestruction = 10.0f;
-	[SerializeField] private float TimeToInfection = 2.0f;
-	[SerializeField] private float TimeBetweenInfectionsMin = 0.5f;
-	[SerializeField] private float TimeBetweenInfectionsMax = 5.0f;
-	[SerializeField] private float TimeInfectionStability = 20.0f;
+	[SerializeField] private float timeToDestruction = 10.0f;
+	[SerializeField] private float timeToInfection = 2.0f;
+	[SerializeField] private float timeBetweenInfectionsMin = 0.5f;
+	[SerializeField] private float timeBetweenInfectionsMax = 5.0f;
+	[SerializeField] private float timeInfectionStability = 20.0f;
 
-	[SerializeField] private float TimeToRemoveImmunity = 20.0f;
-	[SerializeField] private float TimeToRemoveRepairImmunity = 3.0f;
+	[SerializeField] private float timeToRemoveImmunity = 20.0f;
+	[SerializeField] private float timeToRemoveRepairImmunity = 3.0f;
 
-	[SerializeField] private bool Immune = false;
-	[SerializeField] private bool RepairImmune = false;
-	[SerializeField] private bool Repairing = false;
-	[SerializeField] private VirusType VirusTypeVar = VirusType.ALL_AT_ONCE;
-	[SerializeField] private BlockType BlockTypeVar = BlockType.DESTRUCTABLE_INFECTABLE;
-	[SerializeField] private Material[] MaterialsInfection = new Material[7];
+	[SerializeField] private bool immune = false;
+	[SerializeField] private bool repair_immune = false;
+	[SerializeField] private bool repairing = false;
+	[SerializeField] private VirusType virusType = VirusType.ALL_AT_ONCE;
+	[SerializeField] private BlockType blockType = BlockType.DESTRUCTABLE_INFECTABLE;
+	[SerializeField] private Material[] materialsInfection = new Material[7];
 	#endregion
 
 	#region private variables
@@ -78,15 +78,15 @@ public class InfectionRaycast : MonoBehaviour
 		{
 			Init ();
 		}
-		else if (Repairing || Infected || Immune || RepairImmune)
+		else if (repairing || Infected || immune || repair_immune)
 		{
 			if (GameManager.Restart)
 			{
-				Repairing = false;
+				repairing = false;
 				RemoveInfection ();
 				RemoveImmunity ();
 			}
-			if (Repairing)
+			if (repairing)
 			{
 				float duration_repaired = (float)(DateTime.Now - _reparationTime).TotalMilliseconds;
 
@@ -99,15 +99,15 @@ public class InfectionRaycast : MonoBehaviour
 				ManageSelfInfection (duration_infected);
 				InfectNeighbours (duration_infected);
 			}
-			else if (Immune)
+			else if (immune)
 			{
 				float duration_immuned = (float)(DateTime.Now - _immunityTime).TotalMilliseconds;
-				CheckImmunity (duration_immuned, TimeToRemoveImmunity);
+				CheckImmunity (duration_immuned, timeToRemoveImmunity);
 			}
-			else if (RepairImmune)
+			else if (repair_immune)
 			{
 				float duration_repair_immuned = (float)(DateTime.Now - _reparationTime).TotalMilliseconds;
-				CheckImmunity (duration_repair_immuned, TimeToRemoveRepairImmunity);
+				CheckImmunity (duration_repair_immuned, timeToRemoveRepairImmunity);
 			}
 		}
 	}
@@ -121,15 +121,15 @@ public class InfectionRaycast : MonoBehaviour
 	{
 		_isInit = true;
 
-		TimeToDestruction *= 1000;
-		TimeToInfection *= 1000;
-		TimeBetweenInfectionsMin *= 1000;
-		TimeBetweenInfectionsMax *= 1000;
-		TimeToRemoveImmunity *= 1000;
-		TimeToRemoveRepairImmunity *= 1000;
-		TimeInfectionStability *= 1000;
+		timeToDestruction *= 1000;
+		timeToInfection *= 1000;
+		timeBetweenInfectionsMin *= 1000;
+		timeBetweenInfectionsMax *= 1000;
+		timeToRemoveImmunity *= 1000;
+		timeToRemoveRepairImmunity *= 1000;
+		timeInfectionStability *= 1000;
 
-		_timeBetweenReparations = TimeBetweenInfectionsMin * _factorRemoveInfection;
+		_timeBetweenReparations = timeBetweenInfectionsMin * _factorRemoveInfection;
 
 		_meshRenderer = transform.GetComponent<MeshRenderer> ();
 		_meshRendererChildren = new MeshRenderer[transform.childCount];
@@ -144,7 +144,7 @@ public class InfectionRaycast : MonoBehaviour
 		// check all valid directions
 		for (int i = 0; i < _directions.Length; i++)
 		{
-			Transform neighbour = GetNeighbourBlocks (_directions [i], Distance);
+			Transform neighbour = GetNeighbourBlocks (_directions [i], distance);
 			if (neighbour == null)
 			{
 				_directions [i] = Vector3.zero;
@@ -248,34 +248,26 @@ public class InfectionRaycast : MonoBehaviour
 	/// <param name="duration_infected">Duration infected.</param>
 	void ManageSelfInfection(float duration_infected)
 	{
-		if (duration_infected >= TimeToDestruction) // time's up -> destroy object
+		if (duration_infected >= timeToDestruction) // time's up -> destroy object
 		{
-			if (BlockTypeVar == BlockType.DESTRUCTABLE_INFECTABLE)
+			if (blockType == BlockType.DESTRUCTABLE_INFECTABLE)
 			{
 				//Destroy (gameObject);
 				gameObject.layer = 11;
-				ChangeMaterial(MaterialInfectionGhost);
+				ChangeMaterial(materialInfectionGhost);
 				this.enabled = false;
 			}
-			else if (BlockTypeVar == BlockType.UNDESTRUCTABLE_INFECTABLE)
+			else if (blockType == BlockType.UNDESTRUCTABLE_INFECTABLE)
 			{
-				ChangeMaterial(MaterialInfectionFull);
+				ChangeMaterial(materialInfectionFull);
 			}
 		}
-		/*else if (duration_infected < timeToDestruction / 2) // green to yellow
-		{
-			ChangeColor (transform, new Vector3 (duration_infected / (timeToDestruction / 2), 1, 0));
-		}
-		else if (duration_infected >= timeToDestruction / 2) // yellow to red
-		{
-			ChangeColor (transform, new Vector3 (1, 2 - duration_infected / (timeToDestruction / 2), 0));
-		}*/
 		else
 		{
-			int material_index = (int)Math.Floor (duration_infected * MaterialsInfection.Length / TimeToDestruction);
-			if (material_index < MaterialsInfection.Length && material_index >= 0)
+			int material_index = (int)Math.Floor (duration_infected * materialsInfection.Length / timeToDestruction);
+			if (material_index < materialsInfection.Length && material_index >= 0)
 			{
-				ChangeMaterial (MaterialsInfection [material_index]);
+				ChangeMaterial (materialsInfection [material_index]);
 			}
 		}
 	}
@@ -286,9 +278,9 @@ public class InfectionRaycast : MonoBehaviour
 	/// <param name="duration_infected">Duration infected.</param>
 	void InfectNeighbours(float duration_infected)
 	{
-		if (VirusTypeVar == VirusType.ALL_AT_ONCE) // parallel infections
+		if (virusType == VirusType.ALL_AT_ONCE) // parallel infections
 		{
-			if (duration_infected >= TimeToInfection)
+			if (duration_infected >= timeToInfection)
 			{
 				foreach (Vector3 direction in _directions)
 				{
@@ -305,11 +297,11 @@ public class InfectionRaycast : MonoBehaviour
 				}
 			}
 		}
-		else if (VirusTypeVar == VirusType.ONE_AT_TIME) // serial infections
+		else if (virusType == VirusType.ONE_AT_TIME) // serial infections
 		{
-			float time_step = SpeedCurve.Evaluate((float) (DateTime.Now - _startInfectionTime).TotalMilliseconds / TimeInfectionStability);
+			float time_step = speedCurve.Evaluate((float) (DateTime.Now - _startInfectionTime).TotalMilliseconds / timeInfectionStability);
 		
-			if (duration_infected > TimeToInfection && duration_infected - (_lastCheckInfectionTime - _infectionTime).TotalMilliseconds >= Mathf.Lerp(TimeBetweenInfectionsMin, TimeBetweenInfectionsMax, time_step))
+			if (duration_infected > timeToInfection && duration_infected - (_lastCheckInfectionTime - _infectionTime).TotalMilliseconds >= Mathf.Lerp(timeBetweenInfectionsMin, timeBetweenInfectionsMax, time_step))
 			{
 				/*Vector3 direction = GetDirection ();
 				Transform t = GetNeighbourBlocks (direction, distance);*/
@@ -333,7 +325,7 @@ public class InfectionRaycast : MonoBehaviour
 	/// <param name="duration_infected">Duration Repaired.</param>
 	void RepairNeighbours(float duration_repaired)
 	{
-		if (VirusTypeVar == VirusType.ALL_AT_ONCE) // parallel infections
+		if (virusType == VirusType.ALL_AT_ONCE) // parallel infections
 		{
 			foreach (Vector3 direction in _directions)
 			{
@@ -349,7 +341,7 @@ public class InfectionRaycast : MonoBehaviour
 				}
 			}
 		}
-		else if (VirusTypeVar == VirusType.ONE_AT_TIME) // serial infections
+		else if (virusType == VirusType.ONE_AT_TIME) // serial infections
 		{
 			if (duration_repaired >= _timeBetweenReparations * _blockTurn && _blockTurn < _directions.Length)
 			{
@@ -368,7 +360,7 @@ public class InfectionRaycast : MonoBehaviour
 			}
 			else if (_blockTurn >= _directions.Length)
 			{
-				Repairing = false;
+				repairing = false;
 			}
 		}
 	}
@@ -385,9 +377,9 @@ public class InfectionRaycast : MonoBehaviour
 		BoxCollider b = transform.gameObject.GetComponent<BoxCollider> ();
 
 		Vector3 ray_localPosition = new Vector3 (
-			direction.x * (transform.localScale.x * b.size.x / 2 - Epsilon),
-			direction.y * (transform.localScale.y * b.size.y / 2 - Epsilon),
-			direction.z * (transform.localScale.z * b.size.z / 2 - Epsilon));
+			direction.x * (transform.localScale.x * b.size.x / 2 - epsilon),
+			direction.y * (transform.localScale.y * b.size.y / 2 - epsilon),
+			direction.z * (transform.localScale.z * b.size.z / 2 - epsilon));
 		Vector3 ray_pos = (transform.position + b.center) + ray_localPosition;
 
 		if (Physics.Raycast (ray_pos, direction, out hit, distance))
@@ -407,11 +399,11 @@ public class InfectionRaycast : MonoBehaviour
 	/// </summary>
 	public void CreateInfection(DateTime startInfectionTime)
 	{
-		if (BlockTypeVar == BlockType.OBJECTIVE)
+		if (blockType == BlockType.OBJECTIVE)
 		{
 			GM.GameOver ();
 		}
-		else if (BlockTypeVar != BlockType.UNDESTRUCTABLE_UNINFECTABLE && !Immune && !RepairImmune && !Infected)
+		else if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && !immune && !repair_immune && !Infected)
 		{
 			_startInfectionTime = startInfectionTime;
 			_lastCheckInfectionTime = DateTime.Now;
@@ -435,7 +427,7 @@ public class InfectionRaycast : MonoBehaviour
 	/// </summary>
 	public void RemoveInfection()
 	{
-		if (BlockTypeVar != BlockType.UNDESTRUCTABLE_UNINFECTABLE && Infected)
+		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && Infected)
 		{
 			Infected = false;
 			ChangeMaterial(_originalMaterial);
@@ -455,13 +447,13 @@ public class InfectionRaycast : MonoBehaviour
 	/// </summary>
 	public void CreateImmunity()
 	{
-		if (BlockTypeVar != BlockType.UNDESTRUCTABLE_UNINFECTABLE && BlockTypeVar != BlockType.OBJECTIVE)
+		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && blockType != BlockType.OBJECTIVE)
 		{
 			RemoveInfection();
 
-			Immune = true;
-			RepairImmune = false;
-			ChangeMaterial(MaterialImmune);
+			immune = true;
+			repair_immune = false;
+			ChangeMaterial(materialImmune);
 			_immunityTime = DateTime.Now;
 		}
 	}
@@ -471,10 +463,10 @@ public class InfectionRaycast : MonoBehaviour
 	/// </summary>
 	public void RemoveImmunity()
 	{
-		if (BlockTypeVar != BlockType.UNDESTRUCTABLE_UNINFECTABLE && (Immune || RepairImmune))
+		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && (immune || repair_immune))
 		{
-			Immune = false;
-			RepairImmune = false;
+			immune = false;
+			repair_immune = false;
 			ChangeMaterial(_originalMaterial);
 			_immunityTime = new DateTime (0);
 			_blockTurn = 0;
@@ -487,15 +479,15 @@ public class InfectionRaycast : MonoBehaviour
 	/// </summary>
 	public void RepairInfection()
 	{
-		if (BlockTypeVar != BlockType.UNDESTRUCTABLE_UNINFECTABLE && Infected && BlockTypeVar != BlockType.OBJECTIVE)
+		if (blockType != BlockType.UNDESTRUCTABLE_UNINFECTABLE && Infected && blockType != BlockType.OBJECTIVE)
 		{
 			RemoveInfection ();
 
-			Immune = false;
+			immune = false;
 			Infected = false;
-			Repairing = true;
-			RepairImmune = true;
-			ChangeMaterial(MaterialImmune);
+			repairing = true;
+			repair_immune = true;
+			ChangeMaterial(materialImmune);
 			_reparationTime = DateTime.Now;
 			_blockTurn = 0;
 			//ResetDirections ();
