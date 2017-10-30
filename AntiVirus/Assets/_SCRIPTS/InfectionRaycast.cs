@@ -5,6 +5,10 @@ using System;
 
 public class InfectionRaycast : MonoBehaviour
 {
+	/* InfectionRaycast
+	 * this script is attached to EACH infectable block in the scene.
+	 * It manages all infections, immunity and reparation of the blocks
+	 */
 	#region enum
 	public enum VirusType{ALL_AT_ONCE, ONE_AT_TIME};
 	public enum BlockType{DESTRUCTABLE_INFECTABLE, UNDESTRUCTABLE_INFECTABLE, UNDESTRUCTABLE_UNINFECTABLE, OBJECTIVE};
@@ -413,12 +417,6 @@ public class InfectionRaycast : MonoBehaviour
 			this.enabled = true;
 
 			gameObject.layer = 15;
-
-			/*float distance_to_objective = Vector3.Distance (transform.position, GM.Objective.transform.position);
-			if (distance_to_objective < GM.SmallestDistance)
-			{
-				GM.SmallestDistance = distance_to_objective;
-			}*/
 		}
 	}
 

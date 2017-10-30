@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//animation d'une colonne de lave (montée/descente aléatoire)
-//=========================================================================================================
 public class GlowAnimation : MonoBehaviour
 {
+	/* GlowAnimation
+	 * the script that handles the glow effect of the OceanSpawner blocks (clouds and water, etc...)
+	 */
 	#region serialized private variables
 	[SerializeField] private float _AnimSpeed = 25f;
 	[SerializeField] private AnimationCurve _EmiColorCurve = null;

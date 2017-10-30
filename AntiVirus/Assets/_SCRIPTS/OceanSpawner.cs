@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class OceanSpawner : MonoBehaviour
 {
+	/* OceanSpawner
+	 * creates surface of blocks that looks like water, lava, clouds etc...
+	 */
+
 	#region serialized private variables
 	[SerializeField] private float oceanSize = 100.0f;
 	[SerializeField] private float waveSize = 10.0f;

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class NPCManager : MonoBehaviour
 {
+	/* NPCManager
+	 * Movement of NPC
+	 */
+
 	#region serialized private variables
 	[SerializeField] private float destinationChangeDelay = 5.0f;
 	[SerializeField] private float walkRadius = 10.0f;

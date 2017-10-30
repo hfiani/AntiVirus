@@ -5,7 +5,7 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
 	/* Explosion
-	 * used to explode
+	 * used to explode virus
 	 */
 
 	#region serialized private variables
@@ -49,7 +49,7 @@ public class Explosion : MonoBehaviour
 		float scale = Mathf.Lerp (startSize,endSize,sizeCurve.Evaluate ((Time.time - timer) / growthTime)); 
 		//Debug.Log (scale);
 
-		transform.localScale  = new Vector3 (scale,scale,scale);
+		transform.localScale  = new Vector3 (scale, scale, scale);
 	}
 	#endregion
 }

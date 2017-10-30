@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class WaveController : MonoBehaviour
 {
+	/* WaveController
+	 * Each level has a wave of viruses, this script makes sure
+	 * that the viruses are well spread and well removed
+	 */
+
 	#region static variables
 	static int ZoneIndex = 0;
 	#endregion

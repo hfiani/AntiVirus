@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//animation d'une colonne de lave (montée/descente aléatoire)
-//=========================================================================================================
 public class VirusAnimation : MonoBehaviour
 {
+	/* VirusAnimation
+	 * the animation of the virus
+	 */
+
 	#region serialized private variables
 	[SerializeField] private AnimationCurve _SizeCurve = null;
 	[SerializeField] private float _AnimSpeed = 25f;

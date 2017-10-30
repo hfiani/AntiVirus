@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+	/* Projectile
+	 * The projectile that the player shoots
+	 */
+
 	#region serialized private variables
 	[SerializeField] private float startSize = 1.0f;
 	[SerializeField] private float endSize = 1.0f;

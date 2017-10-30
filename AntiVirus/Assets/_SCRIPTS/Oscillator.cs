@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//animation d'une colonne de lave (montée/descente aléatoire)
-//=========================================================================================================
 public class Oscillator : MonoBehaviour
 {
+	/* Oscillator
+	 * Animation of each OceanSpawner block (each block of water surface, or clouds etc...)
+	 */
+
 	#region serialized private variables
 	[SerializeField] private AnimationCurve _waveMovement = null;
 	[SerializeField] private float _waveSpeed = 25f;

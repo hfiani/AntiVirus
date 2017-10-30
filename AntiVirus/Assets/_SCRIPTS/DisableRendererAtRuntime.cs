@@ -5,7 +5,7 @@ using UnityEngine;
 public class DisableRendererAtRuntime : MonoBehaviour
 {
 	/* DisableRendererAtRuntime
-	 * 
+	 * Put on objects that help LD need to see in editor, but we disable their renderer in game.
 	 */
 
 	// Use this for initialization

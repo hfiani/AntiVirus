@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+	/* Menu
+	 * manages main menu buttons
+	 */
 	#region serialized private variables
 	[SerializeField] private GameObject _LoadingPanel;
 	[SerializeField] private GameObject _CreditsPanel;

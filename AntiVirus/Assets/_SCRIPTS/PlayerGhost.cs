@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerGhost : MonoBehaviour
 {
+	/* PlayerGhost
+	 * When player dies, this script teleports him to the spawn point with special effects of DEATH
+	 */
+	
 	#region serialized private variables
 	[SerializeField] private AnimationCurve movementCurve;
 	#endregion

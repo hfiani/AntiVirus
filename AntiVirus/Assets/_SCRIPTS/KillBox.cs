@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class KillBox : MonoBehaviour
 {
+	/* KillBox
+	 * if player touches the object attaching this script, he dies
+	 */
 	private GameManager GM;
 
 	// Use this for initialization

@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class UI_Manager : MonoBehaviour
 {
+	/* UI_Manager
+	 * The UI components and all their related functions (energy bar, compass, etc...)
+	 */
+
 	#region private variables
 	private float _energyBarWidth, _energyBarHeight;
 	private float _infectionBarWidth, _infectionBarHeight;

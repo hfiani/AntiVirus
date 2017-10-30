@@ -5,6 +5,10 @@ using System;
 
 public class VirusManager : MonoBehaviour
 {
+	/* VirusManager
+	 * Handles the Virus and his functions (creation, infection of blocks, health, timer, etc...)
+	 */
+
 	#region public variables
 	[SerializeField] private bool canDieFromAge = false;
 	[SerializeField] private float lifetime = 10.0f;
@@ -182,7 +186,7 @@ public class VirusManager : MonoBehaviour
 	}
 	#endregion
 
-	#region public region
+	#region public functions
 	public Color GetCurrentBaseColor()
 	{
 		return _currentBaseColor;

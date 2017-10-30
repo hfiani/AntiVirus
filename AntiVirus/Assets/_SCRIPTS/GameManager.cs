@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-	/* 
-	 * 
+	/* GameManager
+	 * Placed on a game manager. All the game events are treated here (spawn player, start level, etc...)
 	 */
 
 	#region public static variables

@@ -7,6 +7,10 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerManager : MonoBehaviour
 {
+	/* PlayerManager
+	 * Everything related to the player: shooting, NPc buffs/debuffs, etc...
+	 */
+
 	#region serialized private variables
 	[SerializeField] private Transform _ProjectileSpawnPoint = null;
 	[SerializeField] private GameObject _ProjectilePrefab = null;

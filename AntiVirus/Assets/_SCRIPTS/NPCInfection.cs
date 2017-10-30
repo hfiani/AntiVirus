@@ -5,6 +5,10 @@ using System;
 
 public class NPCInfection : MonoBehaviour
 {
+	/* NPCInfection
+	 * Manages infections of NPCs
+	 */
+
 	#region private variables
 	private DateTime _infectionTime;
 	private Material _originalMaterial;
