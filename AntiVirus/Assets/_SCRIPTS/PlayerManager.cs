@@ -58,7 +58,7 @@ public class PlayerManager : MonoBehaviour
 
 		_crosshairVirus = GameObject.Find ("Image_virus");
 		_crosshairNoVirus = GameObject.Find ("Image_novirus");
-		_crosshairVirus.SetActive (false);
+		_crosshairNoVirus.GetComponent<Image> ().enabled = false;
 	}
 
 	// Update is called once per frame
@@ -72,17 +72,18 @@ public class PlayerManager : MonoBehaviour
 		{
 			Shoot ();
 		}
-
-		RaycastHit hit;
-		if (Physics.Raycast (transform.position, transform.forward, out hit, DistanceRaycast, 1 << 10))
+			
+		if (Physics.Raycast (transform.position, transform.forward, DistanceRaycast, 1 << 10))
 		{
-			_crosshairVirus.SetActive (true);
-			_crosshairNoVirus.SetActive (false);
+			
+			_crosshairVirus.GetComponent<Image> ().enabled = true;
+			_crosshairNoVirus.GetComponent<Image> ().enabled = false;
 		}
 		else
 		{
-			_crosshairNoVirus.SetActive (true);
-			_crosshairVirus.SetActive (false);
+
+			_crosshairVirus.GetComponent<Image> ().enabled = false;
+			_crosshairNoVirus.GetComponent<Image> ().enabled = true;
 		}
 
 		EnergyUpdate (_energyRegen*Time.deltaTime);
