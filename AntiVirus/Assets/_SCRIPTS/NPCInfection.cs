@@ -11,19 +11,21 @@ public class NPCInfection : MonoBehaviour
 	#endregion
 
 	#region public variables
-	public bool infected;
-	public Material infectionMaterial;
-	public float epsilon = 0.001f;
-	public float distance = 0.03f;
+	public bool Infected;
+	#endregion
 
-	public float timeToDeinfection = 10.0f;
+	#region serialized private variables
+	[SerializeField] private Material InfectionMaterial;
+	[SerializeField] private float Epsilon = 0.001f;
+	[SerializeField] private float Distance = 0.03f;
+	[SerializeField] private float TimeToDeinfection = 10.0f;
 	#endregion
 
 	#region events
 	// Use this for initialization
 	void Start ()
 	{
-		timeToDeinfection *= 1000;
+		TimeToDeinfection *= 1000;
 		_originalMaterial = transform.GetChild (0).GetComponent<MeshRenderer> ().sharedMaterial;
 	}
 	
@@ -38,37 +40,37 @@ public class NPCInfection : MonoBehaviour
 	#region private functions
 	void checkInfection()
 	{
-		if (infected && (float)(DateTime.Now - _infectionTime).TotalMilliseconds > timeToDeinfection)
+		if (Infected && (float)(DateTime.Now - _infectionTime).TotalMilliseconds > TimeToDeinfection)
 		{
-			infected = false;
+			Infected = false;
 			ChangeMaterial (_originalMaterial);
 		}
 	}
 
 	void checkInfectionUnder()
 	{
-		if (!infected)
+		if (!Infected)
 		{
 			Vector3 direction = Vector3.down;
 			RaycastHit hit;
 			BoxCollider b = GetComponent<BoxCollider> ();
 
 			Vector3 ray_localPosition = new Vector3 (
-				direction.x * (transform.localScale.x * b.size.x / 2 - epsilon),
-				direction.y * (transform.localScale.y * b.size.y / 2 - epsilon),
-				direction.z * (transform.localScale.z * b.size.z / 2 - epsilon));
+				direction.x * (transform.localScale.x * b.size.x / 2 - Epsilon),
+				direction.y * (transform.localScale.y * b.size.y / 2 - Epsilon),
+				direction.z * (transform.localScale.z * b.size.z / 2 - Epsilon));
 			Vector3 ray_pos = (transform.position + b.center) + ray_localPosition;
-			Debug.DrawRay (ray_pos, direction.normalized*distance, Color.red);
-			if (Physics.Raycast (ray_pos, direction, out hit, distance))
+			Debug.DrawRay (ray_pos, direction.normalized*Distance, Color.red);
+			if (Physics.Raycast (ray_pos, direction, out hit, Distance))
 			{
 				GameObject obj = hit.transform.gameObject;
 				//Debug.Log ("touched=" + obj.name);
-				if (obj != null && obj.GetComponent<InfectionRaycast> () != null && obj.GetComponent<InfectionRaycast> ().infected)
+				if (obj != null && obj.GetComponent<InfectionRaycast> () != null && obj.GetComponent<InfectionRaycast> ().Infected)
 				{
 					//Debug.Log ("infected");
 					_infectionTime = DateTime.Now;
-					infected = true;
-					ChangeMaterial (infectionMaterial);
+					Infected = true;
+					ChangeMaterial (InfectionMaterial);
 				}
 			}
 		}
@@ -86,9 +88,5 @@ public class NPCInfection : MonoBehaviour
 			}
 		}
 	}
-	#endregion
-
-	#region public functions
-
 	#endregion
 }

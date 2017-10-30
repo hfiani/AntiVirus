@@ -2,38 +2,31 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-
-//=======================================================================================================
-//USED IN EXIT SCENE 
-//=======================================================================================================
 public class GameOver : MonoBehaviour
 {
+	#region serialized private variables
+	[SerializeField] private float Delay = 3.0f;
+	[SerializeField] private string SceneToLoad;
+	#endregion
 
-    [SerializeField]
-	private float _delay = 3.0f;
-	[SerializeField]
-	private string _sceneToLoad;
-
+	#region private variables
 	private float _timer;
+	#endregion
 
-    //=======================================================================================================
+	#region events
 	void Start ()
     {
 
 		_timer = Time.time;
 	
 	}
-	
-    //=======================================================================================================
+
 	void Update ()
     {
-
-		if (Time.time > _timer + _delay)
+		if (Time.time > _timer + Delay)
         {
-
-			SceneManager.LoadScene (_sceneToLoad);
-
+			SceneManager.LoadScene (SceneToLoad);
 		}
-	
 	}
+	#endregion
 }

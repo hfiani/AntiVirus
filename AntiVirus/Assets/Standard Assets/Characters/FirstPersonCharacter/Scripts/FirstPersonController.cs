@@ -18,7 +18,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		[SerializeField] private float m_JumpTimeStop;
 		[SerializeField] private float m_JumpTimeMinimum;
 		[SerializeField] private float m_JumpChargeCoeff;
-		private float m_JumpSpeed;
 		[SerializeField] private float m_StickToGroundForce;
 		[SerializeField] private float m_GravityMultiplier;
 		[SerializeField] private MouseLook m_MouseLook;
@@ -36,6 +35,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		[SerializeField] private AnimationCurve jumpCurve;
 
 		private float jumpTimer = 0f;
+		private float m_JumpSpeed;
 
 		private Camera m_Camera;
 		private bool m_Jump;

@@ -2,32 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillBox : MonoBehaviour {
-
+public class KillBox : MonoBehaviour
+{
 	private GameManager GM;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+	{
 		GM = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager>();
-		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		
 	}
 
-	void OnTriggerEnter(Collider col){
-
-		if (col.gameObject.CompareTag ("Player")) {
+	void OnTriggerEnter(Collider col)
+	{
+		if (col.gameObject.CompareTag ("Player"))
+		{
 			GM.PlayerDeath ();
-
-		} else {
-
+		}
+		else
+		{
 			Destroy (col.gameObject);
 		}
-
-
 	}
 }

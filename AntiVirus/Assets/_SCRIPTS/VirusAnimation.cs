@@ -4,82 +4,64 @@ using UnityEngine;
 
 //animation d'une colonne de lave (montée/descente aléatoire)
 //=========================================================================================================
-public class VirusAnimation : MonoBehaviour {
+public class VirusAnimation : MonoBehaviour
+{
+	#region serialized private variables
+	[SerializeField] private AnimationCurve SizeCurve = null;
+	[SerializeField] private float AnimSpeed = 25f;
+	[SerializeField] private float MinSize = 3f;
+	[SerializeField] private float MaxSize = 6f;
+	[SerializeField] private AnimationCurve EmiColorCurve = null;
+	[SerializeField] private float MinEmiIntensity = 0.5f;
+	[SerializeField] private float MaxEmiIntensity = 1.0f;
+	#endregion
 
-	[SerializeField] private AnimationCurve _SizeCurve = null;
-
-
-	[SerializeField] private float _AnimSpeed = 25f;
-
-	[SerializeField] private float _MinSize = 3f;
-	[SerializeField] private float _MaxSize = 6f;
-
-	[SerializeField] private AnimationCurve _EmiColorCurve = null;
-
-	[SerializeField] private float _MinEmiIntensity = 0.5f;
-	[SerializeField] private float _MaxEmiIntensity = 1.0f;
-
+	#region private variables
 	private float _timer = 0f;
-
 	private Vector3 _startPos;
-
 	private VirusManager VM;
+	#endregion
 
+	#region events
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+	{
 		VM = GetComponent<VirusManager> ();
-
 		_timer = Random.Range (0f, 1f);
-
-		//_startPos = transform.localPosition;
-
-
-
 	}
 
-	//=========================================================================================================
-	void Update () {
+	void Update ()
+	{
+		_timer += Time.deltaTime * AnimSpeed / 100f;
 
-
-		_timer += Time.deltaTime * _AnimSpeed / 100f;
-
-		if (_timer > 1f) {
+		if (_timer > 1f)
+		{
 			_timer = 0f;
 		}
-
 		AnimateSize (_timer);
-
 		AnimateColor (_timer);
-
-	
 	}
+	#endregion
 
-	void AnimateSize(float t){
-
-		float scale = Mathf.Lerp (_MinSize, _MaxSize, _SizeCurve.Evaluate (t));
-
+	#region private functions
+	void AnimateSize(float t)
+	{
+		float scale = Mathf.Lerp (MinSize, MaxSize, SizeCurve.Evaluate (t));
 		transform.localScale = new Vector3 (1, 1, 1) * scale;
 	}
 
-	void AnimateColor(float t){
-
-		float intensity = Mathf.Lerp (_MinEmiIntensity, _MaxEmiIntensity, _EmiColorCurve.Evaluate (_timer));
-
+	void AnimateColor(float t)
+	{
+		float intensity = Mathf.Lerp (MinEmiIntensity, MaxEmiIntensity, EmiColorCurve.Evaluate (_timer));
 		Color col = VM.GetCurrentEmiColor() * intensity;
 
-		//GetComponent<Renderer> ().material.SetColor ("_EmissionColor", col);
-
-		for (int i = 0; i < transform.childCount; i++) {
+		for (int i = 0; i < transform.childCount; i++)
+		{
 			GameObject child = transform.GetChild (i).gameObject;
 			if (child.GetComponent<MeshRenderer> ()) {
 				child.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", col);
 			}
-
-
 		}
 	}
-
-
-
+	#endregion
 }

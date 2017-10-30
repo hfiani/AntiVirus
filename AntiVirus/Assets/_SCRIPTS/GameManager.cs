@@ -20,53 +20,49 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private int VirusStartNumber = 1;
 	[SerializeField] private int VirusIncrementPerlevel = 1;
 	[SerializeField] private int VirusSpawnDelay = 10;
-	[SerializeField] private string victorySceneName = "victory";
+	[SerializeField] private string VictorySceneName = "victory";
 
 
 	[SerializeField] private AudioClip DeathSound;
 	[SerializeField] private AudioClip SpawnSound;
-	[SerializeField] private float alertDelay = 4.0f;
-	[SerializeField] private float waveCompleteDelay = 4.0f;
+	[SerializeField] private float AlertDelay = 4.0f;
+	[SerializeField] private float WaveCompleteDelay = 4.0f;
 	[SerializeField] private float RespawnDelay = 4.0f;
 	[SerializeField] private float GameOverDelay = 4.0f;
 	[SerializeField] private float StartLevelDelay = 2.0f;
 
 	[SerializeField] private WaveController WC;
-	#endregion
-
-	#region public variables
-	public GameObject Objective;
-	public float SmallestDistance;
+	[SerializeField] private GameObject Objective;
+	[SerializeField] private float SmallestDistance;
 	#endregion
 
 	#region private variables
-	private GameObject PlayerSpawn;
-	private GameObject LevelMusic;
-	private GameObject StartCamera;
+	private GameObject _playerSpawn;
+	private GameObject _levelMusic;
+	private GameObject _startCamera;
 	private UI_Manager UI;
-	private GameObject PlayerGhost;
-	private GameObject Player;
-	private float respawnTimer;
-	private float gameOverTimer;
-	private float startLevelTimer;
-	private float initTimer;
-	private bool playerIsActive;
-	private bool playerRespawning = false;
-	private bool gameIsOver = false;
-	private bool gameIsWon = false;
-	private bool firstTime = false;
-	private bool levelHasStarted = false;
-	private bool alertMessage = false;
-	private bool waveComplete = false;
+	private GameObject _playerGhost;
+	private GameObject _player;
+	private float _respawnTimer;
+	private float _gameOverTimer;
+	private float _startLevelTimer;
+	private bool _playerIsActive;
+	private bool _playerRespawning = false;
+	private bool _gameIsOver = false;
+	private bool _gameIsWon = false;
+	private bool _firstTime = false;
+	private bool _levelHasStarted = false;
+	private bool _alertMessage = false;
+	private bool _waveComplete = false;
 	//check infection level
-	int layerMask = 1 << 15;
-	float coef = 9;
-	float[] radiuses = {1f, 2f, 3f, 4f, 5f, 6f,7f,8f,9f,10f};
-	int radiusIndex;
-	int noCollisionCount = 0;
-	float infectionCheckTimer;
-	float infectionCheckDelay = 0.25f;
-	float waveCompleteTimer;
+	private int _layerMask = 1 << 15;
+	private float _coef = 9;
+	private float[] _radiuses = {1f, 2f, 3f, 4f, 5f, 6f,7f,8f,9f,10f};
+	private int _radiusIndex;
+	private int _noCollisionCount = 0;
+	private float _infectionCheckTimer;
+	private float _infectionCheckDelay = 0.25f;
+	private float _waveCompleteTimer;
 	#endregion
 
 	#region events
@@ -77,14 +73,11 @@ public class GameManager : MonoBehaviour
 		//WC = GetComponent<WaveController> ();
 
 		Objective = GameObject.FindGameObjectWithTag ("Objective");
-		LevelMusic = GameObject.FindGameObjectWithTag ("Music");
-		StartCamera = GameObject.FindGameObjectWithTag ("StartCamera");
-		PlayerSpawn = GameObject.FindGameObjectWithTag ("PlayerSpawner");
+		_levelMusic = GameObject.FindGameObjectWithTag ("Music");
+		_startCamera = GameObject.FindGameObjectWithTag ("StartCamera");
+		_playerSpawn = GameObject.FindGameObjectWithTag ("PlayerSpawner");
 
-
-
-		firstTime = true;
-		initTimer = Time.time;
+		_firstTime = true;
 
 		RestartLevel ();
 	}
@@ -92,66 +85,59 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (playerRespawning && Time.time - respawnTimer > RespawnDelay)
+		if (_playerRespawning && Time.time - _respawnTimer > RespawnDelay)
 		{
 			SpawnPlayer ();
 		}
 
-		if (gameIsOver && Time.time - gameOverTimer > GameOverDelay)
+		if (_gameIsOver && Time.time - _gameOverTimer > GameOverDelay)
 		{
 			//SceneManager.LoadScene ("gameover");
 			UI.SetGameOverRetryScreen(true);
 		}
 
-		if (!levelHasStarted && Time.time - startLevelTimer > StartLevelDelay)
+		if (!_levelHasStarted && Time.time - _startLevelTimer > StartLevelDelay)
 		{
 			StartLevel();
 		}
 
 
-		if (levelHasStarted)
+		if (_levelHasStarted)
 		{
 			CheckForVictory ();
 
-			if (waveComplete && Time.time - waveCompleteTimer > waveCompleteDelay) {
+			if (_waveComplete && Time.time - _waveCompleteTimer > WaveCompleteDelay) {
 				Endlevel ();
-				waveComplete = false;
+				_waveComplete = false;
 			}
 
-			if (!alertMessage && Time.time - startLevelTimer > StartLevelDelay + alertDelay) {
+			if (!_alertMessage && Time.time - _startLevelTimer > StartLevelDelay + AlertDelay) {
 				UI.SetAlertText (true);
-				alertMessage = true;
+				_alertMessage = true;
 			}
-			if (alertMessage && Time.time - startLevelTimer > StartLevelDelay + 3.0f*alertDelay) {
+			if (_alertMessage && Time.time - _startLevelTimer > StartLevelDelay + 3.0f*AlertDelay) {
 				UI.SetAlertText (false);
-				alertMessage = false;
+				_alertMessage = false;
 			}
 
-			if (Time.time - infectionCheckTimer > infectionCheckDelay) {
+			if (Time.time - _infectionCheckTimer > _infectionCheckDelay) {
 				CheckInfectionLevel ();
 				UI.UpdateCubeText (InfectedBlocks);
 				UI.UpdateVirusNumberText (WC.GetViruses ().Count);
 			}
 		}
 	}
-
-	/*
-	void OnGUI()
-	{
-		GUI.TextArea(new Rect(50, 50, 100, 30), (100 * InfectedBlocks / TotalBlocks).ToString() + "% - " + InfectedBlocks.ToString() + "/" + TotalBlocks.ToString());
-	}
-	*/
 	#endregion
 
 	#region private functions
 	void StartLevel()
 	{
 		UI.SetStartScreen (false);
-		StartCamera.GetComponent<AudioListener> ().enabled = false;
+		_startCamera.GetComponent<AudioListener> ().enabled = false;
 
 		SpawnPlayer ();
 
-		levelHasStarted = true;
+		_levelHasStarted = true;
 
 
 		int virusNumber = VirusStartNumber + VirusIncrementPerlevel * Level;
@@ -160,8 +146,8 @@ public class GameManager : MonoBehaviour
 
 		Restart = false;
 
-		infectionCheckTimer = Time.time;
-		radiusIndex = 0;
+		_infectionCheckTimer = Time.time;
+		_radiusIndex = 0;
 		UI.UpdateInfectionBar (0);
 	}
 
@@ -170,34 +156,34 @@ public class GameManager : MonoBehaviour
 
 		UI.SetRespawnScreen (true);
 
-		respawnTimer = Time.time;
+		_respawnTimer = Time.time;
 
-		playerRespawning = true;
+		_playerRespawning = true;
 	}
 
 	void SpawnPlayer()
 	{
 		Debug.Log ("Spawning Player");
 
-		playerRespawning = false;
-		playerIsActive = true;
+		_playerRespawning = false;
+		_playerIsActive = true;
 
 		UI.SetRespawnScreen (false);
 		UI.SetCrosshair (true);
 		UI.SetEnergyBar (true);
 		UI.SetCompass (true);
 
-		if (Player != null)
+		if (_player != null)
 		{
-			Destroy (Player.gameObject);
+			Destroy (_player.gameObject);
 		}
-		if (PlayerGhost != null)
+		if (_playerGhost != null)
 		{
-			Destroy (PlayerGhost.gameObject);
+			Destroy (_playerGhost.gameObject);
 		}
 
-		Player = Instantiate (PlayerPrefab, PlayerSpawn.transform.position, PlayerSpawn.transform.rotation);
-		Player.GetComponent<PlayerManager> ().Init ();
+		_player = Instantiate (PlayerPrefab, _playerSpawn.transform.position, _playerSpawn.transform.rotation);
+		_player.GetComponent<PlayerManager> ().Init ();
 
 		// add some text & sound ...
 
@@ -210,12 +196,12 @@ public class GameManager : MonoBehaviour
 	{
 		Debug.Log ("RESTART");
 
-		LevelMusic.GetComponent<AudioSource> ().Play ();
+		_levelMusic.GetComponent<AudioSource> ().Play ();
 
 		SmallestDistance = 999999;
 		// except at the start of the game, clean all ghostcubes
-		if (firstTime) {
-			firstTime = false;
+		if (_firstTime) {
+			_firstTime = false;
 		} else {
 			int layerMask = 1 << 11;
 			Vector3 pos = Objective.transform.position;
@@ -227,14 +213,14 @@ public class GameManager : MonoBehaviour
 		}
 	
 		Restart = true;
-		gameIsOver = false;
-		if (PlayerGhost != null)
+		_gameIsOver = false;
+		if (_playerGhost != null)
 		{
-			Destroy (PlayerGhost.gameObject);
+			Destroy (_playerGhost.gameObject);
 		}
-		if (Player!= null)
+		if (_player!= null)
 		{
-			Destroy (Player.gameObject);
+			Destroy (_player.gameObject);
 		}
 
 		UI.HideAll ();
@@ -242,10 +228,10 @@ public class GameManager : MonoBehaviour
 		UI.SetStartScreen (true);
 		UI.SetLevelText ();
 
-		levelHasStarted = false;
-		startLevelTimer = Time.time;
+		_levelHasStarted = false;
+		_startLevelTimer = Time.time;
 
-		StartCamera.GetComponent<AudioListener> ().enabled = true;
+		_startCamera.GetComponent<AudioListener> ().enabled = true;
 		InfectedBlocks = 0;
 		WC.VirusNumberKilled = 0;
 		WC.VirusNumber = 0;
@@ -256,27 +242,27 @@ public class GameManager : MonoBehaviour
 
 	public void GameWon()
 	{
-		if (gameIsWon || gameIsOver)
+		if (_gameIsWon || _gameIsOver)
 		{
 			return;
 		}
 		Debug.Log ("Game Won");
-		gameIsWon = true;
-		SceneManager.LoadScene (victorySceneName);
+		_gameIsWon = true;
+		SceneManager.LoadScene (VictorySceneName);
 
 	}
 
 	public void GameOver()
 	{
-		if (gameIsOver)
+		if (_gameIsOver)
 		{
 			return;
 		}
 		Debug.Log ("Game Over");
 		UI.HideAll ();
 		UI.SetGameOverScreen (true);
-		gameIsOver = true;
-		gameOverTimer = Time.time;
+		_gameIsOver = true;
+		_gameOverTimer = Time.time;
 		ShowGameOver ();
 		Level--;
 		//SceneManager.LoadScene ("gameover");
@@ -284,10 +270,10 @@ public class GameManager : MonoBehaviour
 
 	public void CheckInfectionLevel()
 	{
-		if (radiusIndex == radiuses.Length - 1) {
-			UI.UpdateInfectionBar ((float)(radiuses.Length - SmallestDistance) / radiuses.Length);
-			radiusIndex = 0;
-			noCollisionCount = 0;
+		if (_radiusIndex == _radiuses.Length - 1) {
+			UI.UpdateInfectionBar ((float)(_radiuses.Length - SmallestDistance) / _radiuses.Length);
+			_radiusIndex = 0;
+			_noCollisionCount = 0;
 			SmallestDistance = 99999;
 
 
@@ -297,40 +283,33 @@ public class GameManager : MonoBehaviour
 		Vector3 pos = Objective.transform.position;
 
 
-		Collider[] cols = Physics.OverlapSphere (pos, radiuses[radiusIndex] * coef, layerMask);
+		Collider[] cols = Physics.OverlapSphere (pos, _radiuses[_radiusIndex] * _coef, _layerMask);
 		if (cols.Length > 0)
 		{
-			if (SmallestDistance > radiuses[radiusIndex] )
+			if (SmallestDistance > _radiuses[_radiusIndex] )
 			{
-				SmallestDistance = radiuses[radiusIndex] ;
+				SmallestDistance = _radiuses[_radiusIndex] ;
 
 			}
 					
 		}
 		else
 		{
-			noCollisionCount++;
+			_noCollisionCount++;
 		}
 
-		radiusIndex++;
-		infectionCheckTimer = Time.time;
-
-		/*
-		if (noCollisionCount == radiuses.Length)
-		{
-			UI.UpdateInfectionBar (0);
-		}
-		*/
+		_radiusIndex++;
+		_infectionCheckTimer = Time.time;
 	}
 
 	public void CheckForVictory ()
 	{
-		if (!waveComplete && WC.VirusNumberKilled == WC.VirusNumber && InfectedBlocks <= 1)
+		if (!_waveComplete && WC.VirusNumberKilled == WC.VirusNumber && InfectedBlocks <= 1)
 		{
 			Debug.Log ("wave complete");
-			waveComplete = true;
+			_waveComplete = true;
 			UI.SetWaveCompleteScreen (true);
-			waveCompleteTimer = Time.time;
+			_waveCompleteTimer = Time.time;
 	
 		}
 	}
@@ -342,28 +321,26 @@ public class GameManager : MonoBehaviour
 		}
 		else
 		{
-			//SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 			RestartLevel();
 		}
 	}
 
 	public void PlayerDeath()
 	{
-		if (!playerIsActive) {
+		if (!_playerIsActive) {
 			return;
 		}
 		Debug.Log ("Player Death");
 
-		playerIsActive = false;
+		_playerIsActive = false;
 		UI.SetCrosshair (false);
 		UI.SetEnergyBar (false);
 
-		Destroy (Player.gameObject);
+		Destroy (_player.gameObject);
 
-		PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
-		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (PlayerSpawn, RespawnDelay);
+		_playerGhost = Instantiate (GhostPlayerPrefab, _player.transform.position, _player.transform.GetChild(0). rotation);
+		_playerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (_playerSpawn, RespawnDelay);
 
-		//LevelMusic.GetComponent<AudioSource> ().Stop ();
 		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);
 
 		TriggerRespawn ();
@@ -371,32 +348,36 @@ public class GameManager : MonoBehaviour
 
 	public void ShowGameOver()
 	{
-		playerIsActive = false;
-		playerRespawning = false;
+		_playerIsActive = false;
+		_playerRespawning = false;
 
-		if (Player)
+		if (_player)
 		{
-			Destroy (Player.gameObject);
-			PlayerGhost = Instantiate (GhostPlayerPrefab, Player.transform.position, Player.transform.GetChild(0). rotation);
+			Destroy (_player.gameObject);
+			_playerGhost = Instantiate (GhostPlayerPrefab, _player.transform.position, _player.transform.GetChild(0). rotation);
 		}
 
-		PlayerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (PlayerSpawn, GameOverDelay);
+		_playerGhost.GetComponent<PlayerGhost> ().TriggerTravelToPoint (_playerSpawn, GameOverDelay);
 
-		//LevelMusic.GetComponent<AudioSource> ().Stop ();
 		GetComponent<AudioSource> ().PlayOneShot (DeathSound,1.0f);
 
-		Destroy (Player.gameObject);
+		Destroy (_player.gameObject);
 	}
 
 	public Vector3 GetPlayerPosition()
 	{
 		Vector3 position = Vector3.zero;
-		if (!levelHasStarted) {
-			position =  PlayerSpawn.transform.position;
-		} else if (playerIsActive) {
-			position = Player.transform.position;
-		} else {
-			position = PlayerGhost.transform.position;
+		if (!_levelHasStarted)
+		{
+			position = _playerSpawn.transform.position;
+		}
+		else if (_playerIsActive)
+		{
+			position = _player.transform.position;
+		}
+		else
+		{
+			position = _playerGhost.transform.position;
 		}
 
 		return position;

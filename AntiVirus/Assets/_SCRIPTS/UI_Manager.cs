@@ -3,80 +3,62 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_Manager : MonoBehaviour {
-
+public class UI_Manager : MonoBehaviour
+{
 	#region private variables
 	private float _energyBarWidth, _energyBarHeight;
 	private float _infectionBarWidth, _infectionBarHeight;
 	private List<GameObject> _virusCanvasList = new List<GameObject>();
 	private float _compassWidth = -1;
 	private WaveController WC;
-	private GameManager GM;
 	private GameObject _objective;
 	private GameObject _player;
 	private float _fov = -1;
 	#endregion
 
 	#region serialized private variables
-	[SerializeField] private AnimationCurve infectionBarCurve;
-	[SerializeField] private GameObject _virus = null;
-	[SerializeField] private GameObject _compassBase = null;
-	[SerializeField] private GameObject _objectiveCanvas;
-	[SerializeField] private GameObject _energyBar = null;
-	[SerializeField] private GameObject _infectionBar = null;
-	[SerializeField] private GameObject _infectionBarGroup = null;
-	[SerializeField] private GameObject _respawnScreen = null;
-	[SerializeField] private GameObject _startScreen = null;
-	[SerializeField] private GameObject _gameOverScreen = null;
-	[SerializeField] private GameObject _gameOverRetryScreen = null;
-	[SerializeField] private GameObject _crosshair = null;
-	[SerializeField] private GameObject _compass = null;
-	[SerializeField] private string _textLevel = "LEVEL {1} STARTING ...";
-	[SerializeField] private GameObject _bufftext = null;
-	[SerializeField] private GameObject _debufftext = null;
-	[SerializeField] private GameObject _infectionCubes = null;
-	[SerializeField] private GameObject _alertMessageText = null;
-	[SerializeField] private GameObject _virusNumber = null;
-	[SerializeField] private GameObject _waveCompleteText = null;
-
-	#endregion
-
-	#region public variables
+	[SerializeField] private AnimationCurve InfectionBarCurve;
+	[SerializeField] private GameObject Virus = null;
+	[SerializeField] private GameObject CompassBase = null;
+	[SerializeField] private GameObject ObjectiveCanvas;
+	[SerializeField] private GameObject EnergyBar = null;
+	[SerializeField] private GameObject InfectionBar = null;
+	[SerializeField] private GameObject InfectionBarGroup = null;
+	[SerializeField] private GameObject RespawnScreen = null;
+	[SerializeField] private GameObject StartScreen = null;
+	[SerializeField] private GameObject GameOverScreen = null;
+	[SerializeField] private GameObject GameOverRetryScreen = null;
+	[SerializeField] private GameObject Crosshair = null;
+	[SerializeField] private GameObject Compass = null;
+	[SerializeField] private string TextLevel = "LEVEL {1} STARTING ...";
+	[SerializeField] private GameObject BuffText = null;
+	[SerializeField] private GameObject DebuffText = null;
+	[SerializeField] private GameObject InfectionCubes = null;
+	[SerializeField] private GameObject AlertMessageText = null;
+	[SerializeField] private GameObject VirusNumber = null;
+	[SerializeField] private GameObject WaveCompleteText = null;
 	#endregion
 
 	#region events
 	// Use this for initialization
 	void Start ()
 	{
-		GM = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		WC = GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController> ();
 		_objective = GameObject.FindGameObjectWithTag ("Objective");
 
-		_energyBarWidth = _energyBar.GetComponent<RectTransform>().rect.width;
-		_energyBarHeight = _energyBar.GetComponent<RectTransform>().rect.height;
+		_energyBarWidth = EnergyBar.GetComponent<RectTransform>().rect.width;
+		_energyBarHeight = EnergyBar.GetComponent<RectTransform>().rect.height;
 
-		_compassWidth = _compassBase.GetComponent<RectTransform> ().rect.width;
+		_compassWidth = CompassBase.GetComponent<RectTransform> ().rect.width;
 
-		_infectionBarWidth = _infectionBar.GetComponent<RectTransform>().rect.width;
-		_infectionBarHeight = _infectionBar.GetComponent<RectTransform>().rect.height;
+		_infectionBarWidth = InfectionBar.GetComponent<RectTransform>().rect.width;
+		_infectionBarHeight = InfectionBar.GetComponent<RectTransform>().rect.height;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		MoveCompass ();
-	}
-
-	void OnGUI()
-	{
-		/*if (GM.SmallestDistance >= 999999)
-		{
-			GUI.TextArea (new Rect (30, 30, 200, 25), "No infections");
-		}
-		else
-		{
-			GUI.TextArea (new Rect (30, 30, 200, 25), GM.SmallestDistance.ToString ());
-		}*/
 	}
 	#endregion
 
@@ -101,62 +83,29 @@ public class UI_Manager : MonoBehaviour {
 	#region public functions
 	public void HideAll()
 	{
-		_startScreen.SetActive (false);
-		_energyBar.transform.parent.gameObject.SetActive (false);
-		_respawnScreen.SetActive (false);
-		_crosshair.SetActive (false);
-		_gameOverScreen.SetActive (false);
-		_gameOverRetryScreen.SetActive (false);
-		_compass.SetActive (false);
-		_bufftext.SetActive (false);
-		_debufftext.SetActive (false);
-		_alertMessageText.SetActive (false);
-		_waveCompleteText.SetActive (false);
+		StartScreen.SetActive (false);
+		EnergyBar.transform.parent.gameObject.SetActive (false);
+		RespawnScreen.SetActive (false);
+		Crosshair.SetActive (false);
+		GameOverScreen.SetActive (false);
+		GameOverRetryScreen.SetActive (false);
+		Compass.SetActive (false);
+		BuffText.SetActive (false);
+		DebuffText.SetActive (false);
+		AlertMessageText.SetActive (false);
+		WaveCompleteText.SetActive (false);
 	}
 
 	void MoveCompass()
 	{
-		/*if (_player == null)
-		{
-			_player = GameObject.FindGameObjectWithTag ("Player");
-		}
-
-		if (_fov == -1)
-		{
-			if(Camera.main != null)
-			{
-				_fov = Camera.main.fieldOfView * 2; // here it is half the visible angle
-			}
-		}*/
-
-		/*if (_compassWidth == -1)
-		{
-			if (GameObject.Find ("CompassBase") != null && GameObject.Find ("CompassBase").GetComponent<RectTransform> () != null)
-			{
-				_compassWidth = GameObject.Find ("CompassBase").GetComponent<RectTransform> ().rect.width;
-			}
-		}*/
-
-		/*if (_virus == null)
-		{
-			_virus = GameObject.Find ("Virus");
-		}*/
-
-		/*
-		SetOnCompass (GameObject.Find("North"), Vector3.forward);
-		SetOnCompass (GameObject.Find("South"), Vector3.back);
-		SetOnCompass (GameObject.Find("West"), Vector3.left);
-		SetOnCompass (GameObject.Find("East"), Vector3.right);
-		*/
-
 		if (_player == null)
 		{
 			return;
 		}
 
-		if (_objectiveCanvas != null && _objective != null)
+		if (ObjectiveCanvas != null && _objective != null)
 		{
-			SetOnCompass (_objectiveCanvas, _objective.transform.position - _player.transform.position);
+			SetOnCompass (ObjectiveCanvas, _objective.transform.position - _player.transform.position);
 		}
 
 		foreach (GameObject virus in _virusCanvasList)
@@ -167,7 +116,7 @@ public class UI_Manager : MonoBehaviour {
 
 		foreach (GameObject virus in WC.GetViruses())
 		{
-			GameObject virus_canvas = Instantiate (_virus, _virus.transform.parent, true);
+			GameObject virus_canvas = Instantiate (Virus, Virus.transform.parent, true);
 			_virusCanvasList.Add (virus_canvas);
 			virus_canvas.GetComponent<Image> ().enabled = true;
 			if (virus_canvas != null && virus != null)
@@ -219,97 +168,97 @@ public class UI_Manager : MonoBehaviour {
 	public void UpdateInfectionBar(float percent)
 	{
 		if (percent < 0.10) {
-			_infectionBarGroup.SetActive (false);
+			InfectionBarGroup.SetActive (false);
 		} else {
-			_infectionBarGroup.SetActive (true);
+			InfectionBarGroup.SetActive (true);
 		}
-		percent = infectionBarCurve.Evaluate (percent);
-		_infectionBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_infectionBarWidth * percent, _infectionBarHeight);
+		percent = InfectionBarCurve.Evaluate (percent);
+		InfectionBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_infectionBarWidth * percent, _infectionBarHeight);
 	}
 
 	public void UpdateEnergyBar(float percent)
 	{
 
-		_energyBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_energyBarWidth * percent, _energyBarHeight);
+		EnergyBar.GetComponent<RectTransform>(). sizeDelta = new Vector2 (_energyBarWidth * percent, _energyBarHeight);
 	}
 
 	public void SetEnergyBar(bool state)
 	{
 
-		_energyBar.transform.parent.gameObject.SetActive (state);
+		EnergyBar.transform.parent.gameObject.SetActive (state);
 	}
 
 	public void SetRespawnScreen(bool state)
 	{
 
-		_respawnScreen.SetActive (state);
+		RespawnScreen.SetActive (state);
 	}
 
 	public void SetLevelText()
 	{
-		GameObject text_level = _startScreen.transform.GetChild (0).gameObject;
-		text_level.GetComponent<Text> ().text = _textLevel.Replace ("{1}", (++GameManager.Level).ToString());
+		GameObject text_level = StartScreen.transform.GetChild (0).gameObject;
+		text_level.GetComponent<Text> ().text = TextLevel.Replace ("{1}", (++GameManager.Level).ToString());
 
-		GameObject text_level2 = _startScreen.transform.GetChild(1).gameObject;
+		GameObject text_level2 = StartScreen.transform.GetChild(1).gameObject;
 		text_level2.GetComponent<Text>().text = text_level.GetComponent<Text>().text;
 	}
 
 	public void SetWaveCompleteScreen(bool state)
 	{
-		_waveCompleteText.SetActive (state);
+		WaveCompleteText.SetActive (state);
 	}
 
 	public void SetStartScreen(bool state)
 	{
-		_startScreen.SetActive (state);
+		StartScreen.SetActive (state);
 	}
 
 	public void SetAlertText(bool state)
 	{
-		_alertMessageText.SetActive (state);
+		AlertMessageText.SetActive (state);
 	}
 
 	public void SetCrosshair(bool state)
 	{
 
-		_crosshair.SetActive (state);
+		Crosshair.SetActive (state);
 	}
 
 	public void SetCompass(bool state)
 	{
 
-		_compass.SetActive (state);
+		Compass.SetActive (state);
 	}
 
 	public void SetGameOverScreen(bool state)
 	{
-		_gameOverScreen.SetActive (state);
+		GameOverScreen.SetActive (state);
 	}
 
 	public void SetGameOverRetryScreen(bool state)
 	{
-		_gameOverRetryScreen.SetActive (state);
+		GameOverRetryScreen.SetActive (state);
 
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
 	}
 
 	public void UpdateCubeText(int n){
-		_infectionCubes.GetComponent<Text> ().text = "CORRUPTED CUBES : " + n;
+		InfectionCubes.GetComponent<Text> ().text = "CORRUPTED CUBES : " + n;
 	}
 
 	public void UpdateVirusNumberText(int n){
-		_virusNumber.GetComponent<Text> ().text = "VIRUS : " + n;
+		VirusNumber.GetComponent<Text> ().text = "VIRUS : " + n;
 	}
 
 	public void SetBuffText(bool state)
 	{
-		_bufftext.SetActive (state);
+		BuffText.SetActive (state);
 	}
 
 	public void SetDeBuffText(bool state)
 	{
-		_debufftext.SetActive (state);
+		DebuffText.SetActive (state);
 	}
 	#endregion
 }

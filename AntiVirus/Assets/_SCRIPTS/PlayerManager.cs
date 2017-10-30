@@ -7,40 +7,33 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerManager : MonoBehaviour
 {
-	#region public variables
-	public Transform _ProjectileSpawnPoint = null;
-	public GameObject _ProjectilePrefab = null;
-
-	public float _FireDelay = 0.2f;
-	public float _ShootingCost = 1.0f;
-	public float _BaseEnergyRegen = 1.0f;
-	public float _BuffedEnergyRegen = 50.0f;
-	public float _DebuffedEnergyRegen = 0.0f;
-
-	public AudioClip _ShootingSound;
-	public float _ShootingVolume=1.0f;
-
-	public AnimationCurve buffSpeedCurve;
-	public float buffDuration = 2.0f;
-	public float buffMaxSpeed = 3.0f;
-	public float debuffMaxSpeed = 0.33f;
-
-
-	#endregion
-
 	#region serialized private variables
+	[SerializeField] private Transform ProjectileSpawnPoint = null;
+	[SerializeField] private GameObject ProjectilePrefab = null;
+
+	[SerializeField] private float FireDelay = 0.2f;
+	[SerializeField] private float ShootingCost = 1.0f;
+	[SerializeField] private float BaseEnergyRegen = 1.0f;
+	[SerializeField] private float BuffedEnergyRegen = 50.0f;
+	[SerializeField] private float DebuffedEnergyRegen = 0.0f;
+
+	[SerializeField] private AudioClip ShootingSound;
+	[SerializeField] private float ShootingVolume=1.0f;
+
+	[SerializeField] private AnimationCurve BuffSpeedCurve;
+	[SerializeField] private float BuffDuration = 2.0f;
+	[SerializeField] private float BuffMaxSpeed = 3.0f;
+	[SerializeField] private float DebuffMaxSpeed = 0.33f;
+	[SerializeField] private float DistanceRaycast = 30.0f;
 	#endregion
 
 	#region private variables
-	private bool isShooting = false;
-	private bool isBuffed = false;
-	private bool isDebuffed = false;
-	private float timer;
+	private float _timer;
 	private float _energy = 0.0f;
 	private float _maxEnergy = 100.0f;
-	private float _EnergyRegen;
-	private float walkSpeedOriginValue;
-	private float runSpeedOriginValue;
+	private float _energyRegen;
+	private float _walkSpeedOriginValue;
+	private float _runSpeedOriginValue;
 	private float _buffFactor;
 	private float _buffDuration;
 	private DateTime _buffTime;
@@ -48,24 +41,27 @@ public class PlayerManager : MonoBehaviour
 
 	private AudioSource Audio;
 	private FirstPersonController FPS;
-	private WaveController WC;
 	private UI_Manager UI;
-
 	private Camera _cam = null;
 
+	private GameObject _crosshairVirus;
+	private GameObject _crosshairNoVirus;
 	#endregion
 
 	#region events
 	void Start ()
 	{
-		WC =  GameObject.FindGameObjectWithTag ("GameController").GetComponent<WaveController>();
-
 		FPS = GetComponent<FirstPersonController> ();
 
-		walkSpeedOriginValue = FPS.WalkingSpeed;
-		runSpeedOriginValue = FPS.RunningSpeed;
+		_walkSpeedOriginValue = FPS.WalkingSpeed;
+		_runSpeedOriginValue = FPS.RunningSpeed;
 	
-	
+		Projectile p = new Projectile ();
+		Destroy (p);
+
+		_crosshairVirus = GameObject.Find ("Image_virus");
+		_crosshairNoVirus = GameObject.Find ("Image_novirus");
+		_crosshairVirus.SetActive (false);
 	}
 
 	// Update is called once per frame
@@ -75,14 +71,24 @@ public class PlayerManager : MonoBehaviour
 		{
 			EnergyUpdate (_maxEnergy);
 		}
-		if (Input.GetMouseButton (0) && Time.time - timer > _FireDelay && _energy > 10.0f)
+		if (Input.GetMouseButton (0) && Time.time - _timer > FireDelay && _energy > 10.0f)
 		{
 			Shoot ();
 		}
 
-	
+		RaycastHit hit;
+		if (Physics.Raycast (transform.position, transform.forward, out hit, DistanceRaycast, 1 << 10))
+		{
+			_crosshairVirus.SetActive (true);
+			_crosshairNoVirus.SetActive (false);
+		}
+		else
+		{
+			_crosshairNoVirus.SetActive (true);
+			_crosshairVirus.SetActive (false);
+		}
 
-		EnergyUpdate (_EnergyRegen*Time.deltaTime);
+		EnergyUpdate (_energyRegen*Time.deltaTime);
 
 		ManageBuff ();
 	}
@@ -91,23 +97,19 @@ public class PlayerManager : MonoBehaviour
 	{
 		if (c.tag == "NPC")
 		{
-			if (c.GetComponent<NPCInfection> ().infected)
+			if (c.GetComponent<NPCInfection> ().Infected)
 			{
-				BuffSpeed (debuffMaxSpeed, buffDuration);
+				BuffSpeed (DebuffMaxSpeed, BuffDuration);
 				EnergyUpdate (-_maxEnergy);
-				_EnergyRegen = _DebuffedEnergyRegen;
-				isDebuffed = true;
-				isBuffed = false;
+				_energyRegen = DebuffedEnergyRegen;
 				UI.SetBuffText (false);
 				UI.SetDeBuffText (true);
 			}
 			else
 			{
-				BuffSpeed (buffMaxSpeed, buffDuration);
+				BuffSpeed (BuffMaxSpeed, BuffDuration);
 				EnergyUpdate (_maxEnergy);
-				_EnergyRegen = _BuffedEnergyRegen;
-				isDebuffed = false;
-				isBuffed = true;
+				_energyRegen = BuffedEnergyRegen;
 				UI.SetBuffText (true);
 				UI.SetDeBuffText (false);
 			}
@@ -124,40 +126,33 @@ public class PlayerManager : MonoBehaviour
 		_cam = transform.GetChild (0).GetComponent<Camera> ();
 		Audio = GetComponents<AudioSource>()[1];
 
-		_EnergyRegen = _BaseEnergyRegen;
+		_energyRegen = BaseEnergyRegen;
 
 		UI.Player = gameObject;
 		UI.FOV = _cam.fieldOfView * 2; // here it is half the visible angle
 
 		EnergyUpdate (_maxEnergy);
-		isBuffed = false;
-		isDebuffed = false;
 		UI.SetBuffText (false);
 		UI.SetDeBuffText (false);
 
-	}
-
-	public void BuffSpeed(float factorMax, float duration)
-	{
-		_buffFactor = factorMax;
-		_buffTime = DateTime.Now;
-		_buffDuration = duration * 1000;
-		_buffEnabled = true;
 	}
 	#endregion
 
 	#region private functions
 	void Shoot()
 	{
-		isShooting = true;
+		_timer = Time.time;
+		Instantiate (ProjectilePrefab, ProjectileSpawnPoint.position, ProjectileSpawnPoint.rotation);
+		EnergyUpdate (-ShootingCost);
+		Audio.PlayOneShot (ShootingSound, ShootingVolume);
+	}
 
-		timer = Time.time;
-
-		Instantiate (_ProjectilePrefab, _ProjectileSpawnPoint.position, _ProjectileSpawnPoint.rotation);
-
-		EnergyUpdate (-_ShootingCost);
-
-		Audio.PlayOneShot (_ShootingSound, _ShootingVolume);
+	void BuffSpeed(float factorMax, float duration)
+	{
+		_buffFactor = factorMax;
+		_buffTime = DateTime.Now;
+		_buffDuration = duration * 1000;
+		_buffEnabled = true;
 	}
 
 	void ManageBuff()
@@ -166,18 +161,16 @@ public class PlayerManager : MonoBehaviour
 		{
 			if ((DateTime.Now - _buffTime).TotalMilliseconds < _buffDuration)
 			{
-				float time_step = buffSpeedCurve.Evaluate ((float)(DateTime.Now - _buffTime).TotalMilliseconds / _buffDuration);
+				float time_step = BuffSpeedCurve.Evaluate ((float)(DateTime.Now - _buffTime).TotalMilliseconds / _buffDuration);
 
 				float factorNow = Mathf.Lerp (1, _buffFactor, time_step);
-				FPS.WalkingSpeed = walkSpeedOriginValue * factorNow;
-				FPS.RunningSpeed =  runSpeedOriginValue * factorNow;
+				FPS.WalkingSpeed = _walkSpeedOriginValue * factorNow;
+				FPS.RunningSpeed =  _runSpeedOriginValue * factorNow;
 			}
 			else
 			{
 				_buffEnabled = false;
-				isDebuffed = false;
-				isBuffed = false;
-				_EnergyRegen = _BaseEnergyRegen;
+				_energyRegen = BaseEnergyRegen;
 				UI.SetBuffText (false);
 				UI.SetDeBuffText (false);
 			}

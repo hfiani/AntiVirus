@@ -5,36 +5,39 @@ using UnityEngine;
 public class WaveController : MonoBehaviour
 {
 	#region static variables
-	static int zoneIndex = 0;
+	static int ZoneIndex = 0;
 	#endregion
 
 	#region public variables
-	public GameObject VirusPrefab;
-	public float VirusSpawnDelay = 10.0f;
 	public int VirusNumber = 1;
 	#endregion
 
+	#region serialized private variables
+	[SerializeField] private GameObject VirusPrefab;
+	[SerializeField] private float VirusSpawnDelay = 10.0f;
+	#endregion
+
 	#region private variables
-	private GameObject VirusSpawners;
-	private int virusNumberKilled;
-	private int virusNumberRemaining;
-	private float virusSpawnTimer;
-	private bool waveHasStarted = false;
-	private List<int>[] freeSpawnerIndexes = new List<int>[4];
-	private List<GameObject> virusList = new List<GameObject> ();
+	private GameObject _virusSpawners;
+	private int _virusNumberKilled;
+	private int _virusNumberRemaining;
+	private float _virusSpawnTimer;
+	private bool _waveHasStarted = false;
+	private List<int>[] _freeSpawnerIndexes = new List<int>[4];
+	private List<GameObject> _virusList = new List<GameObject> ();
 	#endregion
 
 	#region events
 	// Use this for initialization
 	void Start ()
 	{
-		VirusSpawners = GameObject.FindGameObjectWithTag ("VirusSpawner");
+		_virusSpawners = GameObject.FindGameObjectWithTag ("VirusSpawner");
 
-		freeSpawnerIndexes = new List<int>[VirusSpawners.transform.childCount];
+		_freeSpawnerIndexes = new List<int>[_virusSpawners.transform.childCount];
 
-		for (int i = 0; i < freeSpawnerIndexes.Length; i++)
+		for (int i = 0; i < _freeSpawnerIndexes.Length; i++)
 		{
-			freeSpawnerIndexes[i] = new List<int> ();
+			_freeSpawnerIndexes[i] = new List<int> ();
 		}
 	}
 
@@ -42,12 +45,12 @@ public class WaveController : MonoBehaviour
 	void Update ()
 	{
 		// try to spawn new virus
-		if (waveHasStarted && Time.time - virusSpawnTimer > VirusSpawnDelay && virusNumberRemaining > 0) {
+		if (_waveHasStarted && Time.time - _virusSpawnTimer > VirusSpawnDelay && _virusNumberRemaining > 0) {
 			UpdateFreeSpawnersIndexes ();
 
 			SpawnVirusAtRandomSpawner();
 
-			virusSpawnTimer = Time.time;
+			_virusSpawnTimer = Time.time;
 		}
 
 		if (GameManager.Restart)
@@ -60,8 +63,8 @@ public class WaveController : MonoBehaviour
 	#region private functions
 	public void StartWave()
 	{
-		waveHasStarted = true;
-		virusSpawnTimer = Time.time;
+		_waveHasStarted = true;
+		_virusSpawnTimer = Time.time;
 		UpdateFreeSpawnersIndexes ();
 	}
 
@@ -69,51 +72,51 @@ public class WaveController : MonoBehaviour
 	{
 		// if all spawners already have a virus, return
 		int count = 0;
-		for (int i = 0; i < freeSpawnerIndexes.Length; i++)
+		for (int i = 0; i < _freeSpawnerIndexes.Length; i++)
 		{
-			if (freeSpawnerIndexes[i].Count == 0)
+			if (_freeSpawnerIndexes[i].Count == 0)
 			{
 				count++;
 			}
 		}
-		if (count == freeSpawnerIndexes.Length)
+		if (count == _freeSpawnerIndexes.Length)
 		{
 			return;
 		}
 
 		// get random index picked from the free index list
-		int r = Random.Range (0, freeSpawnerIndexes[zoneIndex].Count);
-		int index = freeSpawnerIndexes[zoneIndex] [r];
+		int r = Random.Range (0, _freeSpawnerIndexes[ZoneIndex].Count);
+		int index = _freeSpawnerIndexes[ZoneIndex] [r];
 
-		Transform spawner = VirusSpawners.transform.GetChild (zoneIndex).GetChild (index);
+		Transform spawner = _virusSpawners.transform.GetChild (ZoneIndex).GetChild (index);
 		GameObject virus = Instantiate (VirusPrefab, spawner.position, Quaternion.identity);
-		virusList.Add (virus);
+		_virusList.Add (virus);
 		// add virus to its spawner
 		virus.transform.parent = spawner;
 
 		// decrement number of viruses remaining
-		virusNumberRemaining --;
-		Debug.Log ("spawning virus #" + (VirusNumber - virusNumberRemaining));
+		_virusNumberRemaining --;
+		Debug.Log ("spawning virus #" + (VirusNumber - _virusNumberRemaining));
 
 		UpdateFreeSpawnersIndexes ();
 
-		zoneIndex++;
-		if (zoneIndex == VirusSpawners.transform.childCount)
+		ZoneIndex++;
+		if (ZoneIndex == _virusSpawners.transform.childCount)
 		{
-			zoneIndex = 0;
+			ZoneIndex = 0;
 		}
 	}
 
 	void UpdateFreeSpawnersIndexes()
 	{
-		freeSpawnerIndexes[zoneIndex].Clear ();
+		_freeSpawnerIndexes[ZoneIndex].Clear ();
 
-		for (int i = 0; i < VirusSpawners.transform.GetChild (zoneIndex).childCount; i++)
+		for (int i = 0; i < _virusSpawners.transform.GetChild (ZoneIndex).childCount; i++)
 		{
-			Transform child = VirusSpawners.transform.GetChild (zoneIndex).GetChild (i);
+			Transform child = _virusSpawners.transform.GetChild (ZoneIndex).GetChild (i);
 			if (child.childCount == 0 && child.gameObject.activeSelf)
 			{
-				freeSpawnerIndexes[zoneIndex].Add (i);
+				_freeSpawnerIndexes[ZoneIndex].Add (i);
 			}
 		}
 	}
@@ -124,40 +127,44 @@ public class WaveController : MonoBehaviour
 	{
 		VirusSpawnDelay = virusSpawnDelay;
 		VirusNumber = virusNumber;
-		virusNumberRemaining = virusNumber;
+		_virusNumberRemaining = virusNumber;
 	}
 
 	public void RemoveViruses()
 	{
-		foreach (GameObject virus in virusList)
+		foreach (GameObject virus in _virusList)
 		{
 			Destroy (virus);
 		}
-		virusList.Clear ();
+		_virusList.Clear ();
 	}
 
 	public int VirusNumberKilled
 	{
 		get
 		{
-			return virusNumberKilled;
+			return _virusNumberKilled;
 		}
 		set
 		{
-			virusNumberKilled = value;
+			_virusNumberKilled = value;
 		}
 	}
 
-	public void removeVirusFromList(GameObject virus){
-		virusList.Remove (virus);
+	public void removeVirusFromList(GameObject virus)
+	{
+		_virusList.Remove (virus);
 	}
 
-	public float getDistanceFromClosestVirus(Vector3 reference){
-		float shortestDistance=99999.0f;
-		for (int i = 0; i < virusList.Count; i++) {
+	public float getDistanceFromClosestVirus(Vector3 reference)
+	{
+		float shortestDistance = 99999.0f;
+		for (int i = 0; i < _virusList.Count; i++)
+		{
 
-			float dist = Vector3.Distance (reference, virusList [i].transform.position);
-			if (dist < shortestDistance) {
+			float dist = Vector3.Distance (reference, _virusList [i].transform.position);
+			if (dist < shortestDistance)
+			{
 				shortestDistance = dist;
 			}
 		}
@@ -166,7 +173,7 @@ public class WaveController : MonoBehaviour
 
 	public List<GameObject> GetViruses()
 	{
-		return virusList;
+		return _virusList;
 	}
 	#endregion
 }

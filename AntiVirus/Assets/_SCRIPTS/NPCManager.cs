@@ -2,54 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCManager : MonoBehaviour {
+public class NPCManager : MonoBehaviour
+{
+	#region serialized private variables
+	[SerializeField] private float DestinationChangeDelay = 5.0f;
+	[SerializeField] private float WalkRadius = 10.0f;
+	[SerializeField] private float MoveSpeed = 10.0f;
+	[SerializeField] private GameObject TargetPrefab;
+	#endregion
 
-	private CharacterController CC;
+	#region private variables
+	private float _timer;
+	private Vector3 _startPos;
 
-	public float destinationChangeDelay = 5.0f;
-	public float walkRadius = 10.0f;
-	public float moveSpeed = 10.0f;
-	public GameObject targetPrefab;
+	private GameObject _target;
+	private GameObject _parent;
 
-	private float timer;
-	private Vector3 startPos;
+	private bool _canMove = false;
+	private float _travelTime;
+	#endregion
 
-	private GameObject target;
-	private GameObject parent;
-
-	private bool canMove = false;
-	private float travelTime;
-	private float startY;
-
+	#region events
 	// Use this for initialization
-	void Start () {
-		parent = transform.parent.gameObject;
-
-		startY = transform.position.y;
-
-		target = Instantiate (targetPrefab, transform.position, Quaternion.identity);
-
-		timer = Time.time + Random.Range(0f,destinationChangeDelay);
-
-		CC = GetComponent<CharacterController> ();
-		
+	void Start ()
+	{
+		_parent = transform.parent.gameObject;
+		_target = Instantiate (TargetPrefab, transform.position, Quaternion.identity);
+		_timer = Time.time + Random.Range(0f,DestinationChangeDelay);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
-		if (Time.time - timer > destinationChangeDelay) {
+	void Update ()
+	{
+		if (Time.time - _timer > DestinationChangeDelay) {
 
 			FindTarget();
 
-			timer = Time.time;
+			_timer = Time.time;
 		}
 
 		MoveTowardTarget ();
-
 	}
+	#endregion
 
-	void FindTarget(){
+	#region private functions
+	void FindTarget()
+	{
 		Vector3 targetPos = transform.position;
 		bool success = false;
 		int max = 50;
@@ -57,49 +55,49 @@ public class NPCManager : MonoBehaviour {
 		Vector3 dir;
 		Vector3 pos = transform.position;
 		float dist;
-		do{
-			targetPos = randomPosition();
-			dir = targetPos-transform.position;
-			dist = Vector3.Distance(transform.position,targetPos);
-			Ray ray = new Ray(pos,dir );
+		do
+		{
+			targetPos = randomPosition ();
+			dir = targetPos - transform.position;
+			dist = Vector3.Distance (transform.position, targetPos);
+			Ray ray = new Ray (pos, dir);
 			RaycastHit hit;
-			success = !Physics.Raycast(ray,out hit,dist);
-			travelTime = dist/moveSpeed;
-			if(!success && hit.distance>2.0f){
-				float alpha = Mathf.Clamp(hit.distance/dist,0.33f,0.66f);
-				targetPos = Vector3.Lerp(pos,targetPos,alpha);
-				dist = Vector3.Distance(transform.position,targetPos);
+			success = !Physics.Raycast (ray, out hit, dist);
+			_travelTime = dist / MoveSpeed;
+			if (!success && hit.distance > 2.0f)
+			{
+				float alpha = Mathf.Clamp (hit.distance / dist, 0.33f, 0.66f);
+				targetPos = Vector3.Lerp (pos, targetPos, alpha);
+				dist = Vector3.Distance (transform.position, targetPos);
 				success = true;
-				travelTime = dist/moveSpeed;
+				_travelTime = dist / MoveSpeed;
 			}
 
 			k++;
-		}while(!success && k<max);
-		canMove = success;
+		} while(!success && k < max);
+		_canMove = success;
 		//Debug.Log (k);
-		target.transform.position = targetPos;
-		startPos = transform.position;
+		_target.transform.position = targetPos;
+		_startPos = transform.position;
 	}
 
-	Vector3 randomPosition(){
-		
-		Vector2 randomDirection = UnityEngine.Random.insideUnitCircle * walkRadius;
-
-		Vector3 position = parent.transform.position + new Vector3 (randomDirection.x, 0, randomDirection.y);
+	Vector3 randomPosition()
+	{
+		Vector2 randomDirection = UnityEngine.Random.insideUnitCircle * WalkRadius;
+		Vector3 position = _parent.transform.position + new Vector3 (randomDirection.x, 0, randomDirection.y);
 
 		return position;
-
 	}
-	void MoveTowardTarget(){
-		if (!canMove) {
+
+	void MoveTowardTarget()
+	{
+		if (!_canMove)
+		{
 			return;
 		}
-		float alpha = (Time.time - timer) / travelTime;
+		float alpha = (Time.time - _timer) / _travelTime;
 
-		transform.position = Vector3.Lerp (startPos, target.transform.position, alpha);
-
-
-
+		transform.position = Vector3.Lerp (_startPos, _target.transform.position, alpha);
 	}
-
+	#endregion
 }
