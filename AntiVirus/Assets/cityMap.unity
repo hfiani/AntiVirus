@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -901,7 +901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -1550,7 +1550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -1763,7 +1763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -1917,7 +1917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -2140,7 +2140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -2294,7 +2294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -2689,7 +2689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -2894,7 +2894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -3693,7 +3693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -3897,7 +3897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -4278,7 +4278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -4620,7 +4620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -4862,7 +4862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -5176,7 +5176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -5335,7 +5335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -5653,7 +5653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -6063,7 +6063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -6564,7 +6564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -6819,7 +6819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -6973,7 +6973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -7549,7 +7549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -7703,7 +7703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -7946,7 +7946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -8276,7 +8276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -8481,7 +8481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -8640,7 +8640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -8942,7 +8942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -9419,7 +9419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -9646,7 +9646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -9800,7 +9800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -10078,7 +10078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -10237,7 +10237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -10454,7 +10454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -10608,7 +10608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -10825,7 +10825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -11128,7 +11128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -11524,7 +11524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -11678,7 +11678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -11945,7 +11945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -12739,7 +12739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -13295,7 +13295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -13454,7 +13454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -13658,7 +13658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -14095,7 +14095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -14490,7 +14490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -14644,7 +14644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -14966,7 +14966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -15218,7 +15218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -15418,7 +15418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -15879,7 +15879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -16179,7 +16179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -16333,7 +16333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -17178,7 +17178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -17864,7 +17864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -18018,7 +18018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -18629,7 +18629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -19056,7 +19056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -19242,7 +19242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -19396,7 +19396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -19731,7 +19731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -19885,7 +19885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -20148,7 +20148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -20448,7 +20448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -20665,7 +20665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -20824,7 +20824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -21421,7 +21421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -21937,7 +21937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -22379,7 +22379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -22802,7 +22802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -23288,7 +23288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -23496,7 +23496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -23650,7 +23650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -24091,7 +24091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -24316,7 +24316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -24751,7 +24751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -25016,7 +25016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -25295,7 +25295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -25514,7 +25514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -25724,7 +25724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -25878,7 +25878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -26883,7 +26883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -27301,7 +27301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -27506,7 +27506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -27779,7 +27779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -28001,7 +28001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -28354,7 +28354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -28564,7 +28564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -28936,7 +28936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -29141,7 +29141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -29351,7 +29351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -29505,7 +29505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -29659,7 +29659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -29901,7 +29901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -30106,7 +30106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -30323,7 +30323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -30719,7 +30719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -30873,7 +30873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -31027,7 +31027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -31302,7 +31302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -31508,7 +31508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -31919,7 +31919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -32073,7 +32073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -32237,7 +32237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -32459,7 +32459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -32618,7 +32618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -32917,7 +32917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -33076,7 +33076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -33230,7 +33230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -33384,7 +33384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -33543,7 +33543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -33697,7 +33697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -33906,7 +33906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -34246,7 +34246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -34551,7 +34551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -34948,7 +34948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -35275,7 +35275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -35393,12 +35393,12 @@ Prefab:
     - target: {fileID: 224616634770523862, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 560.5
+      value: 597.5
       objectReference: {fileID: 0}
     - target: {fileID: 224616634770523862, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 349
+      value: 336
       objectReference: {fileID: 0}
     - target: {fileID: 224616634770523862, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
@@ -35480,25 +35480,77 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 224996820482256790, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 654.2001
+      objectReference: {fileID: 0}
+    - target: {fileID: 224996820482256790, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1966.6274
+      objectReference: {fileID: 0}
+    - target: {fileID: 224992096168152922, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2037.6775
+      objectReference: {fileID: 0}
     - target: {fileID: 224850389101720182, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2022.4835
+      value: -2037.6775
       objectReference: {fileID: 0}
     - target: {fileID: 224466808640490554, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 597.752
+      value: 539.84937
+      objectReference: {fileID: 0}
+    - target: {fileID: 224287596755938624, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -925.89996
+      objectReference: {fileID: 0}
+    - target: {fileID: 224287596755938624, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2118.9775
       objectReference: {fileID: 0}
     - target: {fileID: 224210006954042636, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2022.4835
+      value: -2037.6775
       objectReference: {fileID: 0}
-    - target: {fileID: 224891307486383008, guid: deb23d5f06420824bb34799330385b8f,
+    - target: {fileID: 224053461496284908, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -923.8001
+      objectReference: {fileID: 0}
+    - target: {fileID: 224053461496284908, guid: deb23d5f06420824bb34799330385b8f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2022.4835
+      value: 2082.2075
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764948781008112, guid: deb23d5f06420824bb34799330385b8f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470308340290786, guid: deb23d5f06420824bb34799330385b8f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396662800531484, guid: deb23d5f06420824bb34799330385b8f, type: 2}
+      propertyPath: m_TagString
+      value: Crosshair
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034266777070352, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417467652811048, guid: deb23d5f06420824bb34799330385b8f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: deb23d5f06420824bb34799330385b8f, type: 2}
@@ -35595,7 +35647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -35749,7 +35801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -35903,7 +35955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -36224,7 +36276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -36817,7 +36869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -37021,7 +37073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -37585,7 +37637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -38223,7 +38275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -38382,7 +38434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -38541,7 +38593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -39002,7 +39054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -39156,7 +39208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -39426,7 +39478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -39580,7 +39632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -39734,7 +39786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -39888,7 +39940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -40267,7 +40319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -40557,7 +40609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -40711,7 +40763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -41330,7 +41382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -41484,7 +41536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -41638,7 +41690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -41981,7 +42033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -42368,7 +42420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -42632,7 +42684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -42786,7 +42838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -43338,7 +43390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -43492,7 +43544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -43646,7 +43698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -43800,7 +43852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -43954,7 +44006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -44108,7 +44160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -44649,7 +44701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -44803,7 +44855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -45013,7 +45065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -45262,7 +45314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -45494,7 +45546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -45745,7 +45797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -45972,7 +46024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -46126,7 +46178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -46414,7 +46466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -46646,7 +46698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -46980,7 +47032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -47186,7 +47238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -47440,7 +47492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -47735,7 +47787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -47889,7 +47941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -48159,7 +48211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -48313,7 +48365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -48467,7 +48519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -48745,7 +48797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -49016,7 +49068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -49175,7 +49227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -49554,7 +49606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -49927,7 +49979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -50139,7 +50191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -50298,7 +50350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -50452,7 +50504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -50611,7 +50663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -50823,7 +50875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -51050,7 +51102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -51313,7 +51365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -51760,7 +51812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -51973,7 +52025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -52244,7 +52296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -52398,7 +52450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -52787,7 +52839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -53075,7 +53127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -53473,7 +53525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -53627,7 +53679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -53781,7 +53833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -53935,7 +53987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -54089,7 +54141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -54243,7 +54295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -54963,7 +55015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -55269,7 +55321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -55530,7 +55582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -55820,7 +55872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -56149,7 +56201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -56585,7 +56637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -56802,7 +56854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -56961,7 +57013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -57339,7 +57391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -57706,7 +57758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -57911,7 +57963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -58065,7 +58117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -58365,7 +58417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -58589,7 +58641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -59069,7 +59121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -59274,7 +59326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -59438,7 +59490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -59655,7 +59707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -59910,7 +59962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -60554,7 +60606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -60713,7 +60765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -60867,7 +60919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -61067,7 +61119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -61284,7 +61336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -61443,7 +61495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -61889,7 +61941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -62043,7 +62095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -62373,7 +62425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -62841,7 +62893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -63362,7 +63414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -63634,7 +63686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -64434,7 +64486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -64588,7 +64640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -64939,7 +64991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -65163,7 +65215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -65440,7 +65492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -65594,7 +65646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -65877,7 +65929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -66031,7 +66083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -66185,7 +66237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -66543,7 +66595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -66697,7 +66749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -66851,7 +66903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -67197,7 +67249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -67509,7 +67561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -67729,7 +67781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -67883,7 +67935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -68499,7 +68551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -68653,7 +68705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -68865,7 +68917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -69208,7 +69260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -69475,7 +69527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -69629,7 +69681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -69895,7 +69947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -70049,7 +70101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -70521,7 +70573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -70784,7 +70836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -71061,7 +71113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -71215,7 +71267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -71520,7 +71572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -71724,7 +71776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -71878,7 +71930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -72032,7 +72084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -72191,7 +72243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -72694,7 +72746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -73161,7 +73213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -73315,7 +73367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -73515,7 +73567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -73669,7 +73721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -73823,7 +73875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -74002,7 +74054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -74709,7 +74761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -75044,7 +75096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -75306,7 +75358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -75778,7 +75830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -76061,7 +76113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -76348,7 +76400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -76576,7 +76628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -77327,7 +77379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -77646,7 +77698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -78105,7 +78157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -78608,7 +78660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -78892,7 +78944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -79046,7 +79098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -79467,7 +79519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -79925,7 +79977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -80137,7 +80189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -80356,7 +80408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -80556,7 +80608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -81103,7 +81155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -81486,7 +81538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -81640,7 +81692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -81794,7 +81846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -82011,7 +82063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -82165,7 +82217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -82329,7 +82381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -82488,7 +82540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -82642,7 +82694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -82925,7 +82977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -83335,7 +83387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -83609,7 +83661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -83841,7 +83893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -84185,7 +84237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -84339,7 +84391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -84551,7 +84603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -84918,7 +84970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -85135,7 +85187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -85579,7 +85631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -85743,7 +85795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -86006,7 +86058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -86871,7 +86923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -87101,7 +87153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -87549,7 +87601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -87785,7 +87837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -87990,7 +88042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -88144,7 +88196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
