@@ -5611,7 +5611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -5637,7 +5637,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114001089234993000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5649,7 +5649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -5675,7 +5675,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114011319009464534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5687,7 +5687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -5713,7 +5713,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114021811241664038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5725,7 +5725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -5751,7 +5751,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114030582668879202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5763,7 +5763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -5789,7 +5789,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114079586456420658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5801,7 +5801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -5827,7 +5827,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114099996000778860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5839,7 +5839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -5865,7 +5865,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114100225239178748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5877,7 +5877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -5903,7 +5903,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114110471811942264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5915,7 +5915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -5941,7 +5941,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114126158166312242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5953,7 +5953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -5979,7 +5979,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114129305390014338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5991,7 +5991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6017,7 +6017,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114156264504682332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6029,7 +6029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6055,7 +6055,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114158900526875108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6067,7 +6067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6093,7 +6093,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114169443276064226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6105,7 +6105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6131,7 +6131,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114174113757599344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6143,7 +6143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6169,7 +6169,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114181457213073234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6181,7 +6181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6207,7 +6207,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114188535498024998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6219,7 +6219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6245,7 +6245,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114207911293024108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6257,7 +6257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6283,7 +6283,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114249840140875468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6295,7 +6295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6321,7 +6321,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114259930206569914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6333,7 +6333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6359,7 +6359,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114275212024798152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6371,7 +6371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6397,7 +6397,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114299548553155356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6409,7 +6409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6435,7 +6435,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114302316914306788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6447,7 +6447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6473,7 +6473,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114308112815043550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6485,7 +6485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6511,7 +6511,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114337189147984154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6523,7 +6523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6549,7 +6549,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114342976504208860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6561,7 +6561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6587,7 +6587,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114355874860779616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6599,7 +6599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6625,7 +6625,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114371912360399906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6637,7 +6637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6663,7 +6663,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114374211706043770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6675,7 +6675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6701,7 +6701,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114386898016305846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6713,7 +6713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6739,7 +6739,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114415491577716128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6751,7 +6751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6777,7 +6777,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114434660707960562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6789,7 +6789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6815,7 +6815,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114485807027307126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6827,7 +6827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6853,7 +6853,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114528480933201522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6865,7 +6865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6891,7 +6891,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114531587007554154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6903,7 +6903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6929,7 +6929,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114570384025197602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6941,7 +6941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -6967,7 +6967,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114584246454567756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6979,7 +6979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7005,7 +7005,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114588826039061450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7017,7 +7017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7043,7 +7043,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114611462475725248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7055,7 +7055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7081,7 +7081,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114646090531594658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7093,7 +7093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7119,7 +7119,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114646360437900994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7131,7 +7131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7157,7 +7157,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114676883931831582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7169,7 +7169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7195,7 +7195,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114680140993921080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7207,7 +7207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7233,7 +7233,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114708863436763796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7245,7 +7245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a33f9bccdbe843b4cb5f5afb9899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infected: 0
+  Infected: 0
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -7306,7 +7306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7332,7 +7332,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114718664557098666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7344,7 +7344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7370,7 +7370,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114733713088427094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7382,7 +7382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7408,7 +7408,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114758922501290010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7420,7 +7420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7446,7 +7446,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114775983319559804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7458,7 +7458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7484,7 +7484,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114776283447885140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7496,7 +7496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7522,7 +7522,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114783814341219506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7534,7 +7534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7560,7 +7560,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114806196253683236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7572,7 +7572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7598,7 +7598,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114812457920658490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7610,7 +7610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7636,7 +7636,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114819248154856476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7648,7 +7648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7674,7 +7674,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114824534303206030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7686,7 +7686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7712,7 +7712,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114831410671351586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7724,7 +7724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7750,7 +7750,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114834208261761718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7762,7 +7762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7788,7 +7788,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114843738429417444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7800,7 +7800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7826,7 +7826,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114858849158944936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7838,7 +7838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7864,7 +7864,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114863900892533874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7876,7 +7876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7902,7 +7902,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114875560665468694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7914,7 +7914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7940,7 +7940,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114882753904962220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7952,7 +7952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -7978,7 +7978,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114884725222763644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7990,7 +7990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -8016,7 +8016,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114936270226720600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8028,7 +8028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -8054,7 +8054,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5
 --- !u!114 &114983991115248614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8066,7 +8066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd0d05320b77f4f89a4a13b7f1e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AnimSpeed: 25
+  _AnimSpeed: 30
   _EmiColorCurve:
     serializedVersion: 2
     m_Curve:
@@ -8092,4 +8092,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   _MinEmiIntensity: 0.5
-  _MaxEmiIntensity: 1.25
+  _MaxEmiIntensity: 1.5

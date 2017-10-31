@@ -20,9 +20,9 @@ public class Menu : MonoBehaviour
 	{
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
-		_LoadingPanel.SetActive (false);
-		_CreditsPanel.SetActive (false);
-		_InfoPanel.SetActive (false);
+		if(_LoadingPanel) _LoadingPanel.SetActive (false);
+		if(_CreditsPanel)_CreditsPanel.SetActive (false);
+		if(_InfoPanel)_InfoPanel.SetActive (false);
 	}
 	#endregion
 

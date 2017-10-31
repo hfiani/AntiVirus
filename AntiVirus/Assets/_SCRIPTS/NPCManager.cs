@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCManager : MonoBehaviour
 {
 	/* NPCManager
-	 * Movement of NPC
+	 * Movement of NPC ("octets")
 	 */
 
 	#region serialized private variables
@@ -13,6 +13,8 @@ public class NPCManager : MonoBehaviour
 	[SerializeField] private float walkRadius = 10.0f;
 	[SerializeField] private float moveSpeed = 10.0f;
 	[SerializeField] private GameObject targetPrefab;
+	[SerializeField] private AudioClip buffSound;
+	[SerializeField] private float buffVolume;
 	#endregion
 
 	#region private variables
@@ -24,15 +26,18 @@ public class NPCManager : MonoBehaviour
 
 	private bool _canMove = false;
 	private float _travelTime;
+	private AudioSource _audio;
 	#endregion
 
 	#region events
 	// Use this for initialization
 	void Start ()
 	{
+		_audio = GetComponent<AudioSource> ();
 		_parent = transform.parent.gameObject;
 		_target = Instantiate (targetPrefab, transform.position, Quaternion.identity);
 		_timer = Time.time + Random.Range(0f,destinationChangeDelay);
+		FindTarget ();
 	}
 	
 	// Update is called once per frame
@@ -48,6 +53,22 @@ public class NPCManager : MonoBehaviour
 		MoveTowardTarget ();
 	}
 	#endregion
+
+	public void PlayBuffSound(){
+		if (_audio.isPlaying){
+			return;
+		}
+		_audio.pitch = 1.0f;
+		_audio.PlayOneShot (buffSound, buffVolume);
+	}
+
+	public void PlayDeBuffSound(){
+		if (_audio.isPlaying){
+			return;
+		}
+		_audio.pitch = 0.5f;
+		_audio.PlayOneShot (buffSound, buffVolume);
+	}
 
 	#region private functions
 	void FindTarget()

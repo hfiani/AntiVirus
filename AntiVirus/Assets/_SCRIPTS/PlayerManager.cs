@@ -111,6 +111,7 @@ public class PlayerManager : MonoBehaviour
 				_energyRegen = _DebuffedEnergyRegen;
 				UI.SetBuffText (false);
 				UI.SetDeBuffText (true);
+				c.GetComponent<NPCManager> ().PlayDeBuffSound ();
 			}
 			else
 			{
@@ -119,6 +120,7 @@ public class PlayerManager : MonoBehaviour
 				_energyRegen = _BuffedEnergyRegen;
 				UI.SetBuffText (true);
 				UI.SetDeBuffText (false);
+				c.GetComponent<NPCManager> ().PlayBuffSound ();
 			}
 		}
 	}

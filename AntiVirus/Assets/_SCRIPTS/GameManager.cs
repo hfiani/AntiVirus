@@ -252,6 +252,7 @@ public class GameManager : MonoBehaviour
 		}
 		Debug.Log ("Game Won");
 		_gameIsWon = true;
+		GameManager.Level = 0;
 		SceneManager.LoadScene (victorySceneName);
 
 	}
@@ -313,6 +314,7 @@ public class GameManager : MonoBehaviour
 			Debug.Log ("wave complete");
 			_waveComplete = true;
 			UI.SetWaveCompleteScreen (true);
+			GetComponent<AudioSource> ().PlayOneShot (SpawnSound,1.0f);
 			_waveCompleteTimer = Time.time;
 	
 		}

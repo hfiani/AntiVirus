@@ -25,6 +25,7 @@ public class GameMenu : MonoBehaviour
 
 	public void MainMenu()
 	{
+		GameManager.Level = 0;
 		Debug.Log ("main menu button");
 		SceneManager.LoadScene ("startmenu");
 
