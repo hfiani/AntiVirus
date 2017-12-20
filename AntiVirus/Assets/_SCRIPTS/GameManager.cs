@@ -280,9 +280,6 @@ public class GameManager : MonoBehaviour
 			_radiusIndex = 0;
 			_noCollisionCount = 0;
 			SmallestDistance = 99999;
-
-
-			
 		}
 
 		Vector3 pos = Objective.transform.position;
@@ -320,7 +317,8 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	void Endlevel(){
+	void Endlevel()
+	{
 		if (Level == LevelMax)
 		{
 			GameWon ();
